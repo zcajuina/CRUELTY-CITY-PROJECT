@@ -37,6 +37,7 @@ The architecture utilizes a robust **State Machine** for First-Person movement a
 - **⏳ Day/Night Cycle:** Global environment and atmospheric time progression .
 
 > ⚠️ **Current State:** The release includes a **flat plane sandbox map** designed explicitly to stress-test all the functional features and entities listed above.
+> ⚠️ **Current Code State:** This project is almost 2 years old, and has gone trough a lot of changes, so if you are trying to continue it, be warned to see a couple useless code and scene files
 
 ---
 
@@ -70,7 +71,7 @@ If you are a 3D artist, level designer, or Godot programmer interested in creati
 
 * **zCAJUINA:** Core systems programming and 3D asset modeling.
 * **Vile Kallio:** Original game concept, creative direction, and texture inspirations.
-* **Starly:** UI & Badge design ([Instagram: @s4tarlyy](https://instagram.com/s4tarlyy)) .
+* **Starly:** Badge design ([Instagram: @s4tarlyy](https://instagram.com/s4tarlyy)) .
 * **Plodeth, WannaCry, and Wrench:** For their dedication to keeping the *CRUELTY BLOX* community alive.
 
 ---
