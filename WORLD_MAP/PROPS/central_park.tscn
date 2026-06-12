@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://ksl3q4v8nxt7"]
+
+[ext_resource type="Texture2D" uid="uid://s2twly7e176q" path="res://Textures/DEV/dev_128_gr_032x.jpg" id="1_i7m4o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3npmo"]
+albedo_texture = ExtResource("1_i7m4o")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq3up"]
+albedo_color = Color(0.3893733, 0.58, 0.1856, 1)
+
+[node name="CENTRAL_PARK" type="CSGBox3D" unique_id=1518512629]
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(152, 0.1, 112)
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=45448898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, -0.5, 0)
+radius = 56.0
+height = 1.0
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS2" type="CSGCylinder3D" parent="." unique_id=133708242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77, 0.125, 0)
+radius = 53.0
+height = 0.1
+sides = 24
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=889210819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 0)
+radius = 56.0
+height = 0.1
+sides = 32
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1514964699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124, -0.5, 0)
+radius = 48.0
+height = 1.0
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS" type="CSGCylinder3D" parent="." unique_id=1668664182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124, 0.025000095, 0)
+radius = 47.0
+height = 0.1
+sides = 24
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="GRASS3" type="CSGCylinder3D" parent="." unique_id=2080110157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0.12500012, -36)
+radius = 12.0
+height = 0.1
+sides = 24
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="GRASS6" type="CSGCylinder3D" parent="." unique_id=1689706665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0.12500012, 36)
+radius = 12.0
+height = 0.1
+sides = 24
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="GRASS4" type="CSGBox3D" parent="." unique_id=371281103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.125, -36)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(130, 0.1, 24)
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="GRASS5" type="CSGBox3D" parent="." unique_id=819020806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0.125, 36)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(131, 0.1, 24)
+material = SubResource("StandardMaterial3D_dq3up")
+
+[node name="FOUNTAIN" type="CSGCylinder3D" parent="." unique_id=673668264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124, 0.7750003, 0)
+use_collision = true
+radius = 27.0
+height = 1.1
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS8" type="CSGCylinder3D" parent="FOUNTAIN" unique_id=976707316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92499995, 0)
+operation = 2
+radius = 26.0
+height = 2.05
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS7" type="CSGCylinder3D" parent="FOUNTAIN" unique_id=223766890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7249999, 0)
+use_collision = true
+radius = 13.0
+height = 2.55
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="FOUNTAIN2" type="CSGCylinder3D" parent="." unique_id=1900039575]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 76, 0.7750003, 0)
+use_collision = true
+radius = 27.0
+height = 1.1
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS8" type="CSGCylinder3D" parent="FOUNTAIN2" unique_id=116782217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92499995, 0)
+operation = 2
+radius = 26.0
+height = 2.05
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="GRASS7" type="CSGCylinder3D" parent="FOUNTAIN2" unique_id=1174631572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7249999, 0)
+use_collision = true
+radius = 13.0
+height = 2.55
+sides = 24
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="CENTRAL_PARK2" type="CSGBox3D" parent="." unique_id=1851483146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5, 0.5499999, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(95, 1, 16)
+material = SubResource("StandardMaterial3D_3npmo")
+
+[node name="CENTRAL_PARK3" type="CSGBox3D" parent="CENTRAL_PARK2" unique_id=1959407855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999995, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(91, 0.6, 12)
+material = SubResource("StandardMaterial3D_dq3up")

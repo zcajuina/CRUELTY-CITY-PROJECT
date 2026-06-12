@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://smfpurvtj808"]
+
+[ext_resource type="Script" uid="uid://nde8b652sorr" path="res://Scenes/Props/damage_in_tics_node.gd" id="1_q5d1b"]
+
+[node name="DAMTICS" type="Node" unique_id=3628026]
+script = ExtResource("1_q5d1b")
+
+[node name="Timer" type="Timer" parent="." unique_id=1060201836]
+
+[node name="DEATH_TIMER" type="Timer" parent="." unique_id=331496225]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DEATH_TIMER" to="." method="_on_death_timer_timeout"]

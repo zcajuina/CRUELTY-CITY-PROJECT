@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cwpgihi570hb"]
+
+[ext_resource type="Script" uid="uid://dvgqmrohob55c" path="res://Scripts/Props/health_item_rigid_body_logic.gd" id="1_ircbu"]
+[ext_resource type="PackedScene" uid="uid://c2wrir2207xy8" path="res://Models/Props/PICK-UPS/PIZZA.glb" id="2_tuhe4"]
+[ext_resource type="PackedScene" uid="uid://b34ph8pykk4ca" path="res://Models/Props/PICK-UPS/SUPER_CRUNCHERS.glb" id="3_kh71n"]
+[ext_resource type="PackedScene" uid="uid://chuvlmi7putp1" path="res://Models/Props/PICK-UPS/SODA.glb" id="4_xel5d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rwt6h"]
+rough = true
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwt6h"]
+size = Vector3(0.57318115, 0.09765625, 0.4237671)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xel5d"]
+height = 0.40000004
+radius = 0.1
+
+[node name="HealthItem" type="RigidBody3D" unique_id=1661241263 groups=["food"]]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_rwt6h")
+script = ExtResource("1_ircbu")
+
+[node name="SQUARE_SHAPE" type="CollisionShape3D" parent="." unique_id=921301123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039367676, 0.04296875, 0.00088500977)
+shape = SubResource("BoxShape3D_rwt6h")
+
+[node name="CILINDER_SHAPE" type="CollisionShape3D" parent="." unique_id=1454266397]
+process_mode = 4
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.9802322e-08, -1.7763568e-15, 0)
+shape = SubResource("CylinderShape3D_xel5d")
+
+[node name="PIZZA" parent="." unique_id=144620914 instance=ExtResource("2_tuhe4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08276677, 0.012520574, 0)
+visible = false
+
+[node name="SUPER_CRUNCHERS" parent="." unique_id=233075360 instance=ExtResource("3_kh71n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022358172, 0)
+visible = false
+
+[node name="SODA" parent="." unique_id=113679609 instance=ExtResource("4_xel5d")]
+visible = false

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cwq0jm71xe520"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_twoul"]
+
+[sub_resource type="Curve" id="Curve_06ijo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_om4d4"]
+curve = SubResource("Curve_06ijo")
+
+[sub_resource type="Curve" id="Curve_8pt32"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oyb2h"]
+curve = SubResource("Curve_8pt32")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pm5qf"]
+angle_min = 1.07288e-05
+angle_max = 397.2
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.1200001
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 35.929977
+radial_velocity_curve = SubResource("CurveTexture_om4d4")
+gravity = Vector3(0, -3.265, 0)
+scale_min = 0.19999999
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_oyb2h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak2oi"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_nehxn"]
+material = SubResource("StandardMaterial3D_ak2oi")
+size = Vector2(0.255, 1)
+
+[node name="BloodSplat" type="Node3D" unique_id=474396424]
+script = ExtResource("1_twoul")
+time = 1.0
+
+[node name="GPUParticles3D" type="CPUParticles3D" parent="." unique_id=2125957395]
+transform = Transform3D(0.0267824, 0, 0, 0, 0.0267824, 0, 0, 0, 0.0267824, 0, 0, 0)
+amount = 64
+explosiveness = 1.0
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1168268998]
+transform = Transform3D(0.0267824, 0, 0, 0, 0.0267824, 0, 0, 0, 0.0267824, 0, 0, 0)
+amount = 64
+explosiveness = 0.6
+process_material = SubResource("ParticleProcessMaterial_pm5qf")
+draw_pass_1 = SubResource("QuadMesh_nehxn")

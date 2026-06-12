@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bumyr61o5kds6"]
+
+[ext_resource type="PackedScene" uid="uid://c6bvwymcyuumc" path="res://Models/Vegetation/tree_06.glb" id="1_aynd7"]
+
+[node name="SIMPLE_TREE" type="Node3D" unique_id=266648268]
+
+[node name="tree_06" parent="." unique_id=824452297 instance=ExtResource("1_aynd7")]

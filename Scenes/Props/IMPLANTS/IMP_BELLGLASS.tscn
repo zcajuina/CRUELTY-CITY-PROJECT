@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cka71qxfl3h7b"]
+
+[ext_resource type="Script" uid="uid://dwor7fwpqhknr" path="res://Scripts/IMPLANTS/imp_bellglass.gd" id="1_y6kqt"]
+[ext_resource type="Texture2D" uid="uid://d4eujld3qqujw" path="res://Textures/HUD/BELL_MARK.png" id="3_5c6p3"]
+
+[sub_resource type="Animation" id="Animation_os80u"]
+resource_name = "KILL"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.93333346),
+"transitions": PackedFloat32Array(0.2176375, 5.4641585, 3.3635828),
+"update": 0,
+"values": [Vector2(758, 799.00006), Vector2(758, 411), Vector2(758, 818)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4333334, 0.73333335),
+"transitions": PackedFloat32Array(0.19614604, 2.9281712, 2.7320802),
+"update": 0,
+"values": [0.0, -0.35014832, 0.144]
+}
+
+[sub_resource type="Animation" id="Animation_y6kqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(758, 799.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5c6p3"]
+_data = {
+&"KILL": SubResource("Animation_os80u"),
+&"RESET": SubResource("Animation_y6kqt")
+}
+
+[node name="ImpBellglass" type="Node" unique_id=678051152]
+script = ExtResource("1_y6kqt")
+
+[node name="Control" type="Control" parent="." unique_id=1422525555]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=731547881]
+libraries/ = SubResource("AnimationLibrary_5c6p3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control" unique_id=1809725419]
+position = Vector2(758, 799.00006)
+scale = Vector2(-0.342, 0.342)
+texture = ExtResource("3_5c6p3")

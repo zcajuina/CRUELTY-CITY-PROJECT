@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bj7c0vmg3sp88"]
+
+[ext_resource type="PackedScene" uid="uid://busjaw3nwpwup" path="res://Models/Props/ALTARES/MAGNITUDE_ALTAR.glb" id="1_fdcb3"]
+[ext_resource type="Script" uid="uid://dmm82o754gkn" path="res://Scripts/Props/ALTAR_interact_LOGIC.gd" id="2_yg83e"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="3_jqtua"]
+[ext_resource type="AudioStream" uid="uid://csgi156mnktr4" path="res://Sounds/SFK/TV_HUM.mp3" id="3_vf8qu"]
+[ext_resource type="Texture2D" uid="uid://bmcnnawavk1wq" path="res://Textures/GFX/gold_light.png" id="4_j26vf"]
+
+[sub_resource type="Curve" id="Curve_apu0d"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0s8k0"]
+curve = SubResource("Curve_apu0d")
+
+[sub_resource type="Gradient" id="Gradient_dvqbq"]
+offsets = PackedFloat32Array(0.45, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vdj8v"]
+gradient = SubResource("Gradient_dvqbq")
+
+[sub_resource type="Curve" id="Curve_4uwhm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.68072283, 0.80898875), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f8rc"]
+curve = SubResource("Curve_4uwhm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lqtqk"]
+emission_shape = 2
+emission_sphere_radius = 0.55
+angle_min = -360.0
+angle_max = 360.00003
+angle_curve = SubResource("CurveTexture_0s8k0")
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 0.99997765
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_6f8rc")
+color_ramp = SubResource("GradientTexture1D_vdj8v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erkar"]
+render_priority = -1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_j26vf")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_pnr6u"]
+material = SubResource("StandardMaterial3D_erkar")
+size = Vector2(0.15, 0.15)
+
+[node name="AltarOfMagnitude" type="Node3D" unique_id=1840839393]
+
+[node name="MAGNITUDE_INTERACT" type="CSGSphere3D" parent="." unique_id=1290637283 groups=["altar"]]
+transform = Transform3D(0.71428573, 0, 0, 0, 0.71428573, 0, 0, 0, 0.71428573, -0.0015745283, 3.427661, -0.00026053935)
+visible = false
+use_collision = true
+radius = 2.0
+rings = 8
+script = ExtResource("2_yg83e")
+altar_name = "MAGNITUDE"
+
+[node name="MAGNITUDE_ALTAR2" parent="." unique_id=115032029 instance=ExtResource("1_fdcb3")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="BALL_ROOT" parent="MAGNITUDE_ALTAR2" index="1" unique_id=604367447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.614286, 0)
+script = ExtResource("3_jqtua")
+sin_y = true
+sin_amp = 0.002
+sin_freq = 0.25
+
+[node name="ANEL1" parent="MAGNITUDE_ALTAR2/BALL_ROOT" index="0" unique_id=274724107]
+transform = Transform3D(0.96592593, 0, 0.25881904, 0, 1, 0, -0.25881907, 0, 0.9659258, -0.0009586308, -0.0026135445, 0.00041547217)
+script = ExtResource("3_jqtua")
+rotate_x = true
+rotate_z = true
+rotate_weight = 0.45
+
+[node name="ANEL2" parent="MAGNITUDE_ALTAR2/BALL_ROOT" index="1" unique_id=1801921284]
+transform = Transform3D(0.9659258, -0.0669873, 0.25, 0, 0.96592593, 0.25881907, -0.25881907, -0.25000003, 0.9330127, -0.0009586308, -0.0026135445, 0.00041547217)
+script = ExtResource("3_jqtua")
+rotate_x = true
+rotate_z = true
+rotate_weight = 0.75
+
+[node name="RIM_001" parent="MAGNITUDE_ALTAR2/BALL_ROOT" index="3" unique_id=458819481]
+script = ExtResource("3_jqtua")
+rotate_y = true
+rotate_weight = -0.25
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MAGNITUDE_ALTAR2/BALL_ROOT" index="4" unique_id=756185489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001124663, -0.29795885, -0.00018609954)
+light_color = Color(1, 0.6333333, 0, 1)
+light_energy = 16.0
+omni_range = 5.022
+omni_attenuation = 0.46
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="MAGNITUDE_ALTAR2/BALL_ROOT" index="5" unique_id=533326262]
+transform = Transform3D(0.71428573, 0, 0, 0, 0.71428573, 0, 0, 0, 0.71428573, -0.001124663, -0.012244463, -0.00018609954)
+light_color = Color(1, 0.2833333, 0, 1)
+light_energy = 16.0
+omni_range = 2.1000001
+omni_attenuation = -2.907
+
+[node name="SPARKS" type="GPUParticles3D" parent="MAGNITUDE_ALTAR2" unique_id=2048882157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6293564, 0)
+amount = 128
+preprocess = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_lqtqk")
+draw_pass_1 = SubResource("QuadMesh_pnr6u")
+
+[node name="HUM" type="AudioStreamPlayer3D" parent="." unique_id=1900859556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("3_vf8qu")
+pitch_scale = 0.5
+autoplay = true
+max_distance = 10.0
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[editable path="MAGNITUDE_ALTAR2"]

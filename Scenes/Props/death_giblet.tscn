@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b8s2jaojdbuuj"]
+
+[ext_resource type="Script" uid="uid://clivtt141pm2r" path="res://Scenes/Props/death_giblet.gd" id="1_mxof7"]
+[ext_resource type="AudioStream" uid="uid://dokers8w83sp5" path="res://Sounds/PLAYER_SOUNDS/FLOOR_SPLASH.wav" id="2_pudvm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_px3cp"]
+
+[node name="DeathGiblet" type="CharacterBody3D" unique_id=1227564598]
+script = ExtResource("1_mxof7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1781755155]
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=539445007]
+shape = SubResource("SphereShape3D_px3cp")
+
+[node name="SPLATER_SND" type="AudioStreamPlayer" parent="." unique_id=1338869333]
+stream = ExtResource("2_pudvm")
+volume_db = -18.129

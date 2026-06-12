@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bf2p2wwpfgqjl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u848b"]
+albedo_color = Color(0.116666794, 1, 0, 1)
+emission_enabled = true
+emission = Color(0.19999993, 1, 0, 1)
+rim_enabled = true
+
+[node name="PartLazerSight" type="Node3D" unique_id=140106194]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1057756832]
+radius = 0.12366851
+material = SubResource("StandardMaterial3D_u848b")

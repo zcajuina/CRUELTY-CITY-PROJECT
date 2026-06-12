@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://buojubmuxl8so"]
+
+[ext_resource type="Texture2D" uid="uid://cplomkcspwvlf" path="res://Textures/CRUS/DOORS/mosaic_1.png" id="1_105nf"]
+
+[resource]
+albedo_texture = ExtResource("1_105nf")

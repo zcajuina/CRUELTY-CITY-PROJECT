@@ -1,0 +1,493 @@
+[gd_scene format=3 uid="uid://dkq0t4linfo2k"]
+
+[ext_resource type="Script" uid="uid://b5mne57pddsbv" path="res://Scripts/Props/world_environment.gd" id="1_5a8l4"]
+[ext_resource type="Material" uid="uid://csj1ekg8tqo5y" path="res://Materials/NORMAL_SKY.tres" id="2_h7uix"]
+[ext_resource type="PackedScene" uid="uid://bag6u1th1x52o" path="res://Scenes/PLAYER.tscn" id="2_w3ube"]
+[ext_resource type="Material" uid="uid://bmnyb0h3pknfs" path="res://Materials/GENERAL_GRASS.tres" id="3_qnklo"]
+[ext_resource type="Texture2D" uid="uid://dtcappwg5p2dd" path="res://Textures/HUD/IMPLANTS_SPRITES/coin.png" id="3_rf37y"]
+[ext_resource type="Material" uid="uid://dhy6nba5dcju6" path="res://Materials/COMMON_WATER.tres" id="4_w3ube"]
+[ext_resource type="Texture2D" uid="uid://uf5h4xc67rhb" path="res://Textures/CRUS/Stone2.png" id="5_3trow"]
+[ext_resource type="PackedScene" uid="uid://c5y4afwu34nl1" path="res://Models/Props/PICK-UPS/GAME_BOX.glb" id="7_3trow"]
+[ext_resource type="Material" uid="uid://v7kivo7bap2w" path="res://Materials/SWAMP_WATER.tres" id="7_gvliy"]
+[ext_resource type="Script" uid="uid://dekrw7burxt4i" path="res://Scripts/Props/general_interactive_object.gd" id="7_o57sv"]
+[ext_resource type="Texture2D" uid="uid://dsk78nbnpn15n" path="res://Textures/MINE/SWAMP_WATER.png" id="8_tlyon"]
+[ext_resource type="PackedScene" uid="uid://bqyurrf2oghxb" path="res://Scenes/Props/PICK_UPS/augmentbaggy.tscn" id="9_uwkcv"]
+[ext_resource type="Texture2D" uid="uid://dvhyg7a4qncd6" path="res://Textures/HUD/IMPLANTS_SPRITES/bell_glass.png" id="10_5sdtc"]
+[ext_resource type="PackedScene" uid="uid://bj7c0vmg3sp88" path="res://Scenes/Props/ALTARS/ALTAR_OF_MAGNITUDE.tscn" id="14_gqi0e"]
+[ext_resource type="PackedScene" uid="uid://qc7o2k0q4fux" path="res://Scenes/Props/ALTARS/ALTAR_OF_MEAGER.tscn" id="15_flpr8"]
+[ext_resource type="Script" uid="uid://4rmu0i0vnt5j" path="res://Scripts/DEBUG_FLAT_PLANE_SCRIPTS/button.gd" id="17_gqi0e"]
+[ext_resource type="PackedScene" uid="uid://c1fgffrnd6iiu" path="res://Scenes/NPCS/dummy.tscn" id="18_flpr8"]
+[ext_resource type="PackedScene" uid="uid://e4gtxcwnx40s" path="res://Scenes/Props/PICK_UPS/DROPPED_GUN_RIGID_BODY.tscn" id="19_qufkp"]
+[ext_resource type="PackedScene" uid="uid://08dwsffejlph" path="res://Scenes/Props/ALTARS/ALTAR_OF_PUTIRY.tscn" id="20_igiei"]
+[ext_resource type="PackedScene" uid="uid://i6864ta0fhem" path="res://Scenes/Props/ALTARS/ALTAR_OF_DEATH.tscn" id="20_jwl42"]
+[ext_resource type="Script" uid="uid://due5d445ycjhb" path="res://Scripts/DEBUG_FLAT_PLANE_SCRIPTS/CLOCK.gd" id="21_igiei"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="21_kr413"]
+
+[sub_resource type="Sky" id="Sky_c82x5"]
+sky_material = ExtResource("2_h7uix")
+
+[sub_resource type="Environment" id="Environment_ahpp8"]
+background_mode = 2
+sky = SubResource("Sky_c82x5")
+glow_enabled = true
+glow_levels/1 = 2.4
+glow_blend_mode = 0
+fog_density = 0.001
+fog_sky_affect = 0.0
+fog_depth_curve = 16.564213
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o57sv"]
+albedo_texture = ExtResource("5_3trow")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qufkp"]
+albedo_color = Color(0.29999995, 1, 0, 1)
+emission_enabled = true
+emission = Color(0.23333335, 1, 0, 1)
+emission_texture = ExtResource("8_tlyon")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3hld"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flpr8"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwl42"]
+albedo_color = Color(0.77, 0.77, 0.77, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igiei"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr413"]
+albedo_color = Color(0.42, 0.42, 0.42, 1)
+metallic = 1.0
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mcjs"]
+albedo_color = Color(1, 0.81960785, 0, 1)
+metallic = 0.52
+roughness = 0.54
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywfjr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m18uj"]
+material = SubResource("StandardMaterial3D_ywfjr")
+size = Vector2(0.025, 0.5)
+
+[node name="LeFlatPlane" type="Node3D" unique_id=1149205070]
+script = ExtResource("1_5a8l4")
+
+[node name="Player" parent="." unique_id=1359576397 instance=ExtResource("2_w3ube")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1068331012]
+environment = SubResource("Environment_ahpp8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=946510867]
+transform = Transform3D(1, 0, 0, 0, 0.09198823, 0.9957601, 0, -0.9957601, 0.09198823, 0, 0, 0)
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+
+[node name="MUNDO_ROOT" type="Node3D" parent="." unique_id=26520444]
+
+[node name="FLOOR" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=831035397]
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(512, 1, 512)
+material = ExtResource("3_qnklo")
+
+[node name="WATER_NORMAL" type="Node3D" parent="MUNDO_ROOT" unique_id=1050995319]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0.5, -6)
+
+[node name="WATER" type="CSGBox3D" parent="MUNDO_ROOT/WATER_NORMAL" unique_id=1015424885 groups=["water", "water_normal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12499988, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(4, 0.25, 4)
+material = ExtResource("4_w3ube")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MUNDO_ROOT/WATER_NORMAL" unique_id=2103380817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MUNDO_ROOT/WATER_NORMAL" unique_id=465513475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MUNDO_ROOT/WATER_NORMAL" unique_id=1906861843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, -2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MUNDO_ROOT/WATER_NORMAL" unique_id=357014541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, 2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="WATER_SWAMP" type="Node3D" parent="MUNDO_ROOT" unique_id=1503074671]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0.5, 0)
+
+[node name="WATER" type="CSGBox3D" parent="MUNDO_ROOT/WATER_SWAMP" unique_id=1734963194 groups=["water", "water_normal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12499988, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(4, 0.25, 4)
+material = ExtResource("7_gvliy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MUNDO_ROOT/WATER_SWAMP" unique_id=746351187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MUNDO_ROOT/WATER_SWAMP" unique_id=461802462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MUNDO_ROOT/WATER_SWAMP" unique_id=1272021093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, -2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MUNDO_ROOT/WATER_SWAMP" unique_id=456333119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, 2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="WATER_PURE" type="Node3D" parent="MUNDO_ROOT" unique_id=270589943]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0.5, 6)
+
+[node name="WATER" type="CSGBox3D" parent="MUNDO_ROOT/WATER_PURE" unique_id=15042234 groups=["water", "water_radio"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12499988, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(4, 0.25, 4)
+material = SubResource("StandardMaterial3D_qufkp")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MUNDO_ROOT/WATER_PURE" unique_id=2143084144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MUNDO_ROOT/WATER_PURE" unique_id=1007932502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.125, 0.18749988, 0)
+size = Vector3(0.25, 0.375, 4)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MUNDO_ROOT/WATER_PURE" unique_id=1236210667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, -2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MUNDO_ROOT/WATER_PURE" unique_id=1147851816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18749988, 2.125)
+size = Vector3(4.5, 0.375, 0.25)
+material = SubResource("StandardMaterial3D_o57sv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=325036018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5005, 0)
+use_collision = true
+size = Vector3(16, 0.001, 16)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=976971213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5005, 32)
+use_collision = true
+size = Vector3(2, 0.001, 48)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=1437370582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5005, 26.75)
+use_collision = true
+size = Vector3(16, 0.001, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=1627777664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5005, -12)
+use_collision = true
+size = Vector3(2, 0.001, 8)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=1546082198]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12, 0.5005, 0)
+use_collision = true
+size = Vector3(2, 0.001, 8)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MUNDO_ROOT" unique_id=1533978391]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12, 0.5005, 0)
+use_collision = true
+size = Vector3(2, 0.001, 8)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="MUNDO_ROOT" unique_id=564072353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50049996, 60.75)
+radius = 5.25
+height = 0.001
+sides = 24
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="MUNDO_ROOT" unique_id=835209026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50049996, 40)
+radius = 2.5
+height = 0.001
+sides = 24
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="MUNDO_ROOT" unique_id=149920084]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0.531919, 60.758163)
+radius = 4.75
+height = 0.812625
+sides = 24
+
+[node name="bell_game" type="CSGBox3D" parent="." unique_id=201700323 groups=["general"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.3125, 0.86783457, 230.0625)
+use_collision = true
+size = Vector3(0.625, 0.75, 0.125)
+material = SubResource("StandardMaterial3D_p3hld")
+script = ExtResource("7_o57sv")
+unique_prop = true
+unique_prop_name = "BELL_GAME"
+inspect_name = "GOON SIMULATOR 6: BELLE DELPHINE"
+inspect_desc = "AQUIRE DEPRAVITY"
+badge_enabled = true
+badge_name = "MEMORIES OF A SWEET ERA WITH A PROFANE SCENT"
+delete_after_interaction = true
+
+[node name="GAME_BOX2" parent="bell_game" unique_id=1475392296 instance=ExtResource("7_3trow")]
+transform = Transform3D(0.37, 0, 0, 0, -1.6173214e-08, -0.37, 0, 0.37, -1.6173214e-08, 0, 0, 0)
+
+[node name="AUGMENTBAGGY" parent="." unique_id=1873895282 groups=["general"] instance=ExtResource("9_uwkcv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.85725, 0.5829468, 230.0123)
+albedo_texture = ExtResource("10_5sdtc")
+AUG_NAME = "Goon Glasses 3000"
+
+[node name="AUGMENTBAGGY2" parent="." unique_id=2062920753 groups=["general"] instance=ExtResource("9_uwkcv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.5829467, -4.25)
+albedo_texture = ExtResource("3_rf37y")
+AUG_NAME = "Ancient coin"
+
+[node name="AltarOfMagnitude" parent="." unique_id=1840839393 instance=ExtResource("14_gqi0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 0, 26.75)
+
+[node name="AltarOfMeager" parent="." unique_id=778513533 instance=ExtResource("15_flpr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25, 0, 26.75)
+
+[node name="BUTTON_PILAR" type="CSGBox3D" parent="." unique_id=580014495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.9999999, -16.25)
+use_collision = true
+size = Vector3(0.45, 1, 0.45)
+
+[node name="BUTTON" type="CSGSphere3D" parent="." unique_id=909281006 groups=["general"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 1.4999999, -16.25)
+use_collision = true
+radius = 0.15
+material = SubResource("StandardMaterial3D_flpr8")
+script = ExtResource("17_gqi0e")
+inspect_name = "BUTTON"
+inspect_desc = "SPAWN A VICTIM"
+
+[node name="laser" type="CSGBox3D" parent="." unique_id=612012602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, -19.75)
+use_collision = true
+size = Vector3(6, 0.25, 6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="laser" unique_id=86571711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+size = Vector3(4, 0.25, 4)
+material = SubResource("StandardMaterial3D_jwl42")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="laser" unique_id=1965235394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.125, -0.25)
+size = Vector3(0.5, 0.5, 6.5)
+material = SubResource("StandardMaterial3D_igiei")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="laser" unique_id=538847213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.125, -0.25)
+size = Vector3(0.5, 0.5, 6.5)
+material = SubResource("StandardMaterial3D_igiei")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="laser" unique_id=215069808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 2.75)
+size = Vector3(5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_igiei")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="laser" unique_id=1450140654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, -2.375)
+size = Vector3(4, 4, 0.75)
+material = SubResource("StandardMaterial3D_kr413")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="laser" unique_id=899845578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, -2.5)
+size = Vector3(4.5, 4.25, 0.5)
+material = SubResource("StandardMaterial3D_igiei")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="laser" unique_id=408763548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, -3.125)
+size = Vector3(5, 4.75, 0.75)
+material = SubResource("StandardMaterial3D_kr413")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="laser" unique_id=1963661279]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.75, 0)
+radius = 3.0
+sides = 14
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="laser/CSGCylinder3D" unique_id=1353489072]
+operation = 2
+radius = 2.75
+sides = 14
+
+[node name="CSGBox3D" type="CSGBox3D" parent="laser" unique_id=384348833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.875, 2)
+size = Vector3(1, 3.75, 0.5)
+
+[node name="Marker3D" type="Marker3D" parent="laser" unique_id=1543081649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="SIGN" type="CSGBox3D" parent="." unique_id=1941830835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.475, 1.25, -1.625)
+use_collision = true
+size = Vector3(0.05, 0.5, 1.25)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SIGN" unique_id=1543090051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+radius = 0.025
+height = 0.5
+
+[node name="Label3D" type="Label3D" parent="SIGN" unique_id=1123659876]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.049999237, 0, 0)
+text = "WATER TESTS"
+
+[node name="SIGN2" type="CSGBox3D" parent="." unique_id=831002603]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.7749996, 1.25, 15.125)
+use_collision = true
+size = Vector3(0.05, 0.5, 1.25)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SIGN2" unique_id=1978969382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+radius = 0.025
+height = 0.5
+
+[node name="Label3D" type="Label3D" parent="SIGN2" unique_id=676555995]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.049999237, 0, 0)
+text = "ALTARS"
+
+[node name="SIGN3" type="CSGBox3D" parent="." unique_id=1889576502]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.7749996, 1.25, -14.375)
+use_collision = true
+size = Vector3(0.05, 0.5, 1.25)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SIGN3" unique_id=661847019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+radius = 0.025
+height = 0.5
+
+[node name="Label3D" type="Label3D" parent="SIGN3" unique_id=924066399]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.049999237, 0, 0)
+text = "LIQUIDATION AREA"
+font_size = 24
+
+[node name="SIGN4" type="CSGBox3D" parent="." unique_id=763357488]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -14.775, 1.25, 1.625)
+use_collision = true
+size = Vector3(0.05, 0.5, 1.25)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SIGN4" unique_id=851186778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+radius = 0.025
+height = 0.5
+
+[node name="Label3D" type="Label3D" parent="SIGN4" unique_id=1304260622]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.049999237, 0, 0)
+text = "SPECIAL GUNS"
+font_size = 24
+
+[node name="DUMMY" parent="." unique_id=100740256 instance=ExtResource("18_flpr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.49999976, -5.5)
+inspect_name = "HELPER"
+dialog_tag = "DEV_TALK"
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1836912070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0.50049996, 0)
+use_collision = true
+radius = 3.25
+height = 0.001
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D" unique_id=1552485442]
+transform = Transform3D(0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 0, 1, -0.016330719, -0.06191194, 0)
+use_collision = true
+radius = 3.0
+height = 0.62525
+sides = 16
+
+[node name="DroppedGun" parent="CSGCylinder3D" unique_id=351728196 instance=ExtResource("19_qufkp")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 1.6276016, 0.37505126, 1.5026019)
+gun_name = "BOLT_ACR"
+special_gun_retreive = true
+full_magazine = true
+
+[node name="DroppedGun3" parent="CSGCylinder3D" unique_id=170412412 instance=ExtResource("19_qufkp")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -1.3776016, 0.5062845, -1.5026019)
+gun_name = "NEURON_DISABLER"
+special_gun_retreive = true
+full_magazine = true
+
+[node name="DroppedGun2" parent="CSGCylinder3D" unique_id=1919734212 instance=ExtResource("19_qufkp")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 1.6276016, 0.37505126, -1.5026019)
+gun_name = "UBERBLADE"
+special_gun_retreive = true
+full_magazine = true
+
+[node name="DroppedGun4" parent="CSGCylinder3D" unique_id=971542023 instance=ExtResource("19_qufkp")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -1.3776016, 0.5062845, 1.5026019)
+gun_name = "DNA_SCRAMBLER"
+special_gun_retreive = true
+full_magazine = true
+
+[node name="AltarOfDeath" parent="." unique_id=351571670 instance=ExtResource("20_jwl42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 61)
+
+[node name="AltarOfPurity" parent="." unique_id=1264323083 instance=ExtResource("20_igiei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501, 40)
+
+[node name="RELOGIO" type="Node3D" parent="." unique_id=215364579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.968102, 2.5088432, -6.9029217)
+script = ExtResource("21_kr413")
+sin_y = true
+sin_amp = 0.001
+sin_freq = 0.25
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RELOGIO" unique_id=1328629667 groups=["general"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+use_collision = true
+height = 0.19824219
+sides = 16
+material = SubResource("StandardMaterial3D_3mcjs")
+script = ExtResource("21_igiei")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="RELOGIO/CSGCylinder3D" unique_id=1120820659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122892946, 0)
+operation = 2
+radius = 0.45263672
+height = 0.052368164
+sides = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RELOGIO/CSGCylinder3D" unique_id=1040764464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101, 0)
+mesh = SubResource("PlaneMesh_m18uj")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="RELOGIO" unique_id=32634835]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.5402043, 0)
+inner_radius = 0.178
+outer_radius = 0.23667178
+sides = 16
+ring_sides = 12
+material = SubResource("StandardMaterial3D_3mcjs")

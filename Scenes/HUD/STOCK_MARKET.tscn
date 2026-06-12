@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://dgb87f4uilyx5"]
+
+[ext_resource type="Texture2D" uid="uid://dxhmood0fkku1" path="res://icon.svg" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://5vpbp5x8fuof" path="res://Scripts/HUD/STOCK_MARKET_PLAYER.gd" id="1_62e2m"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="1_laigc"]
+[ext_resource type="Script" uid="uid://b0jqveibjqbi6" path="res://Scripts/HUD/BUY_AND_SELL_STOCK_BTNS.gd" id="2_jd4bo"]
+[ext_resource type="Theme" uid="uid://d2cf8jvqspjg3" path="res://Resourcers/BUY_BTN_THEME.tres" id="3_523bv"]
+[ext_resource type="Script" uid="uid://dgiqo1ijvdcgh" path="res://Scripts/HUD/user_info_panel.gd" id="4_1jl2p"]
+[ext_resource type="Script" uid="uid://dwwny2voune85" path="res://Scripts/HUD/stock_fish_preview.gd" id="4_ymo7i"]
+[ext_resource type="Theme" uid="uid://bxnogr3tm22u2" path="res://Resourcers/SELL_BTN_THEME.tres" id="5_fpba5"]
+
+[sub_resource type="Environment" id="Environment_1jl2p"]
+background_mode = 1
+
+[sub_resource type="World3D" id="World3D_ymo7i"]
+environment = SubResource("Environment_1jl2p")
+
+[node name="STOCK_MARKET" type="Control" unique_id=65980438]
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_laigc")
+script = ExtResource("1_62e2m")
+
+[node name="STOCKS_MAKT" type="TabContainer" parent="." unique_id=1565756400]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 39.0
+offset_right = 456.0
+offset_bottom = 464.0
+theme_override_constants/tab_separation = 25
+tab_alignment = 1
+current_tab = 0
+
+[node name="STOCKS" type="ItemList" parent="STOCKS_MAKT" unique_id=1621618623]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ORGANS" type="ItemList" parent="STOCKS_MAKT" unique_id=246946301]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="FISH" type="ItemList" parent="STOCKS_MAKT" unique_id=1034592882]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HOLDINGS_PANEL" type="Panel" parent="." unique_id=1597697853]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 39.0
+offset_right = 1131.0
+offset_bottom = 102.0
+
+[node name="MONEY_LABEL" type="Label" parent="HOLDINGS_PANEL" unique_id=905285326]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 414.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 18
+text = "Cash: $0
+Total Holdings: $0"
+autowrap_mode = 2
+clip_text = true
+
+[node name="INFO_PANEL" type="Panel" parent="." unique_id=1289713866]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 115.0
+offset_right = 1131.0
+offset_bottom = 463.0
+
+[node name="HOLDINGS_LABEL" type="Label" parent="INFO_PANEL" unique_id=537207734]
+texture_filter = 2
+layout_mode = 0
+offset_left = 7.0
+offset_top = 164.0
+offset_right = 414.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 15
+text = "[0]VEGGO'S METOIDS
+
+PRICE: $1
+
+Market Share:"
+autowrap_mode = 2
+clip_text = true
+
+[node name="STOCK_DESC" type="Label" parent="INFO_PANEL" unique_id=331800947]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 412.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 17
+text = "Mysterious newcomer in the vegan meat industry. Competitor of G-TECH's goofood business."
+autowrap_mode = 2
+clip_text = true
+
+[node name="BUY_BTN_CONTAINER" type="HBoxContainer" parent="INFO_PANEL" unique_id=289646941]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 272.0
+offset_right = 253.0
+offset_bottom = 297.0
+theme = ExtResource("3_523bv")
+script = ExtResource("2_jd4bo")
+
+[node name="BUY_BUTTON" type="Button" parent="INFO_PANEL/BUY_BTN_CONTAINER" unique_id=1209582070]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "BUY"
+
+[node name="BUY_5_BUTTON" type="Button" parent="INFO_PANEL/BUY_BTN_CONTAINER" unique_id=527565519]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "BUY 5"
+
+[node name="BUY_10_BUTTON" type="Button" parent="INFO_PANEL/BUY_BTN_CONTAINER" unique_id=819659317]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "BUY 10"
+
+[node name="BUY_100_BUTTON" type="Button" parent="INFO_PANEL/BUY_BTN_CONTAINER" unique_id=1891376775]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "BUY 100"
+
+[node name="SELL_BTN_CONTAINER" type="HBoxContainer" parent="INFO_PANEL" unique_id=393240913]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 309.0
+offset_right = 253.0
+offset_bottom = 334.0
+theme = ExtResource("5_fpba5")
+script = ExtResource("2_jd4bo")
+
+[node name="SELL_BUTTON" type="Button" parent="INFO_PANEL/SELL_BTN_CONTAINER" unique_id=188906754]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SELL"
+
+[node name="SELL_5_BUTTON" type="Button" parent="INFO_PANEL/SELL_BTN_CONTAINER" unique_id=1146984584]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SELL 5"
+
+[node name="SELL_10_BUTTON" type="Button" parent="INFO_PANEL/SELL_BTN_CONTAINER" unique_id=448028145]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SELL 10"
+
+[node name="SELL_100_BUTTON" type="Button" parent="INFO_PANEL/SELL_BTN_CONTAINER" unique_id=1585007649]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SELL 100"
+
+[node name="FISH_VIEW" type="SubViewportContainer" parent="INFO_PANEL" unique_id=675980989]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 59.0
+offset_right = 642.0
+offset_bottom = 292.0
+stretch = true
+script = ExtResource("4_ymo7i")
+
+[node name="SubViewport" type="SubViewport" parent="INFO_PANEL/FISH_VIEW" unique_id=134237607]
+world_3d = SubResource("World3D_ymo7i")
+handle_input_locally = false
+size = Vector2i(343, 233)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="INFO_PANEL/FISH_VIEW/SubViewport" unique_id=1483632313]
+
+[node name="Camera3D" type="Camera3D" parent="INFO_PANEL/FISH_VIEW/SubViewport" unique_id=533063083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.231, 0.8742328)
+projection = 1
+
+[node name="FISH_ROOT" type="Node3D" parent="INFO_PANEL/FISH_VIEW/SubViewport" unique_id=1639957562]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23131955, 0)
+
+[node name="STOCK_COMP_SPRITE" type="Sprite2D" parent="INFO_PANEL" unique_id=1184657348]
+position = Vector2(495, 201)
+scale = Vector2(0.995, 0.995)
+
+[node name="USER_INFO_PANEL" type="Control" parent="." unique_id=295683523]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_1jl2p")
+
+[node name="BG" type="Panel" parent="USER_INFO_PANEL" unique_id=1321983687]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 469.0
+offset_right = 1131.0
+offset_bottom = 645.0
+
+[node name="USER_IMAGE" type="Sprite2D" parent="USER_INFO_PANEL" unique_id=1108179065]
+position = Vector2(1044, 557)
+scale = Vector2(1.28125, 1.28125)
+texture = ExtResource("1_0fbet")
+
+[node name="USERNAME" type="Label" parent="USER_INFO_PANEL" unique_id=1253414327]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 482.0
+offset_right = 1064.0
+offset_bottom = 535.0
+scale = Vector2(0.60846436, 0.60846436)
+theme_override_font_sizes/font_size = 24
+text = "USERNAME
+LOW NETWORTH INDIVIDUAL"
+horizontal_alignment = 2
+
+[node name="STATS" type="Label" parent="USER_INFO_PANEL" unique_id=1026476207]
+layout_mode = 0
+offset_left = 787.99994
+offset_top = 518.0
+offset_right = 1065.3828
+offset_bottom = 651.0
+scale = Vector2(0.60846436, 0.60846436)
+theme_override_font_sizes/font_size = 30
+text = "BOUNTY:$0
+LIVES TAKEN: 0
+SPEED: 8
+JUMP HEIGHT: 8"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[connection signal="tab_changed" from="STOCKS_MAKT" to="." method="_on_stocks_makt_tab_changed"]
+[connection signal="item_clicked" from="STOCKS_MAKT/STOCKS" to="." method="_on_stocks_item_clicked"]
+[connection signal="item_clicked" from="STOCKS_MAKT/ORGANS" to="." method="_on_organs_item_clicked"]
+[connection signal="item_clicked" from="STOCKS_MAKT/FISH" to="." method="_on_fish_item_clicked"]
+[connection signal="pressed" from="INFO_PANEL/BUY_BTN_CONTAINER/BUY_BUTTON" to="INFO_PANEL/BUY_BTN_CONTAINER" method="_on_buy_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/BUY_BTN_CONTAINER/BUY_5_BUTTON" to="INFO_PANEL/BUY_BTN_CONTAINER" method="_on_buy_5_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/BUY_BTN_CONTAINER/BUY_10_BUTTON" to="INFO_PANEL/BUY_BTN_CONTAINER" method="_on_buy_10_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/BUY_BTN_CONTAINER/BUY_100_BUTTON" to="INFO_PANEL/BUY_BTN_CONTAINER" method="_on_buy_100_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/SELL_BTN_CONTAINER/SELL_BUTTON" to="INFO_PANEL/SELL_BTN_CONTAINER" method="_on_sell_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/SELL_BTN_CONTAINER/SELL_5_BUTTON" to="INFO_PANEL/SELL_BTN_CONTAINER" method="_on_sell_5_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/SELL_BTN_CONTAINER/SELL_10_BUTTON" to="INFO_PANEL/SELL_BTN_CONTAINER" method="_on_sell_10_button_pressed"]
+[connection signal="pressed" from="INFO_PANEL/SELL_BTN_CONTAINER/SELL_100_BUTTON" to="INFO_PANEL/SELL_BTN_CONTAINER" method="_on_sell_100_button_pressed"]
+[connection signal="mouse_entered" from="INFO_PANEL/FISH_VIEW" to="INFO_PANEL/FISH_VIEW" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="INFO_PANEL/FISH_VIEW" to="INFO_PANEL/FISH_VIEW" method="_on_mouse_exited"]

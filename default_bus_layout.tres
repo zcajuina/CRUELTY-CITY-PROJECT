@@ -1,0 +1,71 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://bhp7pe18wjt61"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 0.71
+spread = 0.77
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 0.08
+spread = 0.28
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
+resource_name = "Reverb"
+room_size = 0.03
+damping = 0.07
+spread = 0.16
+wet = 0.36
+
+[resource]
+bus/1/name = &"BGM"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/3/name = &"REVERB_SONGS"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"BGM"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectDelay_j3pel")
+bus/3/effect/1/enabled = true
+bus/4/name = &"REVERB_SFKs"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"SFX"
+bus/4/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectDelay_j3pel")
+bus/4/effect/1/enabled = true
+bus/5/name = &"LITTLE_REVERB"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"BGM"
+bus/5/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/5/effect/0/enabled = true
+bus/6/name = &"SMALL_REV"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"BGM"
+bus/6/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
+bus/6/effect/0/enabled = true

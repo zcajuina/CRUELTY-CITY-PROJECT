@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ige7u4dam75g"]
+
+[ext_resource type="Texture2D" uid="uid://bjkohr88noaex" path="res://Textures/GFX/BULLET_HOLE.png" id="1_jk6hs"]
+
+[node name="BulletHole" type="Decal" unique_id=811134649]
+transform = Transform3D(0.068993196, 0, 0, 0, -3.0157885e-09, 0.068993196, 0, -0.068993196, -3.0157885e-09, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1523001443]
+transform = Transform3D(1.9106853e-15, 0.9999998, 4.3711385e-08, 4.371139e-08, -4.3711385e-08, 0.9999998, 0.9999998, 0, -4.371139e-08, 0, 0, 0)
+texture = ExtResource("1_jk6hs")

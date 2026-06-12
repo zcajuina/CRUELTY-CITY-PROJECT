@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://d2cjofhbmkp6o"]
+
+[ext_resource type="PackedScene" uid="uid://dcp6u8ww1e02u" path="res://Particles/blood_splater_decal.tscn" id="1_aw1ya"]
+[ext_resource type="PackedScene" uid="uid://cwq0jm71xe520" path="res://Particles/part_big_blood_splat.tscn" id="2_wwiok"]
+[ext_resource type="PackedScene" uid="uid://c3d1vjmhelqd2" path="res://Particles/part_blood_decal.tscn" id="3_7ue46"]
+[ext_resource type="PackedScene" uid="uid://5cp57jyria38" path="res://Particles/part_blood_splat.tscn" id="4_gxysy"]
+[ext_resource type="PackedScene" uid="uid://cni3iyp1je0mj" path="res://Particles/part_fish_appear.tscn" id="5_rvqr4"]
+[ext_resource type="PackedScene" uid="uid://dk6q3r5a825yf" path="res://Particles/part_gun_flash.tscn" id="6_efegl"]
+[ext_resource type="PackedScene" uid="uid://bf2p2wwpfgqjl" path="res://Particles/part_lazer_sight.tscn" id="7_syc7w"]
+[ext_resource type="PackedScene" uid="uid://4o06wnj7psfn" path="res://Particles/part_lighting.tscn" id="8_tawas"]
+[ext_resource type="PackedScene" uid="uid://cpmcioeybw6p1" path="res://Particles/part_neuron_gun_flash.tscn" id="9_ldtbb"]
+[ext_resource type="PackedScene" uid="uid://d173xjtwvas0i" path="res://Particles/part_skril_flame.tscn" id="10_ldpji"]
+[ext_resource type="PackedScene" uid="uid://nanedyo8jb15" path="res://Particles/part_small_blood_part.tscn" id="11_exbr2"]
+[ext_resource type="PackedScene" uid="uid://cmvfgoef3uamb" path="res://Particles/part_soul_emulator.tscn" id="12_speen"]
+[ext_resource type="PackedScene" uid="uid://citnkjkyk1n0n" path="res://Particles/part_wood_break.tscn" id="14_xtaq5"]
+[ext_resource type="PackedScene" uid="uid://dij815uxmpjgt" path="res://Particles/pre_mesh_neuron_gun_flash.tscn" id="15_lqck5"]
+[ext_resource type="PackedScene" uid="uid://b8ihda6kdwux2" path="res://Scenes/GUNS/UBERBLADE.tscn" id="16_7ue46"]
+[ext_resource type="PackedScene" uid="uid://cob4epqx75j8b" path="res://Models/Props/FISH_MODELS/CHOCOLATE STARFISH.glb" id="18_tawas"]
+[ext_resource type="PackedScene" uid="uid://c11fdhgmpwp2f" path="res://Models/Props/FISH_MODELS/DELPHINO.glb" id="19_ldtbb"]
+[ext_resource type="PackedScene" uid="uid://n52sdvn1872e" path="res://Models/Props/FISH_MODELS/FUGU FISH.glb" id="20_ldpji"]
+[ext_resource type="PackedScene" uid="uid://cocxcxl7l3id5" path="res://Models/Props/FISH_MODELS/LE FISHE.glb" id="21_exbr2"]
+[ext_resource type="PackedScene" uid="uid://befum7piwh8j1" path="res://Models/Props/FISH_MODELS/RUBBER WIFE.glb" id="22_speen"]
+[ext_resource type="PackedScene" uid="uid://canjj6hoft0yh" path="res://Scenes/Props/PLAYER_BULLET/NEURON_BULLET.tscn" id="23_ldtbb"]
+[ext_resource type="PackedScene" uid="uid://bkxk50gduy80s" path="res://Scenes/Props/bolt_cancer_cloud.tscn" id="24_ldpji"]
+
+[node name="ThePreLoadChaos" type="Node3D" unique_id=1119945934]
+
+[node name="PARTS" type="Node3D" parent="." unique_id=1135477990]
+
+[node name="BloodSplaterDecal" parent="PARTS" unique_id=82259597 instance=ExtResource("1_aw1ya")]
+script = null
+
+[node name="BloodSplat" parent="PARTS" unique_id=474396424 instance=ExtResource("2_wwiok")]
+script = null
+
+[node name="PartBloodDecak" parent="PARTS" unique_id=387109114 instance=ExtResource("3_7ue46")]
+script = null
+
+[node name="BloodSplat2" parent="PARTS" unique_id=1744345775 instance=ExtResource("4_gxysy")]
+script = null
+
+[node name="part_fish_appear" parent="PARTS" unique_id=1508753630 instance=ExtResource("5_rvqr4")]
+script = null
+
+[node name="PartGunFlasah" parent="PARTS" unique_id=155680170 instance=ExtResource("6_efegl")]
+script = null
+
+[node name="PartLazerSight" parent="PARTS" unique_id=140106194 instance=ExtResource("7_syc7w")]
+
+[node name="PART_LIGHTING" parent="PARTS" unique_id=758908109 instance=ExtResource("8_tawas")]
+
+[node name="PartNeuronGunFlash" parent="PARTS" unique_id=1804483038 instance=ExtResource("9_ldtbb")]
+script = null
+
+[node name="PART_SKRIL_FLAME" parent="PARTS" unique_id=796108392 instance=ExtResource("10_ldpji")]
+
+[node name="PartSmallBloodPart" parent="PARTS" unique_id=439598450 instance=ExtResource("11_exbr2")]
+script = null
+
+[node name="PART_SOUL_EMULATOR" parent="PARTS" unique_id=2116151038 instance=ExtResource("12_speen")]
+
+[node name="PartWoodBreak" parent="PARTS" unique_id=344869116 instance=ExtResource("14_xtaq5")]
+
+[node name="PRE_MESH_NEURON_GUN_FLASH" parent="PARTS" unique_id=888706263 instance=ExtResource("15_lqck5")]
+
+[node name="GUNS" type="Node3D" parent="." unique_id=1374613243]
+
+[node name="Uberblade" parent="GUNS" unique_id=1714542456 instance=ExtResource("16_7ue46")]
+
+[node name="ATMOS" parent="GUNS/Uberblade/UBERBLADE2" parent_id_path=PackedInt32Array(1714542456, 1379938009) index="3" unique_id=1003033527]
+autoplay = false
+
+[node name="ENTRANCE" parent="GUNS/Uberblade/UBERBLADE2" parent_id_path=PackedInt32Array(1714542456, 1379938009) index="4" unique_id=832779535]
+autoplay = false
+
+[node name="FISH" type="Node3D" parent="." unique_id=302780594]
+
+[node name="CHOCOLATE STARFISH" parent="FISH" unique_id=359244801 instance=ExtResource("18_tawas")]
+
+[node name="DELPHINO2" parent="FISH" unique_id=1778994918 instance=ExtResource("19_ldtbb")]
+
+[node name="FUGU FISH" parent="FISH" unique_id=1554533043 instance=ExtResource("20_ldpji")]
+
+[node name="LE FISHE" parent="FISH" unique_id=1637824167 instance=ExtResource("21_exbr2")]
+
+[node name="RUBBER WIFE" parent="FISH" unique_id=1472725477 instance=ExtResource("22_speen")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1754256626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="PlayerBullet" parent="." unique_id=583165145 instance=ExtResource("23_ldtbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
+
+[node name="BOLT_CANCER_CLOUD" parent="." unique_id=1886604552 instance=ExtResource("24_ldpji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, 0)
+
+[editable path="PARTS/BloodSplaterDecal"]
+[editable path="PARTS/BloodSplat"]
+[editable path="PARTS/PartBloodDecak"]
+[editable path="PARTS/BloodSplat2"]
+[editable path="PARTS/part_fish_appear"]
+[editable path="PARTS/PartGunFlasah"]
+[editable path="PARTS/PartLazerSight"]
+[editable path="PARTS/PART_LIGHTING"]
+[editable path="PARTS/PartNeuronGunFlash"]
+[editable path="PARTS/PartSmallBloodPart"]
+[editable path="PARTS/PART_SOUL_EMULATOR"]
+[editable path="PARTS/PartWoodBreak"]
+[editable path="PARTS/PRE_MESH_NEURON_GUN_FLASH"]
+[editable path="GUNS/Uberblade"]

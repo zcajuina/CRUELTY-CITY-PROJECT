@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dij815uxmpjgt"]
+
+[ext_resource type="Texture2D" uid="uid://becqf01as8t76" path="res://Textures/GFX/BEATS_DISC_RED.png" id="1_te053"]
+[ext_resource type="Texture2D" uid="uid://wu1kju7a0g5j" path="res://Textures/GFX/BEATS_SPIKE_FRONT_RED.png" id="2_v7477"]
+[ext_resource type="Texture2D" uid="uid://6rs7dfgc6sbo" path="res://Textures/GFX/BEATS_SPIKE_SIDE_RED.png" id="3_qn1s7"]
+
+[node name="PRE_MESH_NEURON_GUN_FLASH" type="Node3D" unique_id=888706263]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2139257571]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0, 0, -0.3741835)
+modulate = Color(0, 18.892157, 18.892157, 1)
+texture = ExtResource("1_te053")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1437193199]
+transform = Transform3D(0.13313106, -0.175146, 0, 0.175146, 0.13313106, 0, 0, 0, 0.22, 0, 0, -0.17651206)
+modulate = Color(1, 0, 0.69803923, 1)
+texture = ExtResource("1_te053")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1532696544]
+transform = Transform3D(0.14889354, 0.11802848, 0, -0.11802848, 0.14889354, 0, 0, 0, 0.19000003, 0, 0, -0.045918465)
+modulate = Color(0, 2.728708, 18.892157, 1)
+texture = ExtResource("1_te053")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=1179200968]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+modulate = Color(1, 0, 0.69803923, 1)
+texture = ExtResource("2_v7477")
+
+[node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1579821576]
+transform = Transform3D(-8.742277e-09, 0, 0.19999999, 0, 0.19999999, 0, -0.19999999, 0, -8.742277e-09, 0, 0, 0)
+modulate = Color(1, 0, 0.6999998, 1)
+texture = ExtResource("3_qn1s7")

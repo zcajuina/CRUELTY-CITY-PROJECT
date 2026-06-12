@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d3roax7relcl1"]
+
+[ext_resource type="Script" uid="uid://m0321l1rffia" path="res://Scripts/Props/GENERIC_HITTABLE_OBJECT.gd" id="1_h1gmu"]
+[ext_resource type="Script" uid="uid://4v15hmai6qal" path="res://Scripts/Props/dna_cancer_balls.gd" id="1_uhhtj"]
+[ext_resource type="Texture2D" uid="uid://cxwj73swytc0k" path="res://Textures/CRUS/MEAT.png" id="2_r6sjb"]
+[ext_resource type="AudioStream" uid="uid://baoxbufpkowry" path="res://Sounds/CRUS_SOUNDS/flesh_slap.wav" id="4_c2fic"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2fic"]
+albedo_texture = ExtResource("2_r6sjb")
+metallic_specular = 0.6
+roughness = 0.0
+
+[node name="DnaCancerBalls" type="Node3D" unique_id=840666909]
+script = ExtResource("1_uhhtj")
+
+[node name="BASE_MEAT_BALL" type="CSGSphere3D" parent="." unique_id=1318762812]
+use_collision = true
+radius = 1.0
+rings = 8
+material = SubResource("StandardMaterial3D_c2fic")
+script = ExtResource("1_h1gmu")
+
+[node name="MEAT_SND" type="AudioStreamPlayer3D" parent="." unique_id=1924625213]
+stream = ExtResource("4_c2fic")

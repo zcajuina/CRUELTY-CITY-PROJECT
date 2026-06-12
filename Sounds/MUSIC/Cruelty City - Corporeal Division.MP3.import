@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bt14ol8bulo63"
+path="res://.godot/imported/Cruelty City - Corporeal Division.MP3-d80e38c11bfd62e55570b6628ef68b98.mp3str"
+
+[deps]
+
+source_file="res://Sounds/MUSIC/Cruelty City - Corporeal Division.MP3"
+dest_files=["res://.godot/imported/Cruelty City - Corporeal Division.MP3-d80e38c11bfd62e55570b6628ef68b98.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bfa5bcbxgrd8r"]
+
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="1_2iu0k"]
+[ext_resource type="Script" uid="uid://c2ttfryj6ohyy" path="res://Scripts/HUD/options_menu.gd" id="2_qq3is"]
+
+[node name="OPTIONS_MENU" type="Control" unique_id=1055206002]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_2iu0k")
+script = ExtResource("2_qq3is")
+
+[node name="BG" type="Panel" parent="." unique_id=1288936118]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 61.0
+offset_right = 1048.0
+offset_bottom = 562.0
+
+[node name="TITTLE" type="Label" parent="." unique_id=247277172]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 75.0
+offset_right = 639.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="LABEL1" type="Label" parent="." unique_id=920060868]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 81.0
+offset_right = 365.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 24
+text = "MASTER VOLUME
+
+MUSIC VOLUME
+
+SOUND EFFECTS VOLUME"
+
+[node name="LABEL3" type="Label" parent="." unique_id=801635155]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 81.0
+offset_right = 952.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 24
+text = "SCREEN MODE"
+
+[node name="LABEL2" type="Label" parent="." unique_id=868512413]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 323.0
+offset_right = 365.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 24
+text = "MOUSE SENSITIVITY"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1927096760]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="MASTER_SLIDER" type="HSlider" parent="." unique_id=618158130]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 115.0
+offset_right = 491.0
+offset_bottom = 131.0
+max_value = 10.0
+step = 0.01
+value = 0.75
+
+[node name="BGM_SLIDER" type="HSlider" parent="." unique_id=2058654357]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 170.0
+offset_right = 491.0
+offset_bottom = 186.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="MISC_SLIDER" type="HSlider" parent="." unique_id=427933091]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 223.0
+offset_right = 491.0
+offset_bottom = 239.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="SENSI_SLIDER" type="HSlider" parent="." unique_id=19843678]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 359.0
+offset_right = 499.0
+offset_bottom = 375.0
+max_value = 0.008
+step = 0.001
+value = 0.004
+
+[node name="RELOAD_BTN" type="CheckButton" parent="." unique_id=670632771]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 402.0
+offset_right = 528.0
+offset_bottom = 430.0
+text = "CRUELTY SQUAD RELOAD SYSTEM"
+
+[node name="SCREEN_SIZES" type="ItemList" parent="." unique_id=1474289911]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 107.0
+offset_right = 984.0
+offset_bottom = 170.0
+item_count = 2
+item_0/text = "FULLSCREEN"
+item_1/text = "WINDOWED"
+
+[connection signal="toggled" from="RELOAD_BTN" to="." method="_on_reload_btn_toggled"]
+[connection signal="item_selected" from="SCREEN_SIZES" to="." method="_on_screen_sizes_item_selected"]

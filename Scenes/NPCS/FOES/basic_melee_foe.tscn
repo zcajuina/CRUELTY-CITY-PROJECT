@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dvgos5i0ijlfc"]
+
+[ext_resource type="Script" uid="uid://duusw4g2v4u8n" path="res://Scripts/NPC/KillableNPC.gd" id="1_snyhr"]
+[ext_resource type="Texture2D" uid="uid://bf4k601kro1pk" path="res://Textures/SPRITES/TARGET_MARK.png" id="2_vpy2c"]
+[ext_resource type="Script" uid="uid://bp65r816bqs3y" path="res://Scripts/StateMachine/StateMachine.gd" id="3_i4e7r"]
+[ext_resource type="Script" uid="uid://ciiwb4neve3nw" path="res://Scripts/StateMachine/FOE_STATES/foe_idle.gd" id="4_regyq"]
+[ext_resource type="Script" uid="uid://bpbkc3ie1e4ie" path="res://Scripts/StateMachine/FOE_STATES/foe_chase.gd" id="5_i4e7r"]
+[ext_resource type="Script" uid="uid://e51p4rx4xqs8" path="res://Scripts/StateMachine/FOE_STATES/foe_roam.gd" id="5_regyq"]
+[ext_resource type="Script" uid="uid://d3m3ugy3gr2vc" path="res://Scripts/StateMachine/State.gd" id="6_dhrrk"]
+[ext_resource type="Script" uid="uid://d00mxk2naxu7t" path="res://Scripts/StateMachine/FOE_STATES/foe_death.gd" id="7_5llgt"]
+[ext_resource type="AudioStream" uid="uid://de6l1vwjvv720" path="res://Sounds/GUN_FIRE/basic_gunshot.ogg" id="8_5llgt"]
+[ext_resource type="AudioStream" uid="uid://c827cqa5417fa" path="res://Sounds/SFK/gibbing.wav" id="9_ik70s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb4h4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dhrrk"]
+radius = 4.71582
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5llgt"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lr7k6"]
+material = SubResource("StandardMaterial3D_5llgt")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dhrrk"]
+top_radius = 0.0
+
+[node name="SHOOTER" type="CharacterBody3D" unique_id=1231780630 groups=["foe"]]
+script = ExtResource("1_snyhr")
+head_rotation_speed = 18.0
+shooting_distance = 32.0
+speed = 3.2
+
+[node name="TARGET_SPRITE" type="Sprite3D" parent="." unique_id=1902881312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.560061, 0)
+billboard = 1
+no_depth_test = true
+texture = ExtResource("2_vpy2c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1904630362]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1664853223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nb4h4")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1203824181 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_i4e7r")
+initial_state = NodePath("FOE_IDLE")
+metadata/_custom_type_script = "uid://bp65r816bqs3y"
+
+[node name="FOE_IDLE" type="Node" parent="StateMachine" unique_id=1379121510]
+script = ExtResource("4_regyq")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FOE_CHASE" type="Node" parent="StateMachine" unique_id=1829331239]
+script = ExtResource("5_i4e7r")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FOE_ROAM" type="Node" parent="StateMachine" unique_id=1421474974]
+script = ExtResource("5_regyq")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FOE_STOP" type="Node" parent="StateMachine" unique_id=1041541390]
+script = ExtResource("6_dhrrk")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FOE_DEAD" type="Node" parent="StateMachine" unique_id=1274551825]
+script = ExtResource("7_5llgt")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FIELD_OF_VISION" type="Area3D" parent="." unique_id=670808415]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FIELD_OF_VISION" unique_id=1719145304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_dhrrk")
+
+[node name="VISUAIS" type="Node3D" parent="." unique_id=674902500]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VISUAIS" unique_id=1177194034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_lr7k6")
+skeleton = NodePath("../..")
+
+[node name="GUN_POS" type="Node3D" parent="VISUAIS" unique_id=1576038299]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0.027558565, 1.388215, -0.36781156)
+
+[node name="head" type="Node3D" parent="." unique_id=408469817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5974, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="head" unique_id=448004918]
+transform = Transform3D(1, 0, 0, 0, -2.79753e-06, -1, 0, 64, -4.37114e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head" unique_id=1047274099]
+transform = Transform3D(0.39999998, 0, 0, 0, -1.7484554e-08, 0.39999998, 0, -0.39999998, -1.7484554e-08, 0, 0, -0.6563847)
+mesh = SubResource("CylinderMesh_dhrrk")
+
+[node name="shoot_timer" type="Timer" parent="." unique_id=1073002420]
+wait_time = 0.2
+one_shot = true
+
+[node name="reload_timer" type="Timer" parent="." unique_id=952468609]
+one_shot = true
+
+[node name="chase_timer" type="Timer" parent="." unique_id=1892660485]
+wait_time = 5.0
+one_shot = true
+
+[node name="SHOOT_SND" type="AudioStreamPlayer3D" parent="." unique_id=1420977297]
+stream = ExtResource("8_5llgt")
+volume_db = -12.191
+
+[node name="GIB_SND" type="AudioStreamPlayer3D" parent="." unique_id=886273075]
+stream = ExtResource("9_ik70s")
+
+[connection signal="body_entered" from="FIELD_OF_VISION" to="StateMachine/FOE_IDLE" method="_on_field_of_vision_body_entered"]
+[connection signal="timeout" from="reload_timer" to="StateMachine/FOE_CHASE" method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="chase_timer" to="StateMachine/FOE_ROAM" method="_on_chase_timer_timeout"]

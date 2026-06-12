@@ -1,0 +1,75 @@
+[gd_resource type="Theme" format=3 uid="uid://lp2virnd3l0u"]
+
+[ext_resource type="FontFile" uid="uid://5kj7tk8lpl1o" path="res://Resourcers/mingliub.ttc" id="1_vq5qj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4r0t"]
+bg_color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oafga"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yjpx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js2pc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqo8w"]
+bg_color = Color(0.94793564, 0.029236158, 0.99999994, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pct8s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkbne"]
+bg_color = Color(0.21568628, 0.3882353, 0.32941177, 0.78431374)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.39215687, 0.80784315, 0.80784315, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ygxr"]
+bg_color = Color(0.060530342, 0.060530365, 0.060530297, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70wnn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_vq5qj")
+Button/styles/hover = SubResource("StyleBoxFlat_d4r0t")
+Button/styles/normal = SubResource("StyleBoxFlat_oafga")
+Button/styles/pressed = SubResource("StyleBoxFlat_6yjpx")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_js2pc")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_cqo8w")
+ItemList/font_sizes/font_size = 24
+ItemList/fonts/font = ExtResource("1_vq5qj")
+ItemList/styles/panel = SubResource("StyleBoxFlat_pct8s")
+Label/colors/font_color = Color(0.10980392, 0.7921569, 0.21568628, 1)
+Label/colors/font_outline_color = Color(0.10980392, 0.28235295, 0.19607843, 0.6666667)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_vq5qj")
+LineEdit/fonts/font = ExtResource("1_vq5qj")
+Panel/styles/panel = SubResource("StyleBoxFlat_xkbne")
+ProgressBar/fonts/font = ExtResource("1_vq5qj")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3ygxr")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_70wnn")
+RichTextLabel/fonts/normal_font = ExtResource("1_vq5qj")

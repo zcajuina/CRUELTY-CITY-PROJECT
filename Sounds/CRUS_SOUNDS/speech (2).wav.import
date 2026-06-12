@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qhqxbs20p4s6"
+path="res://.godot/imported/speech (2).wav-45149c6f13ff4614da5c78329630ba12.sample"
+
+[deps]
+
+source_file="res://Sounds/CRUS_SOUNDS/speech (2).wav"
+dest_files=["res://.godot/imported/speech (2).wav-45149c6f13ff4614da5c78329630ba12.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

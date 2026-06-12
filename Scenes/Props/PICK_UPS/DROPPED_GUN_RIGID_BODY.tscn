@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://e4gtxcwnx40s"]
+
+[ext_resource type="Script" uid="uid://c8m7d34rfpahk" path="res://Scripts/Props/dropped_gun_logic_rigid_body.gd" id="1_dpgmo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rwt6h"]
+rough = true
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwt6h"]
+size = Vector3(0.328125, 0.25, 0.62353516)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uok55"]
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="DroppedGun" type="RigidBody3D" unique_id=351728196 groups=["weapon"]]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_rwt6h")
+lock_rotation = true
+script = ExtResource("1_dpgmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=457591820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048828125, 0, -0.015380859)
+shape = SubResource("BoxShape3D_rwt6h")
+
+[node name="KILL_SPAWN" type="Timer" parent="." unique_id=622931358]
+wait_time = 60.0
+one_shot = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1641992508]
+size = Vector3(0.25, 0.25, 0.25)
+material = SubResource("StandardMaterial3D_uok55")
+
+[connection signal="timeout" from="KILL_SPAWN" to="." method="_on_kill_spawn_timeout"]

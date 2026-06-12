@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://da6j5mo0e5vlf"]
+
+[sub_resource type="Animation" id="Animation_1d1y8"]
+resource_name = "HIT"
+length = 0.28
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0133333, 0.0533332, 0.111667, 0.126667),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector3(0.194658, 0.194658, 0.194658), Vector3(0.355, 0.135, 0.195), Vector3(0.165, 0.205, 0.195), Vector3(0.194658, 0.194658, 0.194658)]
+}
+
+[sub_resource type="Animation" id="Animation_8oa21"]
+resource_name = "IDLE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(0.194658, 0.194658, 0.194658), Vector3(0.204, 0.188, 0.204), Vector3(0.194658, 0.194658, 0.194658)]
+}
+
+[sub_resource type="Animation" id="Animation_ehtcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.194658, 0.194658, 0.194658)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g0pti"]
+_data = {
+&"HIT": SubResource("Animation_1d1y8"),
+&"IDLE": SubResource("Animation_8oa21"),
+&"RESET": SubResource("Animation_ehtcd")
+}
+
+[node name="NPC_BASIC_ANIM" type="AnimationPlayer" unique_id=1637852552]
+libraries/ = SubResource("AnimationLibrary_g0pti")
+playback_default_blend_time = 0.02

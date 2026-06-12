@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqyurrf2oghxb"]
+
+[ext_resource type="Script" uid="uid://b5hbul7fcjco" path="res://Scripts/Props/augment_baggy.gd" id="1_ud5ke"]
+[ext_resource type="PackedScene" uid="uid://c20281i11781h" path="res://Models/Props/PICK-UPS/AUGMENT_BAG.glb" id="3_67yjn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uc7a4"]
+size = Vector3(0.52008057, 0.15924072, 0.50024414)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_botr6"]
+
+[node name="AUGMENTBAGGY" type="StaticBody3D"]
+script = ExtResource("1_ud5ke")
+surface_index = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011291504, -0.003326416, 0.04748535)
+shape = SubResource("BoxShape3D_uc7a4")
+
+[node name="AUGMENT_BAG2" parent="." instance=ExtResource("3_67yjn")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="AUGMENT_BAG" parent="AUGMENT_BAG2" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_botr6")
+
+[editable path="AUGMENT_BAG2"]

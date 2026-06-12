@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://rwbavnknu0t8"]
+
+[ext_resource type="Script" uid="uid://bd0qk4g7qgw2o" path="res://Scripts/HUD/loading_screen.gd" id="1_rvo47"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="1_sm8sg"]
+[ext_resource type="Texture2D" uid="uid://n4a54n4qx6xf" path="res://Textures/HUD/base_circle.png" id="3_t84lt"]
+[ext_resource type="Shader" uid="uid://lurpxncgbnn6" path="res://Scripts/Shaders/SCREEN_MELT.gdshader" id="3_xflue"]
+[ext_resource type="Texture2D" uid="uid://ct3nk0c4cohs1" path="res://Textures/CRUS/abraxas/face1.png" id="4_cwj3y"]
+[ext_resource type="Texture2D" uid="uid://bi7aeu0fm4mn8" path="res://Textures/HUD/LOADING_SCREEN.png" id="4_xflue"]
+[ext_resource type="Texture2D" uid="uid://biu227nvngs2i" path="res://Textures/CRUS/abraxas/face2.png" id="5_xflue"]
+[ext_resource type="Texture2D" uid="uid://dv028bmkjaeja" path="res://Textures/CRUS/abraxas/face3.png" id="6_m5rjo"]
+[ext_resource type="Texture2D" uid="uid://bswpqdjfhn87n" path="res://Textures/CRUS/abraxas/face4.png" id="7_4wsmq"]
+[ext_resource type="Texture2D" uid="uid://7m30klrjm7rw" path="res://Textures/CRUS/abraxas/face5.png" id="8_8rlo6"]
+[ext_resource type="Texture2D" uid="uid://6jes5jscyctv" path="res://Textures/CRUS/abraxas/face6.png" id="9_j7xub"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wsmq"]
+shader = ExtResource("3_xflue")
+shader_parameter/subdivisions = 50
+shader_parameter/movement = 0.0
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/alpha_multiplier = 1.0
+shader_parameter/use_color_tint = true
+shader_parameter/color_shift = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksqus"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cwj3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xflue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m5rjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8rlo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j7xub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xflue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j7xub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m5rjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xflue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cwj3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8rlo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xflue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="LoadingScreen" type="Control" unique_id=16357298]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sm8sg")
+script = ExtResource("1_rvo47")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1045483522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MELT" type="Sprite2D" parent="." unique_id=1630788559]
+material = SubResource("ShaderMaterial_4wsmq")
+position = Vector2(575.99994, 323.99997)
+scale = Vector2(1.4399999, 1.0799999)
+texture = ExtResource("4_xflue")
+
+[node name="MASK" type="Sprite2D" parent="." unique_id=1773051987]
+visible = false
+modulate = Color(1, 1, 1, 0.5568628)
+self_modulate = Color(0, 0, 0, 1)
+clip_children = 2
+position = Vector2(576, 329)
+texture = ExtResource("3_t84lt")
+
+[node name="ABRAXAS_FACE" type="AnimatedSprite2D" parent="MASK" unique_id=1013121224]
+sprite_frames = SubResource("SpriteFrames_ksqus")
+frame_progress = 0.26269743
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1872111333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -13.5
+offset_right = 289.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+max_value = 1.0
+
+[node name="Label" type="Label" parent="." unique_id=607369839]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = 31.0
+offset_right = 204.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "LOADING RESOURCES"
+horizontal_alignment = 1

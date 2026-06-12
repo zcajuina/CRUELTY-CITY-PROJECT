@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deqtrtn4jqloc"]
+
+[ext_resource type="Script" uid="uid://7tmi2jo1kmj5" path="res://Scripts/IMPLANTS/imp_flower.gd" id="1_7y45f"]
+
+[node name="ImpFlower" type="Node"]
+script = ExtResource("1_7y45f")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dejhsc2r48r87"]
+
+[ext_resource type="Script" uid="uid://jhfy7lfpivip" path="res://Scripts/Props/foe_gib_body.gd" id="1_6uu3a"]
+[ext_resource type="AudioStream" uid="uid://c827cqa5417fa" path="res://Sounds/SFK/gibbing.wav" id="2_mj8a7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gkvah"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytx6a"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6uu3a"]
+material = SubResource("StandardMaterial3D_ytx6a")
+
+[node name="FoeGibBody" type="CharacterBody3D" groups=["foe"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_6uu3a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_gkvah")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_6uu3a")
+skeleton = NodePath("../..")
+
+[node name="GIB_SND" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_mj8a7")
+
+[connection signal="finished" from="GIB_SND" to="." method="_on_gib_snd_finished"]

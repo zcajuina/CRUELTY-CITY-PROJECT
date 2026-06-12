@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b88u6xg2j45vp"]
+
+[ext_resource type="Script" uid="uid://bcw5sm6g4ck5q" path="res://Scripts/IMPLANTS/imp_byon_drive.gd" id="1_b8f4v"]
+[ext_resource type="AudioStream" uid="uid://tr16np37tknh" path="res://Sounds/SFK/screamsplosion.wav" id="2_7qwso"]
+
+[node name="ImpByonDrive" type="Node" unique_id=1947147727]
+script = ExtResource("1_b8f4v")
+
+[node name="EXIT_SND" type="AudioStreamPlayer" parent="." unique_id=781622746]
+stream = ExtResource("2_7qwso")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="TIMEOUT" type="Timer" parent="." unique_id=1718870437]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="TIMEOUT" to="." method="_on_timeout_timeout"]

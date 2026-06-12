@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cuup8pf1sgjrb"]
+
+[ext_resource type="Script" uid="uid://c6k4eh8mqrudv" path="res://Scripts/Gun_Special_Effects/fishing_rod.gd" id="1_ojpgy"]
+
+[node name="fishing_line" type="Node" unique_id=1097683827]
+script = ExtResource("1_ojpgy")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1074887872]
+visible = false
+light_mask = 3
+visibility_layer = 3
+points = PackedVector2Array(0, 0, 674, 257)
+width = 2.0

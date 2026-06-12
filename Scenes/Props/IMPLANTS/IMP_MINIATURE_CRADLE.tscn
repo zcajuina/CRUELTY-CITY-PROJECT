@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cc4lynfcrs61g"]
+
+[ext_resource type="Script" uid="uid://4w3jbkq2ra1o" path="res://Scripts/IMPLANTS/imp_miniature_cradle.gd" id="1_l2wrl"]
+[ext_resource type="PackedScene" uid="uid://c4jhoh07j2bia" path="res://Models/Props/IMPLANTS/IMP_MOON_MODEL.glb" id="2_4add2"]
+[ext_resource type="Texture2D" uid="uid://no8u226uu1s5" path="res://Textures/GFX/WHITE_LIGHT.png" id="3_1p05v"]
+[ext_resource type="Texture2D" uid="uid://dfilc3cfqxaab" path="res://Textures/GFX/WHITE_STAR.png" id="4_1p05v"]
+[ext_resource type="AudioStream" uid="uid://03qpw8lfv0wu" path="res://Sounds/CRUS_SOUNDS/spark.wav" id="4_or7ws"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4add2"]
+radius = 0.65851706
+
+[sub_resource type="Curve" id="Curve_fybng"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.730337), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ko2xv"]
+curve = SubResource("Curve_fybng")
+
+[sub_resource type="Gradient" id="Gradient_e3cd0"]
+offsets = PackedFloat32Array(0, 0.35514018, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f7wcj"]
+gradient = SubResource("Gradient_e3cd0")
+
+[sub_resource type="Curve" id="Curve_p1tcj"]
+_data = [Vector2(0, 0.61797756), 0.0, 0.0, 0, 0, Vector2(0.8421053, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_svygc"]
+curve = SubResource("Curve_p1tcj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j4wl6"]
+emission_shape = 2
+emission_sphere_radius = 0.08
+angle_min = -151.59999
+angle_max = 143.20001
+angle_curve = SubResource("CurveTexture_ko2xv")
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 0.24997765
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_svygc")
+color_ramp = SubResource("GradientTexture1D_f7wcj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6x46"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_1p05v")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_swruy"]
+material = SubResource("StandardMaterial3D_v6x46")
+size = Vector2(0.032, 0.032)
+
+[node name="ImpMiniatureCradle" type="Node3D" unique_id=1094075208]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_l2wrl")
+
+[node name="CRADLE" type="Area3D" parent="." unique_id=1862950914]
+
+[node name="IMP_MOON_MODEL" parent="CRADLE" unique_id=799546292 instance=ExtResource("2_4add2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.25)
+
+[node name="SPARK" type="Sprite3D" parent="CRADLE/IMP_MOON_MODEL" unique_id=543200602]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
+billboard = 1
+texture = ExtResource("3_1p05v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CRADLE" unique_id=1197571598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.25)
+shape = SubResource("SphereShape3D_4add2")
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="SPARKYS" type="GPUParticles3D" parent="CRADLE" unique_id=1987141937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.25)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_j4wl6")
+draw_pass_1 = SubResource("QuadMesh_swruy")
+
+[node name="DEFLECT_SND" type="AudioStreamPlayer3D" parent="CRADLE" unique_id=798798686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.25)
+stream = ExtResource("4_or7ws")
+unit_size = 1.0
+panning_strength = 0.06
+
+[connection signal="area_entered" from="CRADLE" to="." method="_on_cradle_area_entered"]
+
+[editable path="CRADLE/IMP_MOON_MODEL"]

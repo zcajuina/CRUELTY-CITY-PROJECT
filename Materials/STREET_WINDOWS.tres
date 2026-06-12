@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://87o6lnylicr3"]
+
+[ext_resource type="Texture2D" uid="uid://bcdmi28orml1" path="res://Textures/CRUS/building_2.png" id="1_0lk6x"]
+[ext_resource type="Material" uid="uid://cg2lpkk4yru4r" path="res://Materials/NIGHT_WINDOWS.tres" id="2_jhxq6"]
+
+[resource]
+next_pass = ExtResource("2_jhxq6")
+albedo_texture = ExtResource("1_0lk6x")

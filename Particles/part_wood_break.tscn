@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://citnkjkyk1n0n"]
+
+[ext_resource type="Texture2D" uid="uid://bsrmcccj8si38" path="res://Textures/GFX/WOOD.png" id="1_8q8ip"]
+
+[sub_resource type="Curve" id="Curve_rma6c"]
+_data = [Vector2(0, 0.26966298), 0.0, 0.0, 0, 0, Vector2(0.2631579, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_isxg0"]
+curve = SubResource("Curve_rma6c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dbj75"]
+angle_min = -720.0
+angle_max = 720.0
+radial_velocity_min = 54.779976
+radial_velocity_max = 67.07998
+scale_curve = SubResource("CurveTexture_isxg0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p17hy"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_8q8ip")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_cljjt"]
+material = SubResource("StandardMaterial3D_p17hy")
+size = Vector2(4, 4)
+
+[node name="PartWoodBreak" type="Node3D" unique_id=344869116]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=489209216]
+amount = 32
+lifetime = 0.25
+preprocess = 0.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dbj75")
+draw_pass_1 = SubResource("QuadMesh_cljjt")

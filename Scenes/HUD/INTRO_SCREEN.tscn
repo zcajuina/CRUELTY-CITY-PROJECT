@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b4imejpbbmeuy"]
+
+[ext_resource type="Script" uid="uid://6mypxypboe4p" path="res://Scripts/HUD/intro_screen.gd" id="1_yloiu"]
+[ext_resource type="VideoStream" uid="uid://mysr5obgojhl" path="res://Textures/VIDEOS/DUMB.ogv" id="3_v7acq"]
+[ext_resource type="Texture2D" uid="uid://ccwadiphnmhye" path="res://Textures/SPRITES/ADV_SPRITES/adv_top.png" id="4_v7acq"]
+[ext_resource type="Texture2D" uid="uid://b6a271cotsqwg" path="res://Textures/SPRITES/ADV_SPRITES/adv_bottom.png" id="5_rhtvo"]
+[ext_resource type="AudioStream" uid="uid://un4s7371b1do" path="res://Sounds/CRUS_SOUNDS/door_concrete.wav" id="6_v7acq"]
+[ext_resource type="PackedScene" uid="uid://d2cjofhbmkp6o" path="res://Scenes/DEBUG/THE_PRE_LOAD_CHAOS.tscn" id="7_rhtvo"]
+
+[node name="IntroScreen" type="Control" unique_id=1065144999]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yloiu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=134325193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FRAME" type="ColorRect" parent="." unique_id=1070430495]
+visible = false
+clip_children = 2
+layout_mode = 0
+offset_left = 424.0
+offset_top = 172.0
+offset_right = 728.0
+offset_bottom = 476.0
+scale = Vector2(1, 0.625)
+pivot_offset = Vector2(152, 152)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="FRAME" unique_id=533635251]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -128.00002
+offset_right = 432.0
+offset_bottom = 432.0
+scale = Vector2(0.55999756, 0.55200195)
+pivot_offset = Vector2(280, 280)
+stream = ExtResource("3_v7acq")
+volume_db = -5.999998
+bus = &"LITTLE_REVERB"
+
+[node name="LABEL" type="Control" parent="." unique_id=184371513]
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+scale = Vector2(0.25, 0.25)
+
+[node name="TOP" type="Sprite2D" parent="LABEL" unique_id=1856234957]
+position = Vector2(0, -189.5)
+texture = ExtResource("4_v7acq")
+
+[node name="BOTTOM" type="Sprite2D" parent="LABEL" unique_id=1402233723]
+position = Vector2(0, 193.5)
+texture = ExtResource("5_rhtvo")
+
+[node name="IN" type="AudioStreamPlayer" parent="." unique_id=1706980347]
+stream = ExtResource("6_v7acq")
+bus = &"LITTLE_REVERB"
+
+[node name="Timer" type="Timer" parent="." unique_id=1290178659]
+wait_time = 0.5
+autostart = true
+
+[node name="ThePreLoadChaos" parent="." unique_id=1119945934 instance=ExtResource("7_rhtvo")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d10i4t8eimci0"]
+
+[ext_resource type="Script" uid="uid://dret5nh5oth13" path="res://Scripts/Props/phone_boot.gd" id="1_yx4tw"]
+
+[node name="PhoneBoot" type="Node3D" unique_id=539953226]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1463813962 groups=["phone"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.153541, 0)
+use_collision = true
+size = Vector3(1.2728882, 1.8056641, 1)
+script = ExtResource("1_yx4tw")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=976321876 groups=["phone"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67822266, 0)
+use_collision = true
+radius = 0.1303711
+height = 1.3564453
+script = ExtResource("1_yx4tw")

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://08dwsffejlph"]
+
+[ext_resource type="Script" uid="uid://djyrp5d2b23df" path="res://Scripts/Props/SOUL_EMULATOR_LOGIC.gd" id="1_apjsl"]
+[ext_resource type="PackedScene" uid="uid://dvxeewk5foqas" path="res://Models/Props/ALTARES/PURITY_ALTAR.glb" id="3_4bx8w"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="3_mrgwu"]
+[ext_resource type="Texture2D" uid="uid://bev6jb0wdnk40" path="res://Textures/GFX/light2.png" id="4_l2jwi"]
+[ext_resource type="AudioStream" uid="uid://csgi156mnktr4" path="res://Sounds/SFK/TV_HUM.mp3" id="5_nbj3u"]
+
+[sub_resource type="Curve" id="Curve_apjsl"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0s8k0"]
+curve = SubResource("Curve_apjsl")
+
+[sub_resource type="Gradient" id="Gradient_w0exw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vdj8v"]
+gradient = SubResource("Gradient_w0exw")
+
+[sub_resource type="Curve" id="Curve_mrgwu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8827586, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f8rc"]
+curve = SubResource("Curve_mrgwu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l2jwi"]
+emission_shape = 1
+emission_sphere_radius = 0.96
+angle_min = -360.0
+angle_max = 360.00003
+angle_curve = SubResource("CurveTexture_0s8k0")
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 0.99997765
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_6f8rc")
+color_ramp = SubResource("GradientTexture1D_vdj8v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbj3u"]
+render_priority = -1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_l2jwi")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_mce84"]
+material = SubResource("StandardMaterial3D_nbj3u")
+size = Vector2(0.3, 0.3)
+
+[node name="AltarOfPurity" type="Node3D" unique_id=1264323083]
+
+[node name="MEAGER_ALTAR2_MEAGER_ALTAR#MAGNITUDE_INTERACT" type="CSGSphere3D" parent="." unique_id=1416430597 groups=["general"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015745283, 2.1058376, -0.00026053935)
+visible = false
+use_collision = true
+radius = 1.0
+rings = 8
+script = ExtResource("1_apjsl")
+core_name = "LIFE"
+inspect_name = "ALTAR OF PURITY"
+inspect_desc = "TOUCH"
+
+[node name="LIGHT" type="OmniLight3D" parent="." unique_id=824866516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015745283, 2.142857, -0.00026053935)
+light_energy = 4.0
+omni_range = 2.75
+omni_attenuation = -1.0
+
+[node name="HUM" type="AudioStreamPlayer3D" parent="." unique_id=1915128666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("5_nbj3u")
+pitch_scale = 2.0
+autoplay = true
+max_distance = 6.0
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[node name="PURITY_ALTAR" parent="." unique_id=653229255 instance=ExtResource("3_4bx8w")]
+
+[node name="PURITY_ROOT" parent="PURITY_ALTAR" index="1" unique_id=583619234]
+script = ExtResource("3_mrgwu")
+sin_y = true
+sin_amp = -0.002
+sin_freq = 0.25
+
+[node name="BIG_RING" parent="PURITY_ALTAR/PURITY_ROOT" index="0" unique_id=337223051]
+script = ExtResource("3_mrgwu")
+rotate_x = true
+rotate_y = true
+rotate_weight = 5.0
+
+[node name="SMALL_RING" parent="PURITY_ALTAR/PURITY_ROOT" index="2" unique_id=1912940194]
+script = ExtResource("3_mrgwu")
+rotate_y = true
+rotate_z = true
+rotate_weight = 5.0
+
+[node name="SPARKS" type="GPUParticles3D" parent="PURITY_ALTAR/PURITY_ROOT" index="3" unique_id=1093926124]
+amount = 128
+preprocess = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_l2jwi")
+draw_pass_1 = SubResource("QuadMesh_mce84")
+
+[editable path="PURITY_ALTAR"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://rwabagvihhmc"]
+
+[ext_resource type="Texture2D" uid="uid://wv5l8dwm5h64" path="res://Textures/HUD/terrorsuit.png" id="1_1lfll"]
+
+[node name="ImpTerrorsuit" type="Control"]
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(576, 324.00006)
+scale = Vector2(0.7732976, 0.7732976)
+texture = ExtResource("1_1lfll")

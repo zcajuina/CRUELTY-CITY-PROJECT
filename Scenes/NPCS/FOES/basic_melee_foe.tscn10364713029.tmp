@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvgos5i0ijlfc"]
+
+[ext_resource type="Script" uid="uid://duusw4g2v4u8n" path="res://Scripts/NPC/KillableNPC.gd" id="1_snyhr"]
+[ext_resource type="Texture2D" uid="uid://bbc12lwravcmx" path="res://Textures/ICARLY/3095570 - Hannah_Montana.jpg" id="2_i4e7r"]
+[ext_resource type="Script" uid="uid://bp65r816bqs3y" path="res://Scripts/StateMachine/StateMachine.gd" id="3_i4e7r"]
+[ext_resource type="Script" uid="uid://ciiwb4neve3nw" path="res://Scripts/StateMachine/FOE_STATES/foe_idle.gd" id="4_regyq"]
+[ext_resource type="Script" uid="uid://bpbkc3ie1e4ie" path="res://Scripts/StateMachine/FOE_STATES/foe_chase.gd" id="5_i4e7r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb4h4"]
+radius = 0.99378
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4e7r"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytx6a"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("2_i4e7r")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lr7k6"]
+material = SubResource("StandardMaterial3D_ytx6a")
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4e7r"]
+size = Vector3(0.76, 0.365, 0.335)
+
+[node name="DUMMY" type="CharacterBody3D" groups=["dummy"]]
+script = ExtResource("1_snyhr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nb4h4")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_i4e7r")
+initial_state = NodePath("FOE_IDLE")
+metadata/_custom_type_script = "uid://bp65r816bqs3y"
+
+[node name="FOE_IDLE" type="Node" parent="StateMachine"]
+script = ExtResource("4_regyq")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FOE_CHASE" type="Node" parent="StateMachine"]
+script = ExtResource("5_i4e7r")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_i4e7r")
+
+[node name="visuais" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visuais"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_lr7k6")
+skeleton = NodePath("../..")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5974, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.566272)
+mesh = SubResource("BoxMesh_i4e7r")
+
+[node name="RayCast3D" type="RayCast3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, -2.79753e-06, -1, 0, 64, -4.37114e-08, 0, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="StateMachine/FOE_IDLE" method="_on_area_3d_body_entered"]

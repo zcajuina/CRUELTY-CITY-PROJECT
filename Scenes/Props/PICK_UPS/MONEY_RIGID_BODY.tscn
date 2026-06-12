@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dp0i2p4rgvrrl"]
+
+[ext_resource type="Script" uid="uid://by15pq03lrw36" path="res://Scripts/Props/money_rigid_body.gd" id="1_0vat8"]
+[ext_resource type="PackedScene" uid="uid://1hc8so2c5dp6" path="res://Models/Props/PICK-UPS/BIO_CURRENCY.glb" id="2_xskkn"]
+[ext_resource type="PackedScene" uid="uid://bh6w66he5th1u" path="res://Models/Props/PICK-UPS/MONEY_PROP.glb" id="3_0vat8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rwt6h"]
+rough = true
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwt6h"]
+size = Vector3(0.57318115, 0.09765625, 0.3167572)
+
+[node name="MoneyItem" type="RigidBody3D" unique_id=98118494 groups=["money"]]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_rwt6h")
+lock_rotation = true
+script = ExtResource("1_0vat8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=272877330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039367676, 0.04296875, -0.00089263916)
+shape = SubResource("BoxShape3D_rwt6h")
+
+[node name="BIO_CURRENCY" parent="." unique_id=1020661439 instance=ExtResource("2_xskkn")]
+transform = Transform3D(1, 0, 0, 0, 1.557653, 0, 0, 0, 1, 0, 0.037553146, 0)
+visible = false
+
+[node name="MONEY_PROP" parent="." unique_id=1859398680 instance=ExtResource("3_0vat8")]
+transform = Transform3D(0.9087519, 0, 0, 0, 1.7266873, 0, 0, 0, 1, 0, 0.039103806, 0)
+visible = false

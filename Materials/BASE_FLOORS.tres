@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b78cmy2m3w475"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_78b01"]
+
+[resource]
+resource_name = "FLOORS"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_78b01")
+roughness = 0.5
+uv1_triplanar = true
+uv1_world_triplanar = true

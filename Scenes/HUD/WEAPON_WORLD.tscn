@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://cow1nt7hr7d1c"]
+
+[ext_resource type="Script" uid="uid://bsuk13vlcvq8m" path="res://Scripts/Props/sub_viewport_view_fix.gd" id="1_y0cro"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="2_n8mh7"]
+[ext_resource type="Texture2D" uid="uid://cv7nmfo574jp2" path="res://Textures/HUD/Grab_Hand_Anim/hand1.png" id="3_qqcj6"]
+[ext_resource type="Texture2D" uid="uid://n4a54n4qx6xf" path="res://Textures/HUD/base_circle.png" id="3_sixog"]
+[ext_resource type="Texture2D" uid="uid://cody75h3ccssr" path="res://Textures/HUD/Grab_Hand_Anim/hand2.png" id="4_n8mh7"]
+[ext_resource type="Texture2D" uid="uid://c3kq7j0s3skjk" path="res://Textures/HUD/Grab_Hand_Anim/hand3.png" id="5_sixog"]
+[ext_resource type="Script" uid="uid://dywbmcg1owxaj" path="res://Scripts/HUD/reload_bar_logic.gd" id="7_3fw2t"]
+[ext_resource type="AudioStream" uid="uid://ui5ry640gv05" path="res://Sounds/SFK/HIT_SAFE_SND.mp3" id="7_sixog"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n8mh7"]
+size = Vector3(0.3, 0.3, 1)
+
+[sub_resource type="Animation" id="Animation_n8mh7"]
+resource_name = "BREAKING_SAFE"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/SubViewCam/FOOT_ROOT:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/SubViewCam/FOOT_ROOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.7),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(-0.073, -0.21, 0.145), Vector3(-0.073, -0.21, -0.27), Vector3(-0.073, -0.21, 0.145)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SAFE_HIT_SND:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.14),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sixog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/SubViewCam/FOOT_ROOT:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/SubViewCam/FOOT_ROOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.073, -0.21, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SAFE_HIT_SND:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fw2t"]
+_data = {
+&"BREAKING_SAFE": SubResource("Animation_n8mh7"),
+&"RESET": SubResource("Animation_sixog")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n03ju"]
+load_path = "res://.godot/imported/CRUS_CROSSHAIR.png-e05d33e26935e427cf43c993adeff0a5.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fw2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qqcj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n8mh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sixog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n8mh7")
+}],
+"loop": true,
+"name": &"GRAB",
+"speed": 10.0
+}]
+
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=1230254594]
+process_mode = 3
+top_level = true
+light_mask = 2
+visibility_layer = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1472983073]
+process_mode = 3
+transparent_bg = true
+handle_input_locally = false
+canvas_cull_mask = 4293918722
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+script = ExtResource("1_y0cro")
+
+[node name="SubViewCam" type="Camera3D" parent="SubViewport" unique_id=2124072511]
+process_mode = 3
+cull_mask = 2
+
+[node name="WEAPON_PIVOT" type="Node3D" parent="SubViewport/SubViewCam" unique_id=873316892]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444, -0.299499, -0.713567)
+visible = false
+
+[node name="FOOT_ROOT" type="Node3D" parent="SubViewport/SubViewCam" unique_id=531751764]
+transform = Transform3D(1, 0, 0, 0, 0.96814764, 0.25038, 0, -0.25038, 0.96814764, -0.073, -0.21, 0)
+visible = false
+
+[node name="FOOT" type="MeshInstance3D" parent="SubViewport/SubViewCam/FOOT_ROOT" unique_id=387558232]
+transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 0, -0.259756)
+layers = 2
+mesh = SubResource("BoxMesh_n8mh7")
+skeleton = NodePath("../..")
+
+[node name="FOOT_ANIM_PLAYER" type="AnimationPlayer" parent="SubViewport" unique_id=234603636]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_3fw2t")
+
+[node name="Control" type="Control" parent="." unique_id=340930864]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_n8mh7")
+
+[node name="CROSS_HAIR" type="Sprite2D" parent="Control" unique_id=474903271]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.06, 0.06)
+texture = SubResource("CompressedTexture2D_n03ju")
+
+[node name="MIDLE" type="Sprite2D" parent="Control" unique_id=1835988861]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(576, 324)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_sixog")
+
+[node name="PICKABLE_HAND" type="AnimatedSprite2D" parent="Control" unique_id=1635317670]
+visible = false
+position = Vector2(578, 364.40298)
+scale = Vector2(0.7061575, 0.7061575)
+sprite_frames = SubResource("SpriteFrames_3fw2t")
+animation = &"GRAB"
+frame_progress = 0.030527523
+
+[node name="RELOAD_BAR" type="Control" parent="Control" unique_id=43357975]
+visible = false
+anchors_preset = 0
+offset_left = 1015.0
+offset_top = 460.0
+offset_right = 1055.0
+offset_bottom = 500.0
+script = ExtResource("7_3fw2t")
+
+[node name="POLE" type="ColorRect" parent="Control/RELOAD_BAR" unique_id=1002316230]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -142.0
+offset_right = 2.0
+offset_bottom = 142.0
+pivot_offset = Vector2(2, 142)
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="BASE" type="ColorRect" parent="Control/RELOAD_BAR" unique_id=1580956923]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 142.0
+offset_right = 25.0
+offset_bottom = 145.0
+scale = Vector2(2.1599998, 1)
+pivot_offset = Vector2(25, 1.5)
+color = Color(1, 0, 0, 1)
+
+[node name="TARGET" type="ColorRect" parent="Control/RELOAD_BAR" unique_id=1106427933]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -6.0
+offset_right = 25.0
+offset_bottom = 6.0
+pivot_offset = Vector2(25, 6)
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control/RELOAD_BAR" unique_id=1047742597]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 147.0
+offset_right = 24.0
+offset_bottom = 165.0
+pivot_offset = Vector2(24, 9)
+text = "RELOAD"
+horizontal_alignment = 1
+
+[node name="SAFE_HIT_SND" type="AudioStreamPlayer" parent="." unique_id=1985253626]
+stream = ExtResource("7_sixog")
+
+[connection signal="finished" from="SAFE_HIT_SND" to="SubViewport" method="_on_safe_hit_snd_finished"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dltdpioqx1epa"]
+
+[ext_resource type="PackedScene" uid="uid://befum7piwh8j1" path="res://Models/Props/FISH_MODELS/RUBBER WIFE.glb" id="1_tekwf"]
+[ext_resource type="Texture2D" uid="uid://dfilc3cfqxaab" path="res://Textures/GFX/WHITE_STAR.png" id="2_cyprl"]
+
+[sub_resource type="Curve" id="Curve_uxn8q"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.30582523, 0.3370787), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_luvlt"]
+curve = SubResource("Curve_uxn8q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q01xg"]
+emission_shape = 3
+emission_box_extents = Vector3(3.09, 2.77, 2.815)
+angle_min = 1.0728835e-05
+angle_max = 200.70001
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_luvlt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc6n3"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_cyprl")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bg1yv"]
+material = SubResource("StandardMaterial3D_nc6n3")
+
+[node name="RubberWife" type="Node3D" unique_id=1252909763]
+
+[node name="RUBBER WIFE" parent="." unique_id=1472725477 instance=ExtResource("1_tekwf")]
+
+[node name="SPARKS" type="GPUParticles3D" parent="." unique_id=540273356]
+transform = Transform3D(0.064, 0, 0, 0, 0.142, 0, 0, 0, 0.064, 0, -0.27909207, 0)
+preprocess = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_q01xg")
+draw_pass_1 = SubResource("QuadMesh_bg1yv")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://clq0tlybl4pir"]
+
+[ext_resource type="PackedScene" uid="uid://ntni5yow1j0i" path="res://Models/Guns/NEURON_DISABLER.glb" id="1_2mduv"]
+[ext_resource type="Script" uid="uid://ci05gfgmfv1u1" path="res://Scripts/Props/GUN_ANIM_SCRIPTS/neuron_disabler.gd" id="1_a87ng"]
+[ext_resource type="AudioStream" uid="uid://dobw441hi722y" path="res://Sounds/GUN_FIRE/NEURON_OST.mp3" id="3_t3bw5"]
+
+[node name="NEURON_DISABLER" type="Node3D" unique_id=1288588412]
+script = ExtResource("1_a87ng")
+
+[node name="NEURON_DISABLER" parent="." unique_id=541835101 instance=ExtResource("1_2mduv")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NEURON_DISABLER" unique_id=1146128476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.085, 0.388, -0.701)
+light_color = Color(1, 0.36, 0.3706665, 1)
+light_energy = 0.165
+omni_range = 0.15
+
+[node name="neuron_ost" type="AudioStreamPlayer3D" parent="." unique_id=2140085124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1582148, 0.3907231, 0)
+stream = ExtResource("3_t3bw5")
+volume_db = -9.0
+bus = &"SMALL_REV"
+parameters/looping = true
+
+[editable path="NEURON_DISABLER"]

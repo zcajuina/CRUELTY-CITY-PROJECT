@@ -1,0 +1,21 @@
+[gd_resource type="Environment" format=3 uid="uid://cvvmpw5q4er6w"]
+
+[resource]
+ambient_light_source = 1
+reflected_light_source = 2
+glow_enabled = true
+glow_levels/1 = 0.16
+glow_intensity = 0.89
+glow_strength = 0.65
+glow_bloom = 1.0
+glow_blend_mode = 0
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.0002
+fog_sky_affect = 0.0
+fog_depth_begin = 336.8
+fog_depth_end = 336.8
+volumetric_fog_density = 0.0
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 1.25

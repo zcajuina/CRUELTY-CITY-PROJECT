@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cy0gajre364be"]
+
+[ext_resource type="Script" uid="uid://d2bh3wcao8ne3" path="res://Scripts/IMPLANTS/imp_biojet.gd" id="1_gcli8"]
+
+[node name="ImpBiojet" type="Node" unique_id=1696061642]
+script = ExtResource("1_gcli8")

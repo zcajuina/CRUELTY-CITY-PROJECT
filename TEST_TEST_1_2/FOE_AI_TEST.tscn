@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://btyfdvqo8e68n"]
+
+[ext_resource type="Material" uid="uid://csj1ekg8tqo5y" path="res://Materials/NORMAL_SKY.tres" id="1_1my4d"]
+[ext_resource type="PackedScene" uid="uid://dvgos5i0ijlfc" path="res://Scenes/NPCS/FOES/basic_melee_foe.tscn" id="1_x8kp3"]
+[ext_resource type="PackedScene" uid="uid://bag6u1th1x52o" path="res://Scenes/PLAYER.tscn" id="2_be3ls"]
+
+[sub_resource type="Sky" id="Sky_g8l1v"]
+sky_material = ExtResource("1_1my4d")
+
+[sub_resource type="Environment" id="Environment_gdpct"]
+background_mode = 2
+sky = SubResource("Sky_g8l1v")
+glow_enabled = true
+glow_levels/1 = 2.4
+glow_blend_mode = 0
+fog_mode = 1
+fog_density = 1.0
+fog_depth_curve = 16.564213
+fog_depth_end = 4000.0
+adjustment_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_be3ls"]
+vertices = PackedVector3Array(-127.5, 1, -127.5, -127.5, 1, 127.5, 127.5, 1, 127.5, 127.5, 1, -127.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[node name="FoeAiTest" type="Node3D" unique_id=359121934]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1238130839]
+environment = SubResource("Environment_gdpct")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=145767449]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 4, 0)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+directional_shadow_max_distance = 512.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1902874898]
+navigation_mesh = SubResource("NavigationMesh_be3ls")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1166263785]
+use_collision = true
+size = Vector3(256, 1, 256)
+
+[node name="SHOOTER" parent="." unique_id=1231780630 instance=ExtResource("1_x8kp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Player" parent="." unique_id=1359576397 instance=ExtResource("2_be3ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 20)

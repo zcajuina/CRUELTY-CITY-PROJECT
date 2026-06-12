@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dk6q3r5a825yf"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_eqauc"]
+[ext_resource type="Texture2D" uid="uid://ccubctdjflihd" path="res://Textures/GFX/GUN_FLASH_HD.png" id="2_bewbi"]
+[ext_resource type="Texture2D" uid="uid://dwhnph5jkydkf" path="res://Textures/GFX/GUN_NOZZLE.png" id="3_bewbi"]
+
+[node name="PartGunFlasah" type="Node3D" unique_id=155680170]
+script = ExtResource("1_eqauc")
+time = 0.08
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=959058554]
+light_color = Color(1, 0.8666667, 0, 1)
+light_energy = 6.71
+light_indirect_energy = 9.29
+omni_range = 0.8512066
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=983594346]
+transform = Transform3D(0.099999964, 0, 0, 0, 0.099999964, 0, 0, 0, 0.099999964, 0, 0, 0)
+gi_mode = 0
+texture = ExtResource("2_bewbi")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=937121043]
+transform = Transform3D(0.84021664, -0.5422509, 0, 0.5422509, 0.84021664, 0, 0, 0, 1, 0, 0, -0.07187885)
+gi_mode = 0
+texture = ExtResource("2_bewbi")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Sprite3D" unique_id=1240959187]
+transform = Transform3D(0.41073707, -0.68650913, 0, 0.68650913, 0.41073707, 0, 0, 0, 0.7999999, 0, 0, -0.5895699)
+gi_mode = 0
+texture = ExtResource("2_bewbi")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Sprite3D" unique_id=1094433866]
+transform = Transform3D(-0.14886181, -0.6224466, 0, 0.6224466, -0.14886181, 0, 0, 0, 0.6399997, 0, 0.6440819, -1.6464758)
+gi_mode = 0
+texture = ExtResource("2_bewbi")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1736789550]
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D" unique_id=2131913943]
+transform = Transform3D(-5.2453664e-09, 0, -0.12, 0, 0.12, 0, 0.12, 0, -5.2453664e-09, 0, 0, -0.5814165)
+texture = ExtResource("3_bewbi")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D" unique_id=1665621078]
+transform = Transform3D(2.2928224e-16, 0.12, 5.2453664e-09, 5.245367e-09, -5.2453664e-09, 0.12, 0.12, 0, -5.245367e-09, 0, 0, -0.5814165)
+texture = ExtResource("3_bewbi")
+
+[node name="Node3D2" type="Node3D" parent="." unique_id=1259708552]
+transform = Transform3D(0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D2" unique_id=2103263801]
+transform = Transform3D(-5.2453664e-09, 0, -0.12, 0, 0.12, 0, 0.12, 0, -5.2453664e-09, 0, 0, -0.5814165)
+texture = ExtResource("3_bewbi")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D2" unique_id=1082152677]
+transform = Transform3D(2.2928224e-16, 0.12, 5.2453664e-09, 5.245367e-09, -5.2453664e-09, 0.12, 0.12, 0, -5.245367e-09, 0, 0, -0.5814165)
+texture = ExtResource("3_bewbi")

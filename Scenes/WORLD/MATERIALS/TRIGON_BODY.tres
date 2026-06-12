@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c7xwy5txs3vf"]
+
+[ext_resource type="Shader" uid="uid://cw6nopw8ekxc" path="res://Scripts/Shaders/METAL_MARIO.gdshader" id="1_6buak"]
+[ext_resource type="Texture2D" uid="uid://cqqschk2x6sd5" path="res://Textures/CRUS/METAL_TRIGOn.png" id="2_6buak"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_6buak")
+shader_parameter/env_texture = ExtResource("2_6buak")
+shader_parameter/metal_color_gold = Vector3(1, 0.843, 0)
+shader_parameter/metal_color_silver = Vector3(0.75, 0.75, 0.75)
+shader_parameter/use_gold = true
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 1.0

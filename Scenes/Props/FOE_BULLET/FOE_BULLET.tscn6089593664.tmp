@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ql1r3ox1xe3"]
+
+[ext_resource type="Script" uid="uid://cl8n0qp0xke07" path="res://Scripts/Props/FOE_BULLET_LOGIC.gd" id="1_ll0be"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp80b"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll0be"]
+material = SubResource("StandardMaterial3D_qp80b")
+size = Vector3(0.08, 0.045, 0.26)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll0be"]
+radius = 0.185
+height = 0.6
+
+[node name="FoeBullet" type="Node3D"]
+script = ExtResource("1_ll0be")
+SPEED = 64.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ll0be")
+
+[node name="HIT_AREA" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HIT_AREA"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ll0be")
+
+[connection signal="body_entered" from="HIT_AREA" to="." method="_on_hit_area_body_entered"]

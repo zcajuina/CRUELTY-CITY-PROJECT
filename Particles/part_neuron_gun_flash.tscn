@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cpmcioeybw6p1"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_71mk3"]
+[ext_resource type="PackedScene" uid="uid://dij815uxmpjgt" path="res://Particles/pre_mesh_neuron_gun_flash.tscn" id="2_71mk3"]
+
+[node name="PartNeuronGunFlash" type="Node3D" unique_id=1804483038]
+script = ExtResource("1_71mk3")
+time = 0.16
+
+[node name="PRE_MESH_NEURON_GUN_FLASH" parent="." unique_id=888706263 instance=ExtResource("2_71mk3")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1239318890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.53258395)
+layers = 3
+light_color = Color(1, 0.31, 0.7240003, 1)
+omni_range = 4.35451
+omni_attenuation = -2.301

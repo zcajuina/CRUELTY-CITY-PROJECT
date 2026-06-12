@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cn4h3x7i7u00o"]
+
+[ext_resource type="Script" uid="uid://4f2ja56hubta" path="res://Scripts/HUD/badge_info_logic.gd" id="1_o6l76"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="1_ygqf0"]
+[ext_resource type="Texture2D" uid="uid://b54nkjqers2ph" path="res://Textures/SPRITES/BADGE/EMPTY_BADGE_SPRITE.png" id="3_ygqf0"]
+
+[node name="BADGE" type="Panel" unique_id=515512695]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("1_ygqf0")
+script = ExtResource("1_o6l76")
+
+[node name="EMPTY_BADGE_ICON" type="Sprite2D" parent="." unique_id=1335860070]
+position = Vector2(36, 36)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("3_ygqf0")
+
+[node name="BADGE_ICON" type="Sprite2D" parent="." unique_id=1034747864]
+position = Vector2(36, 36)
+scale = Vector2(0.140625, 0.140625)
+
+[node name="TEXT_PANEL" type="Panel" parent="." unique_id=1904833149]
+visible = false
+layout_mode = 0
+offset_left = -71.0
+offset_top = 91.0
+offset_right = 148.0
+offset_bottom = 197.99237
+
+[node name="BADGE_DESC" type="Label" parent="TEXT_PANEL" unique_id=38566281]
+layout_mode = 0
+offset_right = 219.0
+offset_bottom = 107.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap_mode = 3
+
+[node name="BADGE_TITTLE" type="Label" parent="TEXT_PANEL" unique_id=69595368]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 219.0
+offset_bottom = -1.0
+text = "dawdawdawda"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

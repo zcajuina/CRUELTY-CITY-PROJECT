@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c2ifeq5yirtam"]
+
+[ext_resource type="Script" uid="uid://bud22fr7n1qwf" path="res://Scripts/Props/dropped_organ_rigid_body.gd" id="1_rxo01"]
+[ext_resource type="PackedScene" uid="uid://cvls37i1ba6o3" path="res://Models/Props/ORGANS/BRAIN.glb" id="2_hhrh5"]
+[ext_resource type="PackedScene" uid="uid://cdbm31pq0y87e" path="res://Models/Props/ORGANS/HEART.glb" id="3_u561q"]
+[ext_resource type="PackedScene" uid="uid://cf25da4ejcae2" path="res://Models/Props/ORGANS/INTESTINES.glb" id="4_v0036"]
+[ext_resource type="PackedScene" uid="uid://ynlhnhiyyy70" path="res://Models/Props/ORGANS/PANCREAS.glb" id="5_7rbyo"]
+[ext_resource type="PackedScene" uid="uid://d38d8b1va0v34" path="res://Models/Props/ORGANS/SPINE.glb" id="6_kcoud"]
+[ext_resource type="PackedScene" uid="uid://tv71e5k3jjms" path="res://Models/Props/ORGANS/STOMACH.glb" id="7_dpstv"]
+[ext_resource type="Texture2D" uid="uid://b1dn4a354sx83" path="res://Models/MAP/SLABS/-a3_Meat.png" id="8_u561q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yqwmo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxo01"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yqwmo"]
+material = SubResource("StandardMaterial3D_rxo01")
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxo01"]
+size = Vector3(0.25, 0.1665039, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhrh5"]
+size = Vector3(0.2529297, 0.115234375, 1.1849365)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0036"]
+albedo_texture = ExtResource("8_u561q")
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1322341713 groups=["organ"]]
+physics_material_override = SubResource("PhysicsMaterial_yqwmo")
+script = ExtResource("1_rxo01")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=473946897]
+visible = false
+mesh = SubResource("BoxMesh_yqwmo")
+skeleton = NodePath("../RigidBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1336397999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041748047, 0)
+shape = SubResource("BoxShape3D_rxo01")
+
+[node name="SPINE_COL" type="CollisionShape3D" parent="." unique_id=1288192073]
+shape = SubResource("BoxShape3D_hhrh5")
+
+[node name="KILL_SPAWN" type="Timer" parent="." unique_id=2129238257]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="BRAIN" parent="." unique_id=308142882 instance=ExtResource("2_hhrh5")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="HEART" parent="." unique_id=1407145098 instance=ExtResource("3_u561q")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="INTESTINES" parent="." unique_id=1644612875 instance=ExtResource("4_v0036")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="PANCREAS" parent="." unique_id=524894374 instance=ExtResource("5_7rbyo")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="SPINE" parent="." unique_id=1365129090 instance=ExtResource("6_kcoud")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="STOMACH" parent="." unique_id=1826035917 instance=ExtResource("7_dpstv")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
+visible = false
+
+[node name="APIMBA" type="Node3D" parent="." unique_id=678336268]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="APIMBA" unique_id=397463955]
+size = Vector3(0.25, 0.25, 0.25)
+material = SubResource("StandardMaterial3D_v0036")
+
+[connection signal="timeout" from="KILL_SPAWN" to="." method="_on_kill_spawn_timeout"]
+
+[editable path="BRAIN"]
+[editable path="HEART"]
+[editable path="INTESTINES"]
+[editable path="PANCREAS"]
+[editable path="SPINE"]
+[editable path="STOMACH"]

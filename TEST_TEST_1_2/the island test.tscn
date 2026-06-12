@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://blnhilgbip0uu"]
+
+[ext_resource type="Script" uid="uid://b5mne57pddsbv" path="res://Scripts/Props/world_environment.gd" id="1_dexqn"]
+[ext_resource type="PackedScene" uid="uid://bag6u1th1x52o" path="res://Scenes/PLAYER.tscn" id="1_dw3yu"]
+[ext_resource type="Material" uid="uid://csj1ekg8tqo5y" path="res://Materials/NORMAL_SKY.tres" id="2_a2718"]
+[ext_resource type="PackedScene" uid="uid://b32xebpngifyc" path="res://Models/MAP/SLABS/-a0.glb" id="2_b3vre"]
+[ext_resource type="PackedScene" uid="uid://4rwlqcbxr54p" path="res://Models/MAP/SLABS/a0.glb" id="2_s4q6n"]
+[ext_resource type="PackedScene" uid="uid://cqr6tjmr66sei" path="res://Models/MAP/SLABS/a1.glb" id="3_8jtfp"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c6wgowmwfg6cg" path="res://Scenes/OCCLUDERS/THE_WORLD.occ" id="3_02218"]
+[ext_resource type="PackedScene" uid="uid://d2rwlcyg02tt0" path="res://Models/MAP/SLABS/-a1.glb" id="3_p4qnp"]
+[ext_resource type="PackedScene" uid="uid://cg1vcbkutxj2o" path="res://Models/MAP/SLABS/-a-1.glb" id="3_sd6em"]
+[ext_resource type="PackedScene" uid="uid://bo2jkvx885wj" path="res://Models/MAP/SLABS/-a2.glb" id="4_8qcb5"]
+[ext_resource type="PackedScene" uid="uid://bwwf2nh5oywy" path="res://Models/MAP/SLABS/a-1.glb" id="4_badcn"]
+[ext_resource type="PackedScene" uid="uid://bo0caivep1axo" path="res://Models/MAP/SLABS/b1.glb" id="4_y0bnq"]
+[ext_resource type="PackedScene" uid="uid://c5vcewo24c17a" path="res://Models/MAP/SLABS/b2.glb" id="5_87gte"]
+[ext_resource type="PackedScene" uid="uid://c3r7u17kgxwtl" path="res://Models/MAP/SLABS/-b0.glb" id="5_wqdov"]
+[ext_resource type="PackedScene" uid="uid://s38awrucsbpt" path="res://Models/MAP/SLABS/-b-1.glb" id="6_dixol"]
+[ext_resource type="PackedScene" uid="uid://fgfr23vswcbp" path="res://Models/MAP/SLABS/c1.glb" id="6_gryxq"]
+[ext_resource type="PackedScene" uid="uid://dn3ma6o6j4gib" path="res://Models/MAP/SLABS/-c0.glb" id="7_fbsfn"]
+[ext_resource type="PackedScene" uid="uid://di2cbkh86u0xi" path="res://Models/MAP/SLABS/-a-2.glb" id="8_fhxb5"]
+[ext_resource type="PackedScene" uid="uid://dte2uetsg2qcj" path="res://Models/MAP/SLABS/-b1.glb" id="8_gxn8j"]
+[ext_resource type="PackedScene" uid="uid://b3ujabo4fpqwc" path="res://Models/MAP/SLABS/-c-1.glb" id="8_ve0y1"]
+[ext_resource type="PackedScene" uid="uid://braig05pl1cf1" path="res://Models/MAP/SLABS/-a-3.glb" id="9_aqmyo"]
+[ext_resource type="PackedScene" uid="uid://b3j6daumst5di" path="res://Models/MAP/SLABS/-b2.glb" id="9_qfv0n"]
+[ext_resource type="PackedScene" uid="uid://hq61kkkrco8d" path="res://Models/MAP/SLABS/-a-4.glb" id="10_bpawl"]
+[ext_resource type="PackedScene" uid="uid://k2r5ssyfhy65" path="res://Models/MAP/SLABS/b0.glb" id="10_ymnkv"]
+[ext_resource type="PackedScene" uid="uid://byx70agr0xfjb" path="res://Models/MAP/SLABS/b-1.glb" id="11_370aa"]
+[ext_resource type="PackedScene" uid="uid://cdcvqyl2foeeu" path="res://Models/MAP/SLABS/-c1.glb" id="12_gnxjw"]
+[ext_resource type="PackedScene" uid="uid://ckf0gqr5n7l76" path="res://Models/MAP/SLABS/b3.glb" id="12_sd6em"]
+[ext_resource type="PackedScene" uid="uid://3taqd7nnjjkd" path="res://Models/MAP/SLABS/-c2.glb" id="13_svog2"]
+[ext_resource type="PackedScene" uid="uid://h5emmq0al5fu" path="res://Models/MAP/SLABS/c3.glb" id="13_ymnkv"]
+[ext_resource type="PackedScene" uid="uid://de5fiwuna60iy" path="res://Models/MAP/SLABS/c2.glb" id="14_370aa"]
+[ext_resource type="PackedScene" uid="uid://47c33cy115g0" path="res://Models/MAP/SLABS/a3.glb" id="15_370aa"]
+[ext_resource type="PackedScene" uid="uid://pu1a5xo1e2cv" path="res://Models/MAP/SLABS/-b-3.glb" id="15_ul1ot"]
+[ext_resource type="PackedScene" uid="uid://b62au2goy5mor" path="res://Models/MAP/SLABS/-a3.glb" id="16_askw5"]
+[ext_resource type="PackedScene" uid="uid://c18b2gy8h523v" path="res://Models/MAP/SLABS/-b-4.glb" id="16_j1fgd"]
+[ext_resource type="PackedScene" uid="uid://br0l4mv743o0q" path="res://Models/MAP/SLABS/a2.glb" id="17_ct2tw"]
+[ext_resource type="PackedScene" uid="uid://cm5qnxtl3s74e" path="res://Models/MAP/SLABS/c-1.glb" id="21_b6muf"]
+[ext_resource type="PackedScene" uid="uid://bd271jspbji2o" path="res://Models/MAP/SLABS/-c-2.glb" id="21_dexqn"]
+[ext_resource type="PackedScene" uid="uid://6u1accm38eti" path="res://Models/MAP/SLABS/-c-3.glb" id="22_4ro2j"]
+[ext_resource type="PackedScene" uid="uid://co43dxwpuo84s" path="res://Models/MAP/SLABS/d-1.glb" id="22_xin4b"]
+[ext_resource type="PackedScene" uid="uid://d2c1h21rfcfo0" path="res://Models/MAP/SLABS/-c-4.glb" id="23_g8l1v"]
+[ext_resource type="PackedScene" uid="uid://dx1vvlgi8l01c" path="res://Models/MAP/SLABS/c0.glb" id="25_xklr6"]
+[ext_resource type="PackedScene" uid="uid://jnladp8e5fgt" path="res://Models/MAP/SLABS/a-2.glb" id="29_dcclc"]
+[ext_resource type="PackedScene" uid="uid://dhqr5q75qc0p1" path="res://Models/MAP/SLABS/a-3.glb" id="30_6c4tx"]
+[ext_resource type="PackedScene" uid="uid://b4toly2lvwsca" path="res://Models/MAP/SLABS/d0.glb" id="30_kpwry"]
+[ext_resource type="PackedScene" uid="uid://3vws46umeb3d" path="res://Models/MAP/SLABS/d1.glb" id="31_hored"]
+[ext_resource type="PackedScene" uid="uid://csddiavmabvaw" path="res://Models/MAP/SLABS/d2.glb" id="32_cevfd"]
+[ext_resource type="PackedScene" uid="uid://5uyb383jlviy" path="res://Models/MAP/SLABS/b-2.glb" id="37_02218"]
+[ext_resource type="PackedScene" uid="uid://cfqnpcnotn5yk" path="res://Models/MAP/SLABS/b-3.glb" id="38_a2718"]
+[ext_resource type="PackedScene" uid="uid://cqoox1ej3tam4" path="res://Models/MAP/SLABS/b-4.glb" id="39_jblkt"]
+[ext_resource type="PackedScene" uid="uid://ccxlhnwhynj2a" path="res://Models/MAP/SLABS/c-2.glb" id="45_wn16b"]
+[ext_resource type="PackedScene" uid="uid://c2x7xiigln6kl" path="res://Models/MAP/SLABS/c-3.glb" id="46_6varp"]
+[ext_resource type="PackedScene" uid="uid://dq0tj7qr1kpcd" path="res://Models/MAP/SLABS/c-4.glb" id="47_71eyy"]
+[ext_resource type="PackedScene" uid="uid://bmnv6um5q7xqa" path="res://Models/MAP/SLABS/d-2.glb" id="52_k5862"]
+[ext_resource type="PackedScene" uid="uid://b3o6lpsntdtxt" path="res://Models/MAP/SLABS/d-3.glb" id="53_ws7et"]
+[ext_resource type="PackedScene" uid="uid://cimet67n2p320" path="res://Models/MAP/SLABS/d-4.glb" id="54_3ocuh"]
+[ext_resource type="PackedScene" uid="uid://qqylblh4xf8r" path="res://Models/MAP/SLABS/a-4.glb" id="54_bpawl"]
+[ext_resource type="PackedScene" uid="uid://lygu6046xxjd" path="res://Models/MAP/SLABS/-b-2.glb" id="55_as2tf"]
+[ext_resource type="PackedScene" uid="uid://crvyp2ckbtsc" path="res://Models/MAP/STREETS.glb" id="57_g8l1v"]
+[ext_resource type="PackedScene" uid="uid://crnvx15nfnjax" path="res://Models/MAP/THE_MOUNTAINS/MOUNTAINS_COMMON_WEALTH.glb" id="64_j1fgd"]
+[ext_resource type="PackedScene" uid="uid://dwem28qvgkp6q" path="res://Models/MAP/THE_MOUNTAINS/MOUNTAINS_RICH.glb" id="65_02218"]
+[ext_resource type="PackedScene" uid="uid://s7jraibaufpo" path="res://Models/MAP/WATER/OCEAN_MESH.glb" id="65_wn16b"]
+[ext_resource type="Material" uid="uid://dhy6nba5dcju6" path="res://Materials/COMMON_WATER.tres" id="66_6varp"]
+[ext_resource type="PackedScene" uid="uid://b53x4p336vfpg" path="res://Models/MAP/WATER/SWAMP_WATER_MESH.glb" id="67_71eyy"]
+[ext_resource type="Material" uid="uid://v7kivo7bap2w" path="res://Materials/SWAMP_WATER.tres" id="68_k5862"]
+[ext_resource type="PackedScene" uid="uid://d10i4t8eimci0" path="res://Scenes/Props/PHONE_BOOT.tscn" id="69_6c4tx"]
+[ext_resource type="PackedScene" uid="uid://b107202bgve7s" path="res://Models/MAP/MAP_BORDER.glb" id="74_6varp"]
+[ext_resource type="PackedScene" uid="uid://cf4k1kpkde7l2" path="res://Models/MAP/SWAMP_LANDS/SWAMP_LANDS_MERGED.glb" id="75_6varp"]
+
+[sub_resource type="Sky" id="Sky_g8l1v"]
+sky_material = ExtResource("2_a2718")
+
+[sub_resource type="Environment" id="Environment_6varp"]
+background_mode = 2
+sky = SubResource("Sky_g8l1v")
+glow_enabled = true
+glow_levels/1 = 2.4
+glow_blend_mode = 0
+fog_density = 0.0001
+fog_sky_affect = 0.0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4ro2j"]
+geometry_parsed_geometry_type = 0
+region_min_size = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a2718"]
+size = Vector3(1591, 822, 1374)
+
+[node name="Node3D" type="Node3D" unique_id=994433476]
+script = ExtResource("1_dexqn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1957107354]
+environment = SubResource("Environment_6varp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1939395055]
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=578957924]
+occluder = ExtResource("3_02218")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1967144154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 388, 0)
+navigation_mesh = SubResource("NavigationMesh_4ro2j")
+
+[node name="STREETS" parent="NavigationRegion3D" unique_id=2058567198 instance=ExtResource("57_g8l1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -388, 0)
+
+[node name="StaticBody3D" parent="NavigationRegion3D/STREETS/sidewalks" parent_id_path=PackedInt32Array(2058567198, 905447975) index="0" unique_id=314132733]
+collision_layer = 0
+collision_mask = 0
+
+[node name="THE_WORLD" type="Node3D" parent="NavigationRegion3D" unique_id=149838282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -388, 0)
+
+[node name="-a0" parent="NavigationRegion3D/THE_WORLD" unique_id=1316005509 instance=ExtResource("2_b3vre")]
+
+[node name="-a1" parent="NavigationRegion3D/THE_WORLD" unique_id=738997814 instance=ExtResource("3_p4qnp")]
+
+[node name="-a2" parent="NavigationRegion3D/THE_WORLD" unique_id=1023637486 instance=ExtResource("4_8qcb5")]
+
+[node name="-a3" parent="NavigationRegion3D/THE_WORLD" unique_id=1247473340 instance=ExtResource("16_askw5")]
+
+[node name="-a-1" parent="NavigationRegion3D/THE_WORLD" unique_id=236680671 instance=ExtResource("3_sd6em")]
+
+[node name="-a-3" parent="NavigationRegion3D/THE_WORLD" unique_id=969615959 instance=ExtResource("9_aqmyo")]
+
+[node name="-a-4" parent="NavigationRegion3D/THE_WORLD" unique_id=286316587 instance=ExtResource("10_bpawl")]
+
+[node name="-b0" parent="NavigationRegion3D/THE_WORLD" unique_id=1182511563 instance=ExtResource("5_wqdov")]
+
+[node name="-b1" parent="NavigationRegion3D/THE_WORLD" unique_id=168463090 instance=ExtResource("8_gxn8j")]
+
+[node name="-b2" parent="NavigationRegion3D/THE_WORLD" unique_id=617616851 instance=ExtResource("9_qfv0n")]
+
+[node name="-b-1" parent="NavigationRegion3D/THE_WORLD" unique_id=1950535571 instance=ExtResource("6_dixol")]
+
+[node name="-b-2" parent="NavigationRegion3D/THE_WORLD" unique_id=257036206 instance=ExtResource("55_as2tf")]
+
+[node name="-b-3" parent="NavigationRegion3D/THE_WORLD" unique_id=1485647708 instance=ExtResource("15_ul1ot")]
+
+[node name="-b-4" parent="NavigationRegion3D/THE_WORLD" unique_id=1887532324 instance=ExtResource("16_j1fgd")]
+
+[node name="-c0" parent="NavigationRegion3D/THE_WORLD" unique_id=607112710 instance=ExtResource("7_fbsfn")]
+
+[node name="-c1" parent="NavigationRegion3D/THE_WORLD" unique_id=192862266 instance=ExtResource("12_gnxjw")]
+
+[node name="-c2" parent="NavigationRegion3D/THE_WORLD" unique_id=1765796981 instance=ExtResource("13_svog2")]
+
+[node name="-c-2" parent="NavigationRegion3D/THE_WORLD" unique_id=1759948915 instance=ExtResource("21_dexqn")]
+
+[node name="-c-3" parent="NavigationRegion3D/THE_WORLD" unique_id=966358313 instance=ExtResource("22_4ro2j")]
+
+[node name="-c-4" parent="NavigationRegion3D/THE_WORLD" unique_id=818242823 instance=ExtResource("23_g8l1v")]
+
+[node name="a0" parent="NavigationRegion3D/THE_WORLD" unique_id=1581349835 instance=ExtResource("2_s4q6n")]
+
+[node name="a1" parent="NavigationRegion3D/THE_WORLD" unique_id=1000873736 instance=ExtResource("3_8jtfp")]
+
+[node name="a2" parent="NavigationRegion3D/THE_WORLD" unique_id=1713339882 instance=ExtResource("17_ct2tw")]
+
+[node name="a3" parent="NavigationRegion3D/THE_WORLD" unique_id=892747926 instance=ExtResource("15_370aa")]
+
+[node name="a-1" parent="NavigationRegion3D/THE_WORLD" unique_id=1391647722 instance=ExtResource("4_badcn")]
+
+[node name="a-2" parent="NavigationRegion3D/THE_WORLD" unique_id=159948757 instance=ExtResource("29_dcclc")]
+
+[node name="a-3" parent="NavigationRegion3D/THE_WORLD" unique_id=900814745 instance=ExtResource("30_6c4tx")]
+
+[node name="a-4" parent="NavigationRegion3D/THE_WORLD" unique_id=786735337 instance=ExtResource("54_bpawl")]
+
+[node name="b0" parent="NavigationRegion3D/THE_WORLD" unique_id=744494852 instance=ExtResource("10_ymnkv")]
+
+[node name="b1" parent="NavigationRegion3D/THE_WORLD" unique_id=455979584 instance=ExtResource("4_y0bnq")]
+
+[node name="b2" parent="NavigationRegion3D/THE_WORLD" unique_id=160704770 instance=ExtResource("5_87gte")]
+
+[node name="b3" parent="NavigationRegion3D/THE_WORLD" unique_id=316730875 instance=ExtResource("12_sd6em")]
+
+[node name="b-1" parent="NavigationRegion3D/THE_WORLD" unique_id=1974153303 instance=ExtResource("11_370aa")]
+
+[node name="b-2" parent="NavigationRegion3D/THE_WORLD" unique_id=975109683 instance=ExtResource("37_02218")]
+
+[node name="b-3" parent="NavigationRegion3D/THE_WORLD" unique_id=1012616186 instance=ExtResource("38_a2718")]
+
+[node name="b-4" parent="NavigationRegion3D/THE_WORLD" unique_id=1430414295 instance=ExtResource("39_jblkt")]
+
+[node name="c0" parent="NavigationRegion3D/THE_WORLD" unique_id=1044971372 instance=ExtResource("25_xklr6")]
+
+[node name="c1" parent="NavigationRegion3D/THE_WORLD" unique_id=1786667566 instance=ExtResource("6_gryxq")]
+
+[node name="c2" parent="NavigationRegion3D/THE_WORLD" unique_id=82139363 instance=ExtResource("14_370aa")]
+
+[node name="c3" parent="NavigationRegion3D/THE_WORLD" unique_id=315044944 instance=ExtResource("13_ymnkv")]
+
+[node name="c-1" parent="NavigationRegion3D/THE_WORLD" unique_id=1140060608 instance=ExtResource("21_b6muf")]
+
+[node name="c-2" parent="NavigationRegion3D/THE_WORLD" unique_id=1225152647 instance=ExtResource("45_wn16b")]
+
+[node name="c-3" parent="NavigationRegion3D/THE_WORLD" unique_id=992367473 instance=ExtResource("46_6varp")]
+
+[node name="c-4" parent="NavigationRegion3D/THE_WORLD" unique_id=1745007354 instance=ExtResource("47_71eyy")]
+
+[node name="d0" parent="NavigationRegion3D/THE_WORLD" unique_id=1892555101 instance=ExtResource("30_kpwry")]
+
+[node name="d1" parent="NavigationRegion3D/THE_WORLD" unique_id=423801515 instance=ExtResource("31_hored")]
+
+[node name="d2" parent="NavigationRegion3D/THE_WORLD" unique_id=1267881329 instance=ExtResource("32_cevfd")]
+
+[node name="d-1" parent="NavigationRegion3D/THE_WORLD" unique_id=193747677 instance=ExtResource("22_xin4b")]
+
+[node name="d-2" parent="NavigationRegion3D/THE_WORLD" unique_id=588109842 instance=ExtResource("52_k5862")]
+
+[node name="d-3" parent="NavigationRegion3D/THE_WORLD" unique_id=191969607 instance=ExtResource("53_ws7et")]
+
+[node name="d-4" parent="NavigationRegion3D/THE_WORLD" unique_id=1881542159 instance=ExtResource("54_3ocuh")]
+
+[node name="-a-2" parent="NavigationRegion3D/THE_WORLD" unique_id=572668928 instance=ExtResource("8_fhxb5")]
+
+[node name="-c-1" parent="NavigationRegion3D/THE_WORLD" unique_id=6449352 instance=ExtResource("8_ve0y1")]
+
+[node name="MICRO_TIMER" type="Timer" parent="." unique_id=805553610]
+autostart = true
+
+[node name="Player" parent="." unique_id=1359576397 instance=ExtResource("1_dw3yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 662, 0.19999886, 550)
+floor_max_angle = 1.3089969
+
+[node name="THE_MOUNTAINS" type="Node3D" parent="." unique_id=562557672]
+
+[node name="MOUNTAINS_RICH" parent="THE_MOUNTAINS" unique_id=2023432480 instance=ExtResource("65_02218")]
+
+[node name="MOUNTAINS_COMMON_WEALTH" parent="THE_MOUNTAINS" unique_id=2017863248 instance=ExtResource("64_j1fgd")]
+
+[node name="THE OCEAN" type="Node3D" parent="." unique_id=1112179870]
+
+[node name="OCEAN_MESH" parent="THE OCEAN" unique_id=2006460923 instance=ExtResource("65_wn16b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215, 0)
+
+[node name="THE_OCEAN_MESH" parent="THE OCEAN/OCEAN_MESH" index="0" unique_id=1554110693]
+surface_material_override/0 = ExtResource("66_6varp")
+
+[node name="StaticBody3D" parent="THE OCEAN/OCEAN_MESH/THE_OCEAN_MESH" index="0" unique_id=446798649 groups=["water", "water_normal"]]
+
+[node name="SWAMP_WATER_MESH" parent="THE OCEAN" unique_id=1282838479 instance=ExtResource("67_71eyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.785, 0)
+
+[node name="TOXIC_WATER" parent="THE OCEAN/SWAMP_WATER_MESH" index="0" unique_id=1635682442]
+material_override = ExtResource("68_k5862")
+
+[node name="StaticBody3D" parent="THE OCEAN/SWAMP_WATER_MESH/TOXIC_WATER" index="0" unique_id=1881456623 groups=["water", "water_swamp"]]
+
+[node name="PhoneBoot" parent="." unique_id=771432905 instance=ExtResource("69_6c4tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0.3000002, -7)
+
+[node name="PROPS" type="Node3D" parent="." unique_id=1851985484]
+
+[node name="THE_CAVES" type="Node3D" parent="." unique_id=1039757179]
+
+[node name="DARK_AREA" type="Area3D" parent="THE_CAVES" unique_id=1851034943]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="THE_CAVES/DARK_AREA" unique_id=491777744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.5, -485.9675, 1244.5)
+shape = SubResource("BoxShape3D_a2718")
+
+[node name="MAP_BORDER" parent="." unique_id=649632942 instance=ExtResource("74_6varp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2726, 0)
+visible = false
+
+[node name="BOUNDING_BOX" type="Node3D" parent="." unique_id=2110221696]
+
+[node name="THE_SWAMP_LANDS" type="Node3D" parent="." unique_id=1340601387]
+
+[node name="SWAMP_LANDS_MERGED" parent="THE_SWAMP_LANDS" unique_id=1614741601 instance=ExtResource("75_6varp")]
+
+[node name="LIGHTS" type="Node3D" parent="." unique_id=223585743]
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LIGHTS" unique_id=684567731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372, 78, -106)
+light_energy = 0.035
+shadow_enabled = true
+shadow_bias = 1.0
+omni_range = 182.0
+omni_attenuation = -0.509
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1385104865]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D" unique_id=359301430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -120)
+size = Vector3(116, 8, 16)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D" unique_id=1876222735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -120)
+size = Vector3(116, 8, 16)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D" unique_id=1758874650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 120)
+size = Vector3(128, 8, 16)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Node3D" unique_id=1879457212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 120)
+size = Vector3(128, 8, 16)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Node3D" unique_id=370392497]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 120, 0, 0)
+size = Vector3(224, 8, 16)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Node3D" unique_id=1052594530]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -120, 0, 0)
+size = Vector3(224, 8, 16)
+
+[connection signal="body_entered" from="THE_CAVES/DARK_AREA" to="." method="_on_dark_area_body_entered"]
+[connection signal="body_exited" from="THE_CAVES/DARK_AREA" to="." method="_on_dark_area_body_exited"]
+
+[editable path="NavigationRegion3D/STREETS"]
+[editable path="NavigationRegion3D/THE_WORLD/-b-3"]
+[editable path="NavigationRegion3D/THE_WORLD/a0"]
+[editable path="NavigationRegion3D/THE_WORLD/a1"]
+[editable path="NavigationRegion3D/THE_WORLD/a-1"]
+[editable path="NavigationRegion3D/THE_WORLD/b1"]
+[editable path="NavigationRegion3D/THE_WORLD/-a-2"]
+[editable path="THE OCEAN/OCEAN_MESH"]
+[editable path="THE OCEAN/SWAMP_WATER_MESH"]

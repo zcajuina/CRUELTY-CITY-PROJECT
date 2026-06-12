@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://ckga7sn5qjqu0"]
+
+[ext_resource type="Script" uid="uid://bgd2uwxjyjr1r" path="res://Scripts/IMPLANTS/greed_altar_curse.gd" id="1_x47c7"]
+[ext_resource type="PackedScene" uid="uid://bp7a0sod6wi6e" path="res://Models/Props/ALTARES/THE_ALTAR_OF_GREED_CURSE.glb" id="2_p1aqt"]
+[ext_resource type="Script" uid="uid://dxttgeepbiy" path="res://addons/shaker/src/Vector3/shaker_component3D.gd" id="3_0q6sp"]
+[ext_resource type="Script" uid="uid://ctm8sn4xn080k" path="res://addons/shaker/data/Vector3/BaseShakerType3D.gd" id="4_0wlwb"]
+[ext_resource type="Script" uid="uid://c40auhigvw2ai" path="res://addons/shaker/data/Vector3/ShakerTypeSineWave3D.gd" id="5_5cqyg"]
+[ext_resource type="Script" uid="uid://qn06eedlv8ic" path="res://addons/shaker/data/Vector3/ShakerPreset3D.gd" id="6_0at3a"]
+[ext_resource type="AudioStream" uid="uid://dkviyre8j51t0" path="res://Sounds/SFK/SLOT_MACHINE_WIN.mp3" id="7_5cqyg"]
+[ext_resource type="AudioStream" uid="uid://cqga4x4cpyr53" path="res://Sounds/SFK/SLOT_MACHINE_LOSE.mp3" id="8_0at3a"]
+[ext_resource type="Texture2D" uid="uid://bev6jb0wdnk40" path="res://Textures/GFX/light2.png" id="9_0at3a"]
+
+[sub_resource type="Resource" id="Resource_lx3eg"]
+script = ExtResource("5_5cqyg")
+amplitude = Vector3(0.055, 0.05, 0.05)
+offset = Vector3(0.095, -0.095, -0.425)
+metadata/_custom_type_script = "uid://c40auhigvw2ai"
+
+[sub_resource type="Resource" id="Resource_lgbn3"]
+script = ExtResource("6_0at3a")
+PositionShake = Array[ExtResource("4_0wlwb")]([SubResource("Resource_lx3eg")])
+metadata/_custom_type_script = "uid://qn06eedlv8ic"
+
+[sub_resource type="Curve" id="Curve_lx3eg"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.39325845), 0.0, 0.0, 0, 0, Vector2(1, 0.48314607), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lgbn3"]
+curve = SubResource("Curve_lx3eg")
+
+[sub_resource type="Gradient" id="Gradient_0at3a"]
+offsets = PackedFloat32Array(0, 0.14018692, 0.72897196, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lx3eg"]
+gradient = SubResource("Gradient_0at3a")
+
+[sub_resource type="Curve" id="Curve_susrl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5488722, 0.20224726), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2stih"]
+curve = SubResource("Curve_susrl")
+
+[sub_resource type="Curve" id="Curve_lgbn3"]
+_data = [Vector2(0, 0.50561804), 0.0, 0.0, 0, 0, Vector2(0.556391, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_susrl"]
+curve = SubResource("Curve_lgbn3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8j1d8"]
+emission_shape = 2
+emission_sphere_radius = 2.0
+angle_min = -720.0
+angle_max = 720.0
+angle_curve = SubResource("CurveTexture_lgbn3")
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 6.9999776
+radial_velocity_curve = SubResource("CurveTexture_2stih")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_susrl")
+color_ramp = SubResource("GradientTexture1D_lx3eg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1l34"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0.13333344, 1)
+albedo_texture = ExtResource("9_0at3a")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rmeph"]
+material = SubResource("StandardMaterial3D_k1l34")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ktjg"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0.016666412, 1)
+albedo_texture = ExtResource("9_0at3a")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3t7ju"]
+material = SubResource("StandardMaterial3D_8ktjg")
+
+[sub_resource type="Environment" id="Environment_0q6sp"]
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 1.0
+glow_blend_mode = 0
+
+[node name="GREED_ALTAR_CURSE" type="Node3D" unique_id=925620721]
+script = ExtResource("1_x47c7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=773461860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="THE_ALTAR_OF_GREED_CURSE" parent="." unique_id=1328054231 instance=ExtResource("2_p1aqt")]
+transform = Transform3D(-0.97437006, -0.22495098, -6.181724e-08, -0.15906441, 0.6889837, 0.70710677, -0.15906432, 0.6889837, -0.70710677, 0, 8, 0)
+
+[node name="ShakerComponent3D" type="Node3D" parent="THE_ALTAR_OF_GREED_CURSE" unique_id=991080187]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("3_0q6sp")
+intensity = 0.374
+shakerPreset = SubResource("Resource_lgbn3")
+metadata/_custom_type_script = "uid://dxttgeepbiy"
+
+[node name="WIN_PART" type="GPUParticles3D" parent="THE_ALTAR_OF_GREED_CURSE" unique_id=1524975956]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.563241e-14, 0, 1.7881393e-07)
+emitting = false
+amount = 32
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_8j1d8")
+draw_pass_1 = SubResource("QuadMesh_rmeph")
+
+[node name="LOSE_PART" type="GPUParticles3D" parent="THE_ALTAR_OF_GREED_CURSE" unique_id=917800343]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.563241e-14, 0, 1.7881393e-07)
+emitting = false
+amount = 32
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_8j1d8")
+draw_pass_1 = SubResource("QuadMesh_3t7ju")
+
+[node name="GREEN_LIGHT" type="OmniLight3D" parent="." unique_id=412518801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+visible = false
+light_color = Color(0.05000007, 1, 0, 1)
+omni_range = 1673.932
+omni_attenuation = -1.151
+
+[node name="RED_LIGHT" type="OmniLight3D" parent="." unique_id=1221471805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+visible = false
+light_color = Color(1, 0, 0, 1)
+omni_range = 1673.932
+omni_attenuation = -1.151
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1463671445]
+environment = SubResource("Environment_0q6sp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=914701826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.72)
+omni_range = 478.566
+omni_attenuation = 0.14
+
+[node name="WIN_SND" type="AudioStreamPlayer" parent="." unique_id=1640663751]
+stream = ExtResource("7_5cqyg")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="LOSE_SND" type="AudioStreamPlayer" parent="." unique_id=365293505]
+stream = ExtResource("8_0at3a")
+bus = &"SFX"
+
+[editable path="THE_ALTAR_OF_GREED_CURSE"]

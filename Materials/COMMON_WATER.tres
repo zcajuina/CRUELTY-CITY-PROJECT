@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dhy6nba5dcju6"]
+
+[ext_resource type="Shader" uid="uid://beixionbvflre" path="res://Scripts/Shaders/QUAKE_WATER.gdshader" id="1_0kn07"]
+[ext_resource type="Texture2D" uid="uid://23rphn5rx5rl" path="res://Textures/MINE/WATER.png" id="2_n3wrs"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0kn07")
+shader_parameter/albedo_texture = ExtResource("2_n3wrs")
+shader_parameter/warp_speed = 1.0
+shader_parameter/warp_intensity = 0.12
+shader_parameter/warp_closeness = 2.0
+shader_parameter/flow_dir = Vector2(1, 0)
+shader_parameter/flow_speed = 0.0
+shader_parameter/uv_scale = 0.9640000425301201

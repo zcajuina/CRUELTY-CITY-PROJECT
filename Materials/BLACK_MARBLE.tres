@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b72mawhvrliuv"]
+
+[ext_resource type="Texture2D" uid="uid://c58k3cj5fqenr" path="res://Textures/CRUS/blackmarble.png" id="1_umgsk"]
+
+[resource]
+albedo_texture = ExtResource("1_umgsk")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_triplanar = true

@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4ingo20j6e4b"]
+
+[ext_resource type="Texture2D" uid="uid://t61n8r7y05f6" path="res://Textures/CRUS/predios.png" id="1_rqqvk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oeely"]
+transparency = 1
+albedo_color = Color(0, 0.1333332, 1, 1)
+albedo_texture = ExtResource("1_rqqvk")
+uv1_scale = Vector3(0.175, 0.2, 0.175)
+uv1_offset = Vector3(0, 0.6, 0)
+uv1_triplanar = true
+
+[resource]
+resource_name = "WINDOWS"
+next_pass = SubResource("StandardMaterial3D_oeely")
+cull_mode = 2
+emission_enabled = true
+emission = Color(1, 0, 1, 1)
+emission_energy_multiplier = 6.0

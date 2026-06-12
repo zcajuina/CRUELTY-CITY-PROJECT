@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmkngtntqtaa"]
+
+[ext_resource type="Script" uid="uid://2vmsmk5yxu5v" path="res://Scripts/IMPLANTS/imp_gunk.gd" id="1_wycft"]
+[ext_resource type="AudioStream" uid="uid://epbeiiom2uvs" path="res://Sounds/DIALOG/bell_b.mp3" id="2_hjq5x"]
+
+[node name="ImpGunk" type="Node"]
+script = ExtResource("1_wycft")
+
+[node name="POOP_SND" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hjq5x")

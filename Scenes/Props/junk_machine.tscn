@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://btfo4bth85rx4"]
+
+[ext_resource type="Script" uid="uid://bv2fbktjea137" path="res://Scripts/Props/JUNK_MACHINE_LOGIC.gd" id="1_m5vj1"]
+[ext_resource type="Texture2D" uid="uid://dc8wa6t0xuf6o" path="res://Textures/SPRITES/PORN_ORBS/BODGDANA_ASS.png" id="2_kqb3s"]
+[ext_resource type="PackedScene" uid="uid://di6111s6e1n2v" path="res://Models/Props/VENDING MACHINE.glb" id="3_itky6"]
+[ext_resource type="AudioStream" uid="uid://c4dpr32hl8tat" path="res://Sounds/SFK/50HzNOISE.ogg" id="4_1na2u"]
+[ext_resource type="Script" uid="uid://dxttgeepbiy" path="res://addons/shaker/src/Vector3/shaker_component3D.gd" id="4_1sx5r"]
+[ext_resource type="AudioStream" uid="uid://cb8vsfckcssw" path="res://Sounds/SFK/JUNK_MACHINE_DISPENSER.mp3" id="4_03gy1"]
+[ext_resource type="Script" uid="uid://ctm8sn4xn080k" path="res://addons/shaker/data/Vector3/BaseShakerType3D.gd" id="5_vu0g6"]
+[ext_resource type="Script" uid="uid://c40auhigvw2ai" path="res://addons/shaker/data/Vector3/ShakerTypeSineWave3D.gd" id="6_hrayt"]
+[ext_resource type="Script" uid="uid://qn06eedlv8ic" path="res://addons/shaker/data/Vector3/ShakerPreset3D.gd" id="7_3yrc5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itky6"]
+albedo_texture = ExtResource("2_kqb3s")
+
+[sub_resource type="Resource" id="Resource_5dyfo"]
+script = ExtResource("6_hrayt")
+amplitude = Vector3(0.01, 0.01, 0.01)
+metadata/_custom_type_script = "uid://c40auhigvw2ai"
+
+[sub_resource type="Resource" id="Resource_rta2p"]
+script = ExtResource("6_hrayt")
+amplitude = Vector3(0, 0, 0.01)
+metadata/_custom_type_script = "uid://c40auhigvw2ai"
+
+[sub_resource type="Resource" id="Resource_gpp8t"]
+script = ExtResource("7_3yrc5")
+PositionShake = Array[ExtResource("5_vu0g6")]([SubResource("Resource_5dyfo")])
+RotationShake = Array[ExtResource("5_vu0g6")]([SubResource("Resource_rta2p")])
+metadata/_custom_type_script = "uid://qn06eedlv8ic"
+
+[node name="JUNK_MACHINE" type="Node3D" unique_id=1251019349]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1023813065 groups=["general"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.050000012)
+visible = false
+use_collision = true
+size = Vector3(2, 3, 1.1)
+script = ExtResource("1_m5vj1")
+
+[node name="DISPENSER" type="Node3D" parent="." unique_id=1225073431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=751838507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 1.5999999, 0.55)
+visible = false
+size = Vector3(1.8000001, 2.4, 0.1)
+material = SubResource("StandardMaterial3D_itky6")
+
+[node name="VENDING MACHINE" parent="." unique_id=637428357 instance=ExtResource("3_itky6")]
+transform = Transform3D(1, 5.215406e-08, -5.401671e-08, -5.2154064e-08, 1, -4.284084e-08, 5.4016706e-08, 4.2840842e-08, 1, 0, 0, 9.126961e-08)
+
+[node name="SHAKER" type="Node3D" parent="VENDING MACHINE" unique_id=2131919268]
+script = ExtResource("4_1sx5r")
+intensity = 2.0
+duration = 1.0
+shake_speed = 2.0
+shakerPreset = SubResource("Resource_gpp8t")
+metadata/_custom_type_script = "uid://dxttgeepbiy"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="VENDING MACHINE" unique_id=170217279]
+transform = Transform3D(1, -4.413961e-08, -6.0741634e-08, 5.215406e-08, -0.17364828, 0.9848078, -5.401671e-08, -0.9848078, -0.17364828, -1.2945384e-07, 3, 0.4999998)
+spot_range = 4.0
+spot_angle = 26.861013
+
+[node name="OmniLight3D" type="OmniLight3D" parent="VENDING MACHINE" unique_id=402828348]
+transform = Transform3D(1, -5.2154064e-08, 5.4016706e-08, 5.215406e-08, 1, 4.2840842e-08, -5.401671e-08, -4.284084e-08, 1, -5.2154068e-08, 1, -1.3411045e-07)
+omni_range = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="VENDING MACHINE" unique_id=1727737024]
+transform = Transform3D(1, -5.2154064e-08, 5.4016706e-08, 5.215406e-08, 1, 4.2840842e-08, -5.401671e-08, -4.284084e-08, 1, -1.04308135e-07, 2, -1.7695129e-07)
+omni_range = 2.0
+
+[node name="DROP_SND" type="AudioStreamPlayer3D" parent="." unique_id=234888307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("4_03gy1")
+autoplay = true
+max_distance = 4.65
+bus = &"SFX"
+
+[node name="HUM" type="AudioStreamPlayer3D" parent="." unique_id=1842377294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("4_1na2u")
+volume_db = -30.0
+pitch_scale = 0.72
+autoplay = true
+max_distance = 4.65
+bus = &"SFX"
+parameters/looping = true

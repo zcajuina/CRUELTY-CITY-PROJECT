@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://nanedyo8jb15"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_lvog2"]
+[ext_resource type="Script" uid="uid://b4oln6wmnrt41" path="res://Scripts/Props/self_starter_one_shot_particle.gd" id="2_2ao77"]
+
+[sub_resource type="Curve" id="Curve_2ao77"]
+_data = [Vector2(0, 0.30337083), 0.0, 0.0, 0, 0, Vector2(0.39097744, 0.50561804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4bslw"]
+curve = SubResource("Curve_2ao77")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7w3m"]
+direction = Vector3(0, 0, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -7, 0)
+linear_accel_min = -44.440002
+linear_accel_max = -24.560001
+radial_accel_min = 14.039997
+radial_accel_max = 50.299995
+scale_curve = SubResource("CurveTexture_4bslw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd6kj"]
+shading_mode = 0
+albedo_color = Color(0.6, 0, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bpxiw"]
+material = SubResource("StandardMaterial3D_nd6kj")
+size = Vector2(0.125, 0.25)
+
+[node name="PartSmallBloodPart" type="Node3D" unique_id=439598450]
+script = ExtResource("1_lvog2")
+time = 0.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2025652610]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_p7w3m")
+draw_pass_1 = SubResource("QuadMesh_bpxiw")
+script = ExtResource("2_2ao77")
+delete = false

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cmireb74tr2ol"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_kxsgm"]
+[ext_resource type="Texture2D" uid="uid://ccubctdjflihd" path="res://Textures/GFX/GUN_FLASH_HD.png" id="2_kxsgm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o16ld"]
+albedo_color = Color(0, 1, 0.88333344, 1)
+emission_enabled = true
+emission = Color(0, 0.5, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1597761949]
+script = ExtResource("1_kxsgm")
+time = 0.08
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=552728770]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.6527238e-07, -2.6527238e-07, -6.068725)
+radius = 0.12890625
+height = 12.1154785
+sides = 16
+material = SubResource("StandardMaterial3D_o16ld")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=392030652]
+light_color = Color(0.24000001, 0.8226668, 1, 1)
+light_energy = 6.71
+light_indirect_energy = 9.29
+omni_range = 0.8512066
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1893462737]
+transform = Transform3D(0.2627477, 0, 0, 0, 0.2627477, 0, 0, 0, 0.165, 0, 0, 0)
+gi_mode = 0
+modulate = Color(1, 0, 0.2666664, 1)
+texture = ExtResource("2_kxsgm")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" unique_id=628205893]
+transform = Transform3D(0.84021664, -0.5422509, 0, 0.5422509, 0.84021664, 0, 0, 0, 1, 0, 0, -0.07187885)
+gi_mode = 0
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_kxsgm")

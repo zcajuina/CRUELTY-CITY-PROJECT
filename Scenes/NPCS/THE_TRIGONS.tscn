@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bpsvsx1tfx7rb"]
+
+[ext_resource type="Script" uid="uid://uf2ah33l13q7" path="res://Scripts/Props/trigon_base.gd" id="1_rcqaq"]
+[ext_resource type="PackedScene" uid="uid://dyftu4qrcujxq" path="res://Models/City/NEW CRUS DISTRICT/TRIGON_BASE.glb" id="2_autno"]
+[ext_resource type="Material" uid="uid://c7xwy5txs3vf" path="res://Scenes/WORLD/MATERIALS/TRIGON_BODY.tres" id="3_xhjhd"]
+[ext_resource type="Script" uid="uid://by6cagn5yysv0" path="res://Scripts/Props/TRIGONS/TRIGON_HEAD_COL_LOGIC.gd" id="4_autno"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ymumd"]
+height = 81.30469
+radius = 369.58643
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lejtc"]
+height = 457.07043
+radius = 150.03564
+
+[node name="TRIGONS" type="Node3D" unique_id=1020663885]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
+script = ExtResource("1_rcqaq")
+
+[node name="TRIGON_1" parent="." unique_id=309601359 instance=ExtResource("2_autno")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.699951, -392.28632, 119.22702)
+
+[node name="trigon_body" parent="TRIGON_1/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(309601359, 1063031000) index="0" unique_id=1226028132]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="TRIGON_1/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(309601359, 1063031000) index="1" unique_id=667859443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 440.5, 0)
+bone_name = "T_HEAD"
+bone_idx = 5
+
+[node name="TRIGON_HEAD_COL" type="CSGSphere3D" parent="TRIGON_1/TRIGON_BASE/trigon_armature/Skeleton3D/BoneAttachment3D" unique_id=1751775930 node_paths=PackedStringArray("trigon_head_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
+visible = false
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+radius = 91.154
+script = ExtResource("4_autno")
+internal_trigon_name = "trigon_1"
+trigon_head_mesh = NodePath("../../trigon_HEAD")
+blessing = "raymond"
+
+[node name="trigon_HEAD" parent="TRIGON_1/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(309601359, 1063031000) index="2" unique_id=1405255707]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TRIGON_1" unique_id=336588688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200.12012, 0)
+visible = false
+use_collision = true
+radius = 116.886
+height = 402.24023
+sides = 12
+
+[node name="TRIGON_2" parent="." unique_id=1216931165 instance=ExtResource("2_autno")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -52.976563, -343.8664, -50.63327)
+
+[node name="trigon_body" parent="TRIGON_2/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1216931165, 1063031000) index="0" unique_id=1226028132]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="TRIGON_2/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1216931165, 1063031000) index="1" unique_id=1384595217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 440.5, 0)
+bone_name = "T_HEAD"
+bone_idx = 5
+
+[node name="TRIGON_HEAD_COL" type="CSGSphere3D" parent="TRIGON_2/TRIGON_BASE/trigon_armature/Skeleton3D/BoneAttachment3D" unique_id=1886515550 node_paths=PackedStringArray("trigon_head_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
+visible = false
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+radius = 91.154
+script = ExtResource("4_autno")
+internal_trigon_name = "trigon_2"
+trigon_head_mesh = NodePath("../../trigon_HEAD")
+blessing = "money"
+
+[node name="trigon_HEAD" parent="TRIGON_2/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1216931165, 1063031000) index="2" unique_id=1405255707]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TRIGON_2" unique_id=728473597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200.12012, 0)
+visible = false
+use_collision = true
+radius = 116.886
+height = 402.24023
+sides = 12
+
+[node name="TRIGON_3" parent="." unique_id=1666393030 instance=ExtResource("2_autno")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77.008545, -456.98727, -2.8233337)
+
+[node name="trigon_body" parent="TRIGON_3/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1666393030, 1063031000) index="0" unique_id=1226028132]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="TRIGON_3/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1666393030, 1063031000) index="1" unique_id=95741904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 440.5, 0)
+bone_name = "T_HEAD"
+bone_idx = 5
+
+[node name="TRIGON_HEAD_COL" type="CSGSphere3D" parent="TRIGON_3/TRIGON_BASE/trigon_armature/Skeleton3D/BoneAttachment3D" unique_id=1935568542 node_paths=PackedStringArray("trigon_head_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 80, 0)
+visible = false
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+radius = 91.154
+script = ExtResource("4_autno")
+internal_trigon_name = "trigon_3"
+trigon_head_mesh = NodePath("../../trigon_HEAD")
+blessing = "suit"
+
+[node name="trigon_HEAD" parent="TRIGON_3/TRIGON_BASE/trigon_armature/Skeleton3D" parent_id_path=PackedInt32Array(1666393030, 1063031000) index="2" unique_id=1405255707]
+surface_material_override/0 = ExtResource("3_xhjhd")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TRIGON_3" unique_id=1239687999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200.12012, 0)
+visible = false
+use_collision = true
+radius = 116.886
+height = 402.24023
+sides = 12
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=702380373]
+light_energy = 16.0
+omni_range = 268.99573
+omni_attenuation = 0.475
+
+[node name="COIN_AREA" type="Area3D" parent="." unique_id=636895955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -386.52145, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="COIN_AREA" unique_id=1288080829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.574005, 0)
+shape = SubResource("CylinderShape3D_ymumd")
+
+[node name="TRIGON_HOSTILE_AREA" type="Area3D" parent="." unique_id=934726860]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TRIGON_HOSTILE_AREA" unique_id=1852650919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36.83075, 30.702454)
+shape = SubResource("CylinderShape3D_lejtc")
+
+[connection signal="body_entered" from="COIN_AREA" to="." method="_on_coin_area_body_entered"]
+[connection signal="body_entered" from="TRIGON_HOSTILE_AREA" to="." method="_on_trigon_hostile_area_body_entered"]
+
+[editable path="TRIGON_1"]
+[editable path="TRIGON_2"]
+[editable path="TRIGON_3"]

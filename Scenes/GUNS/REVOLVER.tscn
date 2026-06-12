@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://khjrjkc66j7i"]
+
+[ext_resource type="PackedScene" uid="uid://b4r3b2nk5dbya" path="res://Models/Guns/REVOLVER.glb" id="1_gx0vs"]
+
+[node name="PistolGlock" type="Node3D"]
+
+[node name="GUN_NOZZLE" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0913712, -0.680228)
+
+[node name="REVOLVER" parent="." instance=ExtResource("1_gx0vs")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="BIG_IRON_ON_MY_HIP" parent="REVOLVER" index="0"]
+layers = 2
+
+[editable path="REVOLVER"]

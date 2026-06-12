@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://d4aq74a3akb3f"]
+
+[ext_resource type="Script" uid="uid://0n7akfexv780" path="res://Scripts/Props/GUN_ANIM_SCRIPTS/bolt_acr.gd" id="1_h7quf"]
+[ext_resource type="PackedScene" uid="uid://docamg6k88cit" path="res://Models/Guns/BOLT_ACR.glb" id="1_sgio5"]
+[ext_resource type="Texture2D" uid="uid://cldmetlpqfrk8" path="res://Textures/GFX/RAYS/electric5.png" id="3_2wljw"]
+[ext_resource type="AudioStream" uid="uid://36pl7matulti" path="res://Sounds/GUN_FIRE/BOLT_ACR_OST.mp3" id="4_6kdeu"]
+[ext_resource type="AudioStream" uid="uid://dea63worg6032" path="res://Sounds/SFK/MICROWAVE_BEEP.mp3" id="5_mriyw"]
+[ext_resource type="AudioStream" uid="uid://w82f3qxrr2gh" path="res://Sounds/GUN_FIRE/BOLT_ACR_OST_2.mp3" id="5_tq0q5"]
+[ext_resource type="AudioStream" uid="uid://gpmrvt2nhomk" path="res://Sounds/SFK/radioactive_bomb.mp3" id="6_1enly"]
+[ext_resource type="Material" uid="uid://csj1ekg8tqo5y" path="res://Materials/NORMAL_SKY.tres" id="8_xrveg"]
+
+[sub_resource type="Gradient" id="Gradient_6kdeu"]
+offsets = PackedFloat32Array(0, 0.069767445, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mriyw"]
+gradient = SubResource("Gradient_6kdeu")
+
+[sub_resource type="Curve" id="Curve_6kdeu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.19877675, 0.587805), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mriyw"]
+curve = SubResource("Curve_6kdeu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tq0q5"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 9.859998
+scale_curve = SubResource("CurveTexture_mriyw")
+color_ramp = SubResource("GradientTexture1D_mriyw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1enly"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.8666668, 1, 1)
+albedo_texture = ExtResource("3_2wljw")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_xrveg"]
+material = SubResource("StandardMaterial3D_1enly")
+
+[sub_resource type="Sky" id="Sky_156vt"]
+sky_material = ExtResource("8_xrveg")
+
+[sub_resource type="Environment" id="Environment_7iu0t"]
+background_mode = 2
+sky = SubResource("Sky_156vt")
+glow_enabled = true
+glow_bloom = 1.0
+glow_blend_mode = 0
+fog_density = 0.0001
+fog_sky_affect = 0.0
+
+[node name="BOLT_ACR" type="Node3D" unique_id=1506689858]
+script = ExtResource("1_h7quf")
+
+[node name="BOLT_ACR" parent="." unique_id=1459282153 instance=ExtResource("1_sgio5")]
+
+[node name="Point" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="0" unique_id=1987103389]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_001" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="1" unique_id=1066456327]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_002" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="2" unique_id=922142921]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_003" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="3" unique_id=1650747432]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_004" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="4" unique_id=1815542147]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_005" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="5" unique_id=99764872]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_006" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="6" unique_id=1003537921]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_007" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="7" unique_id=1279702758]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_008" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="8" unique_id=114014266]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_009" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="9" unique_id=902979396]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_010" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="10" unique_id=1960644586]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_011" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="11" unique_id=1434306270]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_012" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="12" unique_id=1751521205]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_013" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="13" unique_id=1667098817]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_014" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="14" unique_id=2119550078]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_015" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="15" unique_id=2009253398]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_016" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="16" unique_id=489009838]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_017" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="17" unique_id=1675845105]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_018" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="18" unique_id=377230886]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_019" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="19" unique_id=356726204]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_020" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="20" unique_id=53279820]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_021" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="21" unique_id=230110495]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_022" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="22" unique_id=715841804]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_023" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="23" unique_id=1856475572]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_024" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="24" unique_id=956385659]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_025" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="25" unique_id=1505802209]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Point_026" parent="BOLT_ACR/LIGHTS_ROOT" parent_id_path=PackedInt32Array(1459282153, 408233319) index="26" unique_id=56496658]
+light_energy = 32.0
+omni_range = 0.075
+omni_attenuation = -0.9
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1603882671]
+transform = Transform3D(-0.5123582, 0.27482134, -0.8136107, -0.04538473, 0.93742275, 0.34522286, 0.8575718, 0.21380325, -0.4678235, -0.32096654, 0.99204296, -0.98273665)
+
+[node name="GAMMA_RAYS" type="GPUParticles3D" parent="." unique_id=174910774]
+transform = Transform3D(-2.8216132e-08, 0, 1.198436, 0, 0.70165265, 0, -0.64550984, 0, -5.2385303e-08, 1.0864816, 0.2149848, -0.028698206)
+amount = 128
+lifetime = 0.25
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_tq0q5")
+draw_pass_1 = SubResource("QuadMesh_xrveg")
+
+[node name="MICROWAVE_SOUND" type="AudioStreamPlayer3D" parent="." unique_id=993537453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7476101, 0.10289363, -0.043491125)
+stream = ExtResource("4_6kdeu")
+volume_db = -15.0
+pitch_scale = 0.4
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[node name="MICROWAVE_SOUND2" type="AudioStreamPlayer3D" parent="." unique_id=748604792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7476101, 0.10289363, 0.015350878)
+stream = ExtResource("5_tq0q5")
+volume_db = -30.0
+pitch_scale = 0.4
+autoplay = true
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[node name="GUIGER_COUNTER" type="AudioStreamPlayer3D" parent="." unique_id=1735109476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7181895, 0.10289363, -0.049375474)
+stream = ExtResource("6_1enly")
+volume_db = -28.0
+pitch_scale = 0.3
+autoplay = true
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[node name="MICRO_BEEP" type="AudioStreamPlayer3D" parent="." unique_id=7154163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7299577, 0.10629408, 0.006441593)
+stream = ExtResource("5_mriyw")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1395068320]
+environment = SubResource("Environment_7iu0t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1929231157]
+transform = Transform3D(1, 0, 0, 0, 0.04164893, -0.99913234, 0, 0.99913234, 0.04164893, 0, 0, 0)
+light_energy = 0.0
+sky_mode = 2
+
+[editable path="BOLT_ACR"]

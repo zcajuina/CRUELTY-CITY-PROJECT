@@ -1,0 +1,1219 @@
+[gd_scene format=4 uid="uid://cbgl6kxh1jj6a"]
+
+[ext_resource type="PackedScene" uid="uid://da25e4dksox7m" path="res://Models/Props/GAME_LOGO.glb" id="1_3l3x6"]
+[ext_resource type="Script" uid="uid://hy8iaidlsms3" path="res://Scripts/Props/main_menu.gd" id="1_42bj4"]
+[ext_resource type="Script" uid="uid://wbi00v5prwm8" path="res://Scripts/HUD/weapons_menu.gd" id="4_6cdfb"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="5_w5iqn"]
+[ext_resource type="PackedScene" uid="uid://r68330sx5t2l" path="res://Scenes/Props/weapon_preview_node.tscn" id="6_ncvu7"]
+[ext_resource type="PackedScene" uid="uid://cqkxk32viqs34" path="res://Models/Props/CRUEL_BEACH.glb" id="7_cr7c3"]
+[ext_resource type="Shader" uid="uid://dqbdocgdpn18q" path="res://Scripts/Shaders/water_shader.gdshader" id="8_10acv"]
+[ext_resource type="Texture2D" uid="uid://dxhmood0fkku1" path="res://icon.svg" id="9_tc858"]
+[ext_resource type="Texture2D" uid="uid://c42fr2vno1rx3" path="res://Textures/CRUS/water_text.png" id="10_g86yl"]
+[ext_resource type="Theme" uid="uid://d2cf8jvqspjg3" path="res://Resourcers/BUY_BTN_THEME.tres" id="11_dbka8"]
+[ext_resource type="Texture2D" uid="uid://uf5h4xc67rhb" path="res://Textures/CRUS/Stone2.png" id="11_tc858"]
+[ext_resource type="Shader" uid="uid://cx4nyu1ke7fnt" path="res://Scripts/Shaders/CLOUDS_SHADER.gdshader" id="12_g86yl"]
+[ext_resource type="Script" uid="uid://fvvv1ob2p5l6" path="res://Scripts/HUD/char_menu.gd" id="13_cm53y"]
+[ext_resource type="Script" uid="uid://cuoo70agv5nq4" path="res://Scripts/HUD/player_indept_infos.gd" id="14_4th48"]
+[ext_resource type="AudioStream" uid="uid://c8i4f565r2cee" path="res://Sounds/SFK/beach_shore.mp3" id="14_03016"]
+[ext_resource type="Script" uid="uid://cck24nwo4o3jf" path="res://Scripts/HUD/CHAR_MENU_base_btns.gd" id="14_a5hvx"]
+[ext_resource type="Script" uid="uid://dsljgwlghtjps" path="res://Scripts/HUD/char_skin_menu.gd" id="14_ash4x"]
+[ext_resource type="Texture2D" uid="uid://b13s5xa00dvhv" path="res://Textures/SPRITES/BADGE/DUMMY_BADGE.png" id="14_odhdv"]
+[ext_resource type="PackedScene" uid="uid://dgb87f4uilyx5" path="res://Scenes/HUD/STOCK_MARKET.tscn" id="14_t8wyk"]
+[ext_resource type="PackedScene" uid="uid://cn4h3x7i7u00o" path="res://Scenes/HUD/BADGE_INFO.tscn" id="14_up1up"]
+[ext_resource type="FontFile" uid="uid://5kj7tk8lpl1o" path="res://Resourcers/mingliub.ttc" id="14_wxlp8"]
+[ext_resource type="Texture2D" uid="uid://b7u5yypgpv3ks" path="res://Textures/CRUS/SKY/sky2.png" id="15_qcf5p"]
+[ext_resource type="Texture2D" uid="uid://dvvkpeghr4tg2" path="res://Textures/SPRITES/BADGE/TRIGON_FRIEND.png" id="16_8v1l4"]
+[ext_resource type="PackedScene" uid="uid://jd06y8synfqc" path="res://Models/DEFAULT_PLAYER_MODELS/CUSTOM_PLAYER_BODY.glb" id="16_ash4x"]
+[ext_resource type="Shader" uid="uid://chiai7slo6rx3" path="res://Scripts/Shaders/BAR_CODE_SHADER.gdshader" id="16_dbka8"]
+[ext_resource type="Texture2D" uid="uid://b74eqi7mb06iu" path="res://Textures/SPRITES/BADGE/TRIGON_DEATH.png" id="17_t1tp8"]
+[ext_resource type="Texture2D" uid="uid://f17ah7mbd3y8" path="res://Textures/SPRITES/BADGE/LONG_LIVE_THE_QUEEN.png" id="18_t1tp8"]
+[ext_resource type="Texture2D" uid="uid://i5o13yhc3sv1" path="res://Textures/SPRITES/BADGE/SIDARTA_BADGE.png" id="21_nhqxa"]
+[ext_resource type="Texture2D" uid="uid://dnkgpjf8gqswh" path="res://Textures/SPRITES/BADGE/SACRIFICE.png" id="22_8nwyf"]
+[ext_resource type="Texture2D" uid="uid://b5b8tpvqeby4g" path="res://Textures/SPRITES/BADGE/DIVINE_LIGHT_SEV.png" id="23_ash4x"]
+[ext_resource type="AudioStream" uid="uid://bt14ol8bulo63" path="res://Sounds/MUSIC/Cruelty City - Corporeal Division.MP3" id="27_wxlp8"]
+[ext_resource type="PackedScene" uid="uid://bfa5bcbxgrd8r" path="res://Scenes/HUD/OPTIONS_MENU.tscn" id="28_deyml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g86yl"]
+albedo_texture = ExtResource("11_tc858")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_offset = Vector3(0.5, 0, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g86yl"]
+render_priority = 0
+shader = ExtResource("12_g86yl")
+shader_parameter/noise_scale = 5.37
+shader_parameter/speed = 0.16
+shader_parameter/darkness_amount = 14.845
+shader_parameter/detail = 0.285
+shader_parameter/concentration = -0.055
+shader_parameter/amount = -0.385
+shader_parameter/bloom = 1.92
+shader_parameter/alpha = 8.0
+shader_parameter/cloud_tint = Color(1, 0.61600006, 0.52, 1)
+shader_parameter/edge_fade = 0.445
+shader_parameter/rotation_matrix = Transform2D(1.885, -1.2, 1.305, 1.6, 0.2, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cm53y"]
+material = SubResource("ShaderMaterial_g86yl")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_10acv"]
+load_path = "res://.godot/imported/CRUEL_BEACH_bugs.png-676ef26ad46f63e453be7e5ebbb742a6.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tc858"]
+resource_name = "BUGS_BEACH"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_10acv")
+metallic_specular = 0.15
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g86yl"]
+_surfaces = [{
+"aabb": AABB(-5.6916413, -0.9331503, -7.772373, 15.588667, 1.7652473, 15.538253),
+"format": 34896613377,
+"index_count": 726,
+"index_data": PackedByteArray("LAACAAAALAABAAIAQQAsAAAAQQAAAAcAQgABACwAQgADAAEAawAsAEEAawBCACwALQBBAAcALQAHAAkALwBrAEEALwBBAC0AQwADAEIAQwAFAAMALgBCAGsALgBDAEIARABrAC8ARAAuAGsAaQAFAEMAaQAEAAUAagBDAC4AagBpAEMAbAAuAEQAbABqAC4AbQAEAGkAbQAIAAQAMABpAGoAMABtAGkAbgBqAGwAbgAwAGoAbwAIAG0AbwAKAAgAcABtADAAcABvAG0AcQAwAG4AcQBwADAAcgAKAG8AcgAMAAoAcwBvAHAAcwByAG8AdABwAHEAdABzAHAAdQAMAHIAdQANAAwAdgByAHMAdgB1AHIAZABzAHQAZAB2AHMAZwANAHUAZwAOAA0APwB1AHYAPwBnAHUAZQB2AGQAZQA/AHYAaAAOAGcAaAAQAA4AEQAQAGgAEQASABAAEwARAGgAQABoAGcAEwBoAEAAQABnAD8AFAATAEAAZgBAAD8AFABAAGYAZgA/AGUAFQAUAGYAFQBmAGMAYwBmAGUAFgAVAGMAYwBlADwAFgBjAGEAYQBjADwAPABlAGQAFwAWAGEAPABkAGIAYgBkAHQAYQA8AD4APgA8AGIAFwBhAF4AXgBhAD4AGAAXAF4AYgB0AGAAYAB0AHEAPgBiAHcAdwBiAGAAXgA+AHgAeAA+AHcAGABeAD0APQBeAHgAGQAYAD0AYABxAHkAeQBxAG4AdwBgADoAOgBgAHkAGQA9AFsAXwB3ADoAeAB3AF8AGgAZAFsAPQB4AFwAXAB4AF8AWwA9AFwAGgBbAFkAIgAaAFkAWwBcAFoAWQBbAFoAXABfAF0AWgBcAF0AXQBfAHoAXwA6AHoAIgBZAFgAIwAiAFgAIwBYACEAWABZAFcAWQBaAFcAIQBYAHsAWABXAHsAIQB7ACAAVwBaADkAWgBdADkAewBXAHwAVwA5AHwAIAB7AH0AewB8AH0AIAB9AB8AOQBdAFUAXQB6AFUAfAA5ADsAOQBVADsAfQB8AFIAfAA7AFIAHwB9AH4AfQBSAH4AHwB+AB4AHgB+AH8AHgB/AB0AfgBSAIAAfgCAAH8AUgA7AFMAUgBTAIAAOwBUAFMAOwBVAFQAHQB/AIEAHQCBABwAfwCAADgAfwA4AIEAgABTAFEAgABRADgAUwCCAFEAUwBUAIIAHACBAIMAHACDABsAgQA4ADcAgQA3AIMAOABRAFAAOABQADcAUQCEAFAAUQCCAIQAGwCDAIUAGwCFAAYAgwA3AEsAgwBLAIUANwBQADUANwA1AEsAUACGADUAUACEAIYABgCFAE8ABgBPACQAhQBLAE0AhQBNAE8ASwA1ADMASwAzAE0ANQCHADMANQCGAIcAJABPADQAJAA0ACoAKgA0ACkAKgApACsANAAoACkATwBOADQANABOACgATwBNAE4ATgAnACgATQBIAE4ATgBIACcATQAzAEgASAAmACcAMwAxAEgASAAxACYAMwCHADEAMQAlACYAMQCIACUAhwCIADEAiAAPACUAhwBHAIgAiABGAA8ARwBGAIgARgALAA8AhgBHAIcARgBFAAsARQAJAAsARQAtAAkAMgBFAEYARwAyAEYAiQAtAEUAMgCJAEUAiQAvAC0AhgBJAEcASQAyAEcAhABJAIYANgCJADIASQA2ADIAigAvAIkANgCKAIkAigBEAC8AhABKAEkASgA2AEkAggBKAIQAiwCKADYASgCLADYAjABEAIoAiwCMAIoAjABsAEQAggCNAEoAjQCLAEoAVACNAIIATACMAIsAjQBMAIsAjgBsAIwATACOAIwAjgBuAGwAeQBuAI4AVACPAI0AjwBMAI0AVQCPAFQAVQB6AI8AjwBWAEwAVgCOAEwAegBWAI8AVgB5AI4AegA6AFYAOgB5AFYA"),
+"lods": [0.22348578, PackedByteArray("LAACAAAALAABAAIAQQAsAAAAQQAAAAcAQgABACwAQgADAAEALwAsAEEALQBBAAcALwBBAC0ALQAHAAkAQwADAEIAQwAFAAMALgBCACwALgBDAEIARAAsAC8ARAAuACwAMgAvAC0ARAAvADIARQAtAAkAMgAtAEUARQAJAAsARgBFAAsAMgBFAEYARgALAA8AMQBGAA8AMQAPACUAMQAlACYARwBGADEARwAyAEYASAAxACYASAAmACcAMwBHADEAMwAxAEgASQAyAEcASQA2ADIANgBEADIANQBJAEcANQBHADMASgA2AEkASgBJADUASgBEADYASwA1ADMATABEAEoASwAzAE0ATQAzAEgANwA1AEsABgBLAE0ANwBLAAYATQBIAE4ATgBIACcATgAnACgATwBNAE4ABgBNAE8ANABOACgATwBOADQABgBPACQAJABPADQAGwA3AAYAJAA0ACoANAAoACkAKgA0ACkAKgApACsAHAA3ABsAHAA4ADcAHQA4ABwAHQAeADgAOABQADcANwBQADUAUABKADUAUQBKAFAAOABRAFAAUQBMAEoAHgBSADgAHwBSAB4AOABTAFEAUgBTADgAUwBUAFEAVABMAFEAUgA7AFMAOwBUAFMAHwA5AFIAOQA7AFIAOwBVAFQAOQBVADsAVABWAEwAVQBWAFQAVwA5AB8AIABXAB8AIQBXACAAIQBYAFcAIwBYACEAIwAiAFgAIgBZAFgAWABZAFcAIgAaAFkAVwBaADkAWQBaAFcAGgBbAFkAWQBbAFoAGgAZAFsAGQA9AFsAGQAYAD0AWwBcAFoAWwA9AFwAWgBdADkAWgBcAF0AOQBdAFUAGABeAD0AGAAXAF4AXAA9AF8AXABfAF0AXQA6AFUAXQBfADoAVQA6AFYAPQA+AF8AXwA+ADoAXgA+AD0AOgBgAFYAPgBgADoAVgBgAEwAXgBhAD4AFwBhAF4AFwAWAGEAYAAwAEwATAAwAEQAPgBiAGAAYgAwAGAAYQA8AD4APgA8AGIAFgBjAGEAYQBjADwAFgAVAGMAPABkAGIAYgBkADAAYwBlADwAPABlAGQAFQBmAGMAYwBmAGUAFQAUAGYAZQA/AGQAZgA/AGUAFABAAGYAZgBAAD8AFAATAEAAPwAMAGQAZAAMADAAPwANAAwADAAKADAAMAAKAAgAPwBnAA0AQABnAD8AZwAOAA0AQABoAGcAaAAOAGcAEwBoAEAAaAAQAA4AEwARAGgAEQAQAGgAEQASABAAMAAIAGkAaQAIAAQAaQAEAAUAaQAFAEMAMABpAGoAagBpAEMAMABqAEQAagBDAC4ARABqAC4A"), 0.5694, PackedByteArray("LAACAAAALAABAAIALAAAAAcAAwABACwALQAsAAcALQAHAAkALQAJAAsALQALAA8ALgADACwALgAFAAMABAAFAC4ALwAuACwALwAsAC0AMAAEAC4AMAAuAC8AMAAIAAQAMAAKAAgADAAKADAAMQAtAA8AMQAPACUAMQAlACYAMQAmACcAKAAxACcAMgAtADEAMgAvAC0AMwAxACgAMwAyADEAJAAzACgAJAAoADQANAAoACkAJAA0ACoAKgA0ACkAKgApACsABgAzACQANQAyADMABgA1ADMANgAvADIANQA2ADIAMAAvADYANwA1AAYANwA2ADUAGwA3AAYAHAA3ABsAOAA2ADcAHAA4ADcAOAAwADYAHQA4ABwAHQAeADgAHwA4AB4AHwA5ADgAIAA5AB8AOAA6ADAAOQA7ADgAOwA6ADgAOQA6ADsAPAAwADoAPAAMADAAGgA5ACAAIQAaACAAIgAaACEAIwAiACEAGgA9ADkAPQA6ADkAGgAZAD0AGQAYAD0APQA+ADoAGAA+AD0APgA8ADoAGAAXAD4AFwAWAD4AFgAVAD4APgAVADwAFQA/ADwAPwAMADwAPwANAAwAPwAOAA0AFQBAAD8AQAAOAD8AFABAABUAFAATAEAAQAAQAA4AEwARAEAAEQAQAEAAEQASABAA"), 14.171915, PackedByteArray("AAABAAIAAwABAAAABAADAAAABAAFAAMABAAAAAYABgAAAAcABgAIAAQABgAHAAkABgAKAAgABgAJAAsADAAKAAYABgANAAwABgAOAA0ABgALAA8ABgAQAA4AEQASABAAEQAQAAYAEwARAAYAFAATAAYAFQAUAAYAFgAVABcAFQAGABcAGAAXAAYAGQAYAAYAGQAGABoAGgAGABsAHAAaABsAHQAaABwAHQAeABoAHwAaAB4AIAAaAB8AIQAaACAAIgAaACEAIwAiACEAJAAGAA8AJAAPACUAJAAlACYAJAAmACcAKAAkACcAJAAoACkAKgAkACkAKgApACsA")],
+"name": "BUGS_BEACH",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 144,
+"vertex_data": PackedByteArray("Dv+JkZwXAADs54mRZwAAAA7/iZFnAAAAytCJkWcAAAB+orO0agAAAMe5T6MAAAAAjbl3qrX/AAAO/4mR0i4AAGOLjJFnAAAADv+JkQdGAAA5dEygXwAAAP//p6QyXQAAHl1FkmYAAAD8RVOHZwAAANouLIdnAAAAaP/YmHR0AAC3F5J1ZQAAAG0A/WWQFwAAlQAuh2YAAABSAJdq/i4AAGsAZmInRgAAmgBrZT9dAAB7AG1na3QAAFUAa07miwAArgB7UBWjAAC0ABZpMroAAAAAw1tp0QAAe6LXmsH/AABji4mRs/8AAEF0iZGz/wAAHl2JkbP/AAD8RVOHs/8AAO4uXH23/wAAyBe0S1b/AACJAPSBf+gAAIEAzHma/wAAr9AXtf//AADW/9KjlYsAAN//MM3nogAAHf9zuuu5AAAO/4mRSNEAADn/dpqI6AAA7OeJkbP/AAAO/4mRs/8AAPDnur2CFwAA8Oj//31FAACauZ2tzS4AAIvQCMy6RQAAY4uJkdIuAAD7533qhKIAAHjPTvZadAAAlNC41Au6AADN6PPuEOkAAGq5XKAUugAAoLl0nnR0AACGov22PNEAAFOLKqBA0QAA2UU/QUe6AABgXUlaXHQAAHVdPDAgugAAoS/iMpRcAAAWGNg9X6MAAG8w2gzodAAASC+LVgIvAAC9Fy0fKy8AABXolsugLgAA0tAVsWAXAADFubroXxcAAJu5fqQaRgAAxujY3aNcAAB+6AH8OXQAAOvPqseYiwAALegRtP65AABFucC2o4sAAIWigJGniwAAp7mJkUjRAABji4mRcnQAAIHQbuwx0QAAWejkwTzRAAB10EjN0ugAAIWiiZESugAAY4uEkRK6AAA2XcJ8d9EAAJN0fGwgugAAXXQYhN6iAACRXXY2tKIAAE10Y4lodAAA5C77bUvRAADCFwUpVegAAL8XemRU0QAA2C7icjm6AADfF+lYSroAAPguWEIIowAAU0W5FLqiAAAsGAsXR4wAAKpFQFOBiwAALF3cgDldAAAMGAAAgHQAABFG7kIaXQAAJhi0IONcAAD+RbOEBkYAAA0vQXUKRgAA+BfpPBJGAADfLoJTYxcAAJ0X5zI7FwAASaKWsLMXAACFoomR0i4AAJ/Qjaq9LgAAhaKJkQdGAABei0ygoRcAAGOLiZEHRgAAQXSJkZwXAABBdImR0i4AAEF0iZEHRgAAHl2JkZwXAAAeXYmR0i4AAFVdw2nYRQAA/EVTh5wXAAD+RfqB0C4AAPNF2kN+dAAAiC8OPNuLAABgdL58PV0AAHBd1jasiwAA5C5RgX7oAAAGRrlmgNEAAP5FAYOF6AAAHl2JkX3oAABBdImRfegAAGB06YFY0QAAUYsQpYvoAABki1yP3aIAAHaiVryb6AAAhaKJkd2iAABsuQqngugAAH25iK/FogAAANDD4K2iAAD75zTlgYsAAFXQaemxXAAAgrlZsjxdAACFoomRcnQAAIWiiZE8XQAAaYuoe6eLAABqi1CKPF0AAGF00n6jiwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uff2h"]
+resource_name = "CRUEL_BEACH_Plane"
+_surfaces = [{
+"aabb": AABB(-5.6916413, -0.9331503, -7.772373, 15.588667, 1.7652473, 15.538253),
+"attribute_data": PackedByteArray("//9wH4rp+wj///sIFdP7CCym+wigvPsIoLz/////5DW3j/sI//9ZTEJ5+wj//85izmL7CFlM+wjkNfsI//9CeXAf+wj7CHAf+wj7CPsI5DX7CFlM+wjOYvsIQnn7CLeP+wgspvsIoLz7CBXTLKb//7eP//9Cef//zmL//1lM///kNf//cB////sIiun7CP//FdP/////t4///yym//+gvP//FdP//4rpiun///////+K6XAfiulZTKC85DUV01lMt4/kNYrpLKYV00J5FdOgvIrpiumgvKC8oLxCeSymFdO3jxXTWUygvM5iQnnOYqC85DXOYnAfLKbkNUJ55DXkNXAf5DWK6eQ1FdNwH6C8cB+gvFlMiunOYorpQnkV07ePiumgvKC8t48sprePoLwV07ePQnkV0xXTiukV0xXTiukspqC8t4+gvM5iFdNCeaC8Qnksps5iLKZCeUJ55DUV03AfiulwHxXT5DWgvHAfoLzkNSymWUwspnAft49ZTLePzmLOYnAfQnlZTM5icB/OYllMWUzkNVlMcB9ZTOQ1cB9wH3AfLKZwHyym5DUV0+Q1LKZZTLePcB+3j1lMQnlwH0J55DVCeVlMzmJwH85i5DXOYllMWUxwH1lM5DVZTEJ55DW3j0J5zmLOYreP5DWK6VlMFdNZTIrpzmKK6UJ5iulCeRXTt4+K6bePLKYsporpLKYspqC8iumgvCymFdMsporpt48V085ioLzOYiymQnksps5it4+3j7ePzmJCebeP"),
+"format": 34896613399,
+"index_count": 726,
+"index_data": PackedByteArray("LAACAAAALAABAAIAQQAsAAAAQQAAAAcAQgABACwAQgADAAEAawAsAEEAawBCACwALQBBAAcALQAHAAkALwBrAEEALwBBAC0AQwADAEIAQwAFAAMALgBCAGsALgBDAEIARABrAC8ARAAuAGsAaQAFAEMAaQAEAAUAagBDAC4AagBpAEMAbAAuAEQAbABqAC4AbQAEAGkAbQAIAAQAMABpAGoAMABtAGkAbgBqAGwAbgAwAGoAbwAIAG0AbwAKAAgAcABtADAAcABvAG0AcQAwAG4AcQBwADAAcgAKAG8AcgAMAAoAcwBvAHAAcwByAG8AdABwAHEAdABzAHAAdQAMAHIAdQANAAwAdgByAHMAdgB1AHIAZABzAHQAZAB2AHMAZwANAHUAZwAOAA0APwB1AHYAPwBnAHUAZQB2AGQAZQA/AHYAaAAOAGcAaAAQAA4AEQAQAGgAEQASABAAEwARAGgAQABoAGcAEwBoAEAAQABnAD8AFAATAEAAZgBAAD8AFABAAGYAZgA/AGUAFQAUAGYAFQBmAGMAYwBmAGUAFgAVAGMAYwBlADwAFgBjAGEAYQBjADwAPABlAGQAFwAWAGEAPABkAGIAYgBkAHQAYQA8AD4APgA8AGIAFwBhAF4AXgBhAD4AGAAXAF4AYgB0AGAAYAB0AHEAPgBiAHcAdwBiAGAAXgA+AHgAeAA+AHcAGABeAD0APQBeAHgAGQAYAD0AYABxAHkAeQBxAG4AdwBgADoAOgBgAHkAGQA9AFsAXwB3ADoAeAB3AF8AGgAZAFsAPQB4AFwAXAB4AF8AWwA9AFwAGgBbAFkAIgAaAFkAWwBcAFoAWQBbAFoAXABfAF0AWgBcAF0AXQBfAHoAXwA6AHoAIgBZAFgAIwAiAFgAIwBYACEAWABZAFcAWQBaAFcAIQBYAHsAWABXAHsAIQB7ACAAVwBaADkAWgBdADkAewBXAHwAVwA5AHwAIAB7AH0AewB8AH0AIAB9AB8AOQBdAFUAXQB6AFUAfAA5ADsAOQBVADsAfQB8AFIAfAA7AFIAHwB9AH4AfQBSAH4AHwB+AB4AHgB+AH8AHgB/AB0AfgBSAIAAfgCAAH8AUgA7AFMAUgBTAIAAOwBUAFMAOwBVAFQAHQB/AIEAHQCBABwAfwCAADgAfwA4AIEAgABTAFEAgABRADgAUwCCAFEAUwBUAIIAHACBAIMAHACDABsAgQA4ADcAgQA3AIMAOABRAFAAOABQADcAUQCEAFAAUQCCAIQAGwCDAIUAGwCFAAYAgwA3AEsAgwBLAIUANwBQADUANwA1AEsAUACGADUAUACEAIYABgCFAE8ABgBPACQAhQBLAE0AhQBNAE8ASwA1ADMASwAzAE0ANQCHADMANQCGAIcAJABPADQAJAA0ACoAKgA0ACkAKgApACsANAAoACkATwBOADQANABOACgATwBNAE4ATgAnACgATQBIAE4ATgBIACcATQAzAEgASAAmACcAMwAxAEgASAAxACYAMwCHADEAMQAlACYAMQCIACUAhwCIADEAiAAPACUAhwBHAIgAiABGAA8ARwBGAIgARgALAA8AhgBHAIcARgBFAAsARQAJAAsARQAtAAkAMgBFAEYARwAyAEYAiQAtAEUAMgCJAEUAiQAvAC0AhgBJAEcASQAyAEcAhABJAIYANgCJADIASQA2ADIAigAvAIkANgCKAIkAigBEAC8AhABKAEkASgA2AEkAggBKAIQAiwCKADYASgCLADYAjABEAIoAiwCMAIoAjABsAEQAggCNAEoAjQCLAEoAVACNAIIATACMAIsAjQBMAIsAjgBsAIwATACOAIwAjgBuAGwAeQBuAI4AVACPAI0AjwBMAI0AVQCPAFQAVQB6AI8AjwBWAEwAVgCOAEwAegBWAI8AVgB5AI4AegA6AFYAOgB5AFYA"),
+"lods": [0.22348578, PackedByteArray("LAACAAAALAABAAIAQQAsAAAAQQAAAAcAQgABACwAQgADAAEALwAsAEEALQBBAAcALwBBAC0ALQAHAAkAQwADAEIAQwAFAAMALgBCACwALgBDAEIARAAsAC8ARAAuACwAMgAvAC0ARAAvADIARQAtAAkAMgAtAEUARQAJAAsARgBFAAsAMgBFAEYARgALAA8AMQBGAA8AMQAPACUAMQAlACYARwBGADEARwAyAEYASAAxACYASAAmACcAMwBHADEAMwAxAEgASQAyAEcASQA2ADIANgBEADIANQBJAEcANQBHADMASgA2AEkASgBJADUASgBEADYASwA1ADMATABEAEoASwAzAE0ATQAzAEgANwA1AEsABgBLAE0ANwBLAAYATQBIAE4ATgBIACcATgAnACgATwBNAE4ABgBNAE8ANABOACgATwBOADQABgBPACQAJABPADQAGwA3AAYAJAA0ACoANAAoACkAKgA0ACkAKgApACsAHAA3ABsAHAA4ADcAHQA4ABwAHQAeADgAOABQADcANwBQADUAUABKADUAUQBKAFAAOABRAFAAUQBMAEoAHgBSADgAHwBSAB4AOABTAFEAUgBTADgAUwBUAFEAVABMAFEAUgA7AFMAOwBUAFMAHwA5AFIAOQA7AFIAOwBVAFQAOQBVADsAVABWAEwAVQBWAFQAVwA5AB8AIABXAB8AIQBXACAAIQBYAFcAIwBYACEAIwAiAFgAIgBZAFgAWABZAFcAIgAaAFkAVwBaADkAWQBaAFcAGgBbAFkAWQBbAFoAGgAZAFsAGQA9AFsAGQAYAD0AWwBcAFoAWwA9AFwAWgBdADkAWgBcAF0AOQBdAFUAGABeAD0AGAAXAF4AXAA9AF8AXABfAF0AXQA6AFUAXQBfADoAVQA6AFYAPQA+AF8AXwA+ADoAXgA+AD0AOgBgAFYAPgBgADoAVgBgAEwAXgBhAD4AFwBhAF4AFwAWAGEAYAAwAEwATAAwAEQAPgBiAGAAYgAwAGAAYQA8AD4APgA8AGIAFgBjAGEAYQBjADwAFgAVAGMAPABkAGIAYgBkADAAYwBlADwAPABlAGQAFQBmAGMAYwBmAGUAFQAUAGYAZQA/AGQAZgA/AGUAFABAAGYAZgBAAD8AFAATAEAAPwAMAGQAZAAMADAAPwANAAwADAAKADAAMAAKAAgAPwBnAA0AQABnAD8AZwAOAA0AQABoAGcAaAAOAGcAEwBoAEAAaAAQAA4AEwARAGgAEQAQAGgAEQASABAAMAAIAGkAaQAIAAQAaQAEAAUAaQAFAEMAMABpAGoAagBpAEMAMABqAEQAagBDAC4ARABqAC4A"), 0.5694, PackedByteArray("LAACAAAALAABAAIALAAAAAcAAwABACwALQAsAAcALQAHAAkALQAJAAsALQALAA8ALgADACwALgAFAAMABAAFAC4ALwAuACwALwAsAC0AMAAEAC4AMAAuAC8AMAAIAAQAMAAKAAgADAAKADAAMQAtAA8AMQAPACUAMQAlACYAMQAmACcAKAAxACcAMgAtADEAMgAvAC0AMwAxACgAMwAyADEAJAAzACgAJAAoADQANAAoACkAJAA0ACoAKgA0ACkAKgApACsABgAzACQANQAyADMABgA1ADMANgAvADIANQA2ADIAMAAvADYANwA1AAYANwA2ADUAGwA3AAYAHAA3ABsAOAA2ADcAHAA4ADcAOAAwADYAHQA4ABwAHQAeADgAHwA4AB4AHwA5ADgAIAA5AB8AOAA6ADAAOQA7ADgAOwA6ADgAOQA6ADsAPAAwADoAPAAMADAAGgA5ACAAIQAaACAAIgAaACEAIwAiACEAGgA9ADkAPQA6ADkAGgAZAD0AGQAYAD0APQA+ADoAGAA+AD0APgA8ADoAGAAXAD4AFwAWAD4AFgAVAD4APgAVADwAFQA/ADwAPwAMADwAPwANAAwAPwAOAA0AFQBAAD8AQAAOAD8AFABAABUAFAATAEAAQAAQAA4AEwARAEAAEQAQAEAAEQASABAA"), 14.171915, PackedByteArray("AAABAAIAAwABAAAABAADAAAABAAFAAMABAAAAAYABgAAAAcABgAIAAQABgAHAAkABgAKAAgABgAJAAsADAAKAAYABgANAAwABgAOAA0ABgALAA8ABgAQAA4AEQASABAAEQAQAAYAEwARAAYAFAATAAYAFQAUAAYAFgAVABcAFQAGABcAGAAXAAYAGQAYAAYAGQAGABoAGgAGABsAHAAaABsAHQAaABwAHQAeABoAHwAaAB4AIAAaAB8AIQAaACAAIgAaACEAIwAiACEAJAAGAA8AJAAPACUAJAAlACYAJAAmACcAKAAkACcAJAAoACkAKgAkACkAKgApACsA")],
+"material": SubResource("StandardMaterial3D_tc858"),
+"name": "BUGS_BEACH",
+"primitive": 3,
+"uv_scale": Vector4(28.5, 28.5, 0, 0),
+"vertex_count": 144,
+"vertex_data": PackedByteArray("Dv+JkZwXLcPs54mRZwD6xQ7/iZFnAHzEytCJkWcAuMh+orO0agDsw8e5T6MAADPIjbl3qrX/er0O/4mR0i5NxGOLjJFnAJLADv+JkQdGo8M5dEygXwA5v///p6QyXcfBHl1FkmYANb/8RVOHZwB8vdouLIdnANi3aP/YmHR0l8G3F5J1ZQBAtW0A/WWQF/i6lQAuh2YAh7ZSAJdq/i4rwWsAZmInRpHAmgBrZT9dYr57AG1na3Twv1UAa07mi6nCrgB7UBWjx8S0ABZpMrp7wgAAw1tp0f++e6LXmsH/3rtji4mRs/9uvEF0iZGz/we/Hl2JkbP/OMD8RVOHs/8/wO4uXH23/8DByBe0S1b/2cKJAPSBf+jswIEAzHma/23Dr9AXtf//IbnW/9KjlYuYwt//MM3noue+Hf9zuuu5E7sO/4mRSNG9wTn/dpqI6FK+7OeJkbP/SrUO/4mRs/85tvDnur2CF4jD8Oj//31FN8OauZ2tzS6WvIvQCMy6RefDY4uJkdIufr77533qhKKTvnjPTvZadPq+lNC41Au64b7N6PPuEOlvvGq5XKAUuvq/oLl0nnR077+Gov22PNHFwlOLKqBA0RTD2UU/QUe63MZgXUlaXHQFvXVdPDAgun/FoS/iMpRc47cWGNg9X6NZxW8w2gzodPjASC+LVgIvQsK9Fy0fKy9DwRXolsugLh/E0tAVsWAX/cLFubroXxdFwJu5fqQaRgHCxujY3aNcVsF+6AH8OXS7v+vPqseYizC/LegRtP658rxFucC2o4ujwIWigJGni3jAp7mJkUjRXMFji4mRcnRVv4HQbuwx0WvBWejkwTzRLMJ10EjN0ujJvIWiiZESuovBY4uEkRK6yME2XcJ8d9FMx5N0fGwgumjCXXQYhN6i6L+RXXY2tKIdv010Y4lodBK+5C77bUvRNsHCFwUpVejnv78XemRU0aG+2C7icjm6G8XfF+lYSrpMw/guWEIIo//DU0W5FLqiPMAsGAsXR4z5w6pFQFOBizO+LF3cgDldmL0MGAAAgHRyvxFG7kIaXRK6Jhi0IONck7r+RbOEBkauuw0vQXUKRga9+BfpPBJGCL/fLoJTYxehu50X5zI7F+C5SaKWsLMXor6FoomR0i6OvJ/Qjaq9LkTBhaKJkQdG+r9ei0ygoRfIvmOLiZEHRh6/QXSJkZwXP79BdImR0i6lvkF0iZEHRmW+Hl2JkZwXeb8eXYmR0i72vVVdw2nYRR69/EVTh5wXo77+RfqB0C7Ov/NF2kN+dHi/iC8OPNuLGsNgdL58PV1Bv3Bd1jasiyi95C5RgX7oK8EGRrlmgNEIxv5FAYOF6IvCHl2JkX3oQcJBdImRfej0wGB06YFY0dbEUYsQpYvoCr9ki1yP3aKnwHaiVryb6Ne+haKJkd2iD8BsuQqngug3v325iK/Fon+/ANDD4K2iB7/75zTlgYv6v1XQaemxXD7CgrlZsjxdRcGFoomRcnTNv4WiiZE8XeS/aYuoe6eLxb9qi1CKPF3Nv2F00n6jixe/OO1bdpL7KX4Y9Np56febe4z6MYw5+/N9l/yuhmjhkXAl/IOH19tYbtn+LoJ13Blvav1UhaD6zooc+IKP/dzNbqf8oH5A5jhzpevZdcbj5HGU5cVyz9+6bxncaG4G5bNy3PE3ee/5IH2x86d53v1JhPT7AIh3/gWDHv69g079cIUE9umSdP+YgOvlm3Km4fBvzfuHh6DiZ3Ei8MN4IvbqerPpV3RP5M5xq/F2erznU3LQ+Qp9FvL+eNX7VYjQ926Qwv5tgqT4q3zy9uKS//p/isHv7Hcv97qRIvVglgr/k3+I+amML/f3erP38JBj+HuO6Pfhj4P9lH7n9waQ1/Qmljj9mH6V9lZ7nforfRH/V39g+IiPJu3+dmjt/XbH9+mQIfREemb2V5Mq+p2LmfnEjNH9RISY+Z2M/e52d375TYwl/ouD+fr8ibz7m4em9WCU9vTplf/1UpSD+WSNNP0VhU3/l4FQ/qiDN/q2fBz/y4GI/E192fgnfPL2q3vo/aqEHfkUjjDwqHj6972Ql/OyeVD75YgE9xqTk/1wfmf255Ni+xZ+t/mLjez6z4pf/ImHCPzKh938RYYw/56B2/47gtv9NISM/LuGs/2hhO79NIRO/JCHJvnGjTH6CIyl+CWQbvsmisX7bIjx9jmSk/ffj4r+m390/eeElP3bhCn9iYXC+YCMlPrBiur8IoZo/x2BFvsCitH7LYjF9vuS1vksjZ3z03mb94+RnvWwlW37IYnf+zeIwP14hBf+y4O69ryS")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g86yl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uff2h"]
+render_priority = 0
+shader = ExtResource("8_10acv")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/water_texture1 = ExtResource("10_g86yl")
+shader_parameter/water_texture2 = ExtResource("10_g86yl")
+shader_parameter/noise_texture = ExtResource("9_tc858")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 2.025
+shader_parameter/scale1 = Vector2(4, 4)
+shader_parameter/scale2 = Vector2(4, 4)
+shader_parameter/wave_strength = -0.035
+shader_parameter/wave_scale = 1.795
+shader_parameter/pixelation_level = 64
+shader_parameter/FoamSize = 0.075
+shader_parameter/WaterOpacity = 1.0
+shader_parameter/FoamGlowIntensity = 1.1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_03016"]
+_surfaces = [{
+"aabb": AABB(-60, 0, -60, 120, 1e-05, 120),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "BLOOD_BEACH",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAP//AAD//wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cm53y"]
+resource_name = "CRUEL_BEACH_Plane_001"
+_surfaces = [{
+"aabb": AABB(-60, 0, -60, 120, 1e-05, 120),
+"attribute_data": PackedByteArray("MAz/////MAz/////MAwwDA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("ShaderMaterial_uff2h"),
+"name": "BLOOD_BEACH",
+"primitive": 3,
+"uv_scale": Vector4(21, 21, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///7///wAAAAD/v///AAD///+/AAAAAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_03016")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xj4ej"]
+sky_top_color = Color(0, 0.40087745, 0.8292781, 1)
+sky_horizon_color = Color(0.8343332, 0.29000002, 1, 1)
+sky_curve = 0.5045382
+ground_bottom_color = Color(0.0859665, 0.0290517, 0.106248, 1)
+ground_horizon_color = Color(1, 0.73080283, 0.93200105, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_3l3x6"]
+sky_material = SubResource("ProceduralSkyMaterial_xj4ej")
+
+[sub_resource type="Environment" id="Environment_42bj4"]
+background_mode = 2
+sky = SubResource("Sky_3l3x6")
+glow_enabled = true
+glow_levels/1 = 0.4
+glow_intensity = 0.96
+glow_strength = 0.4
+glow_bloom = 1.0
+glow_blend_mode = 0
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.0
+
+[sub_resource type="Environment" id="Environment_8nwyf"]
+background_mode = 1
+glow_enabled = true
+glow_strength = 0.53
+glow_blend_mode = 0
+
+[sub_resource type="World3D" id="World3D_wxlp8"]
+environment = SubResource("Environment_8nwyf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_deyml"]
+shader = ExtResource("16_dbka8")
+shader_parameter/bar_count = 128.0
+shader_parameter/seed = 0.0
+
+[sub_resource type="World3D" id="World3D_8nwyf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8nwyf"]
+
+[node name="MainMenu" type="Node3D" unique_id=1808688429]
+script = ExtResource("1_42bj4")
+
+[node name="CREDITS" type="Label" parent="." unique_id=1260056088]
+offset_left = 866.0
+offset_top = 573.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = ExtResource("5_w5iqn")
+text = "INSPIRED BY
+CRUELTY SQUAD AND CRUELTY BLOX
+ CREATED BY: zCAJUINA"
+horizontal_alignment = 1
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1608421933]
+transform = Transform3D(-4.371139e-08, 0, 1.0000006, 0, 1.0000006, 0, -1, 0, -4.3711413e-08, 5.545, 0.61, 0)
+fov = 99.2
+
+[node name="MAP" type="Node3D" parent="." unique_id=1276346538]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="MAP" unique_id=1846562046]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -7.87, -0.347, 18.402)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="MAP" unique_id=988584594]
+transform = Transform3D(0.62034446, -0.12818804, 0.77378345, -0.25031477, 0.90260583, 0.35020742, -0.7433137, -0.4109386, 0.52783924, -5.875, 0.058, -18.363)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MAP" unique_id=1830200201]
+transform = Transform3D(3.874951, -0.3155139, -1.5409511, 0.20202105, 4.1629233, -0.34435833, 1.5598936, 0.2446343, 3.8724945, -33.281, 12.293, 24.772)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="MAP" unique_id=1526578805]
+transform = Transform3D(2.4788342, 0.3362685, -3.351362, 0.6876569, 4.022959, 0.91228014, 3.2972462, -1.0918111, 2.3292572, -18.618, -9.987, 56.317)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MAP" unique_id=516590105]
+transform = Transform3D(2.8464324, -0.231768, -1.1319407, 0.40670162, 3.0179353, 0.40478092, 1.0814805, -0.5249165, 2.8270211, -89.066, 5.668, 19.37)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="MAP" unique_id=543236893]
+transform = Transform3D(0.57549965, 1.1245495, 2.8002453, -0.20491402, 2.8586988, -1.1059103, -3.0106466, 0.020391108, 0.61055225, -38.734283, 5.6676354, -33.00912)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MAP" unique_id=1369521337]
+transform = Transform3D(1.5873405, 0.09512282, -1.2858177, -0.5290951, 1.9078553, -0.51202714, 1.1757694, 0.730113, 1.5054988, -33.355, 0.598, -4.723)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MAP" unique_id=540655194]
+transform = Transform3D(1.5579932, -0.7316393, -1.1042583, 1.0137525, 1.7558707, 0.26692608, 0.8526362, -0.7507645, 1.7004087, -30.041, 12.468, -43.636)
+size = Vector3(2.5, 18.2455, 2.5)
+material = SubResource("StandardMaterial3D_g86yl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MAP" unique_id=1076911204]
+transform = Transform3D(-238.2702, -44.16077, 2.1184987e-05, -44.16077, 238.2702, 0, -2.0830243e-05, -3.860657e-06, -242.328, -141.763, 46.156, 0)
+mesh = SubResource("PlaneMesh_cm53y")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MAP" unique_id=1050053594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7484236, 1.0350634, 0)
+light_energy = 7.433
+omni_range = 0.68375754
+
+[node name="CRUEL_BEACH" parent="MAP" unique_id=99377185 instance=ExtResource("7_cr7c3")]
+
+[node name="sand" parent="MAP/CRUEL_BEACH" index="0" unique_id=2051291402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.785, 0, 0, 0)
+mesh = SubResource("ArrayMesh_uff2h")
+
+[node name="sea" parent="MAP/CRUEL_BEACH" index="1" unique_id=446125589]
+mesh = SubResource("ArrayMesh_cm53y")
+
+[node name="GAME_LOGO" parent="MAP" unique_id=889989258 instance=ExtResource("1_3l3x6")]
+transform = Transform3D(-3.125364e-08, 0.71475494, 0.018716551, 0, 0.018716551, -0.71475494, -0.715, -3.1242934e-08, -8.1812646e-10, 3.86, 1.416, 0)
+top_level = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP" unique_id=1522164720]
+transform = Transform3D(1.20085e-08, -0.9152272, 0.40293837, 2.7275895e-08, 0.40293843, 0.9152271, -1, -4.5975503e-16, 2.9802322e-08, 0, 3.089942, 0)
+light_color = Color(0.9934481, 0.9194891, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MAP" unique_id=1639582512]
+environment = SubResource("Environment_42bj4")
+
+[node name="MAIN_SCREEN" type="Control" parent="." unique_id=1283655034]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+
+[node name="PLAY_BTN" type="Button" parent="MAIN_SCREEN" unique_id=1665577594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 12.0
+offset_right = 86.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+text = "SPAWN"
+
+[node name="SpawnList" type="OptionButton" parent="MAIN_SCREEN" unique_id=796062671]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 407.0
+offset_right = 680.0
+offset_bottom = 435.0
+alignment = 1
+clip_text = true
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "FLAT PLANE"
+popup/item_0/id = 0
+
+[node name="WEAPON_BTN" type="Button" parent="MAIN_SCREEN" unique_id=529664732]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 122.0
+offset_right = 70.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+text = "WEAPONS"
+
+[node name="CHAR_BTN" type="Button" parent="MAIN_SCREEN" unique_id=1110026588]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 169.0
+offset_right = 70.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+text = "CHARACTER"
+
+[node name="STOCKS_BTN" type="Button" parent="MAIN_SCREEN" unique_id=1244696059]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 216.0
+offset_right = 70.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+text = "STOCKS"
+
+[node name="QUIT_BTN" type="Button" parent="MAIN_SCREEN" unique_id=948513528]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 263.0
+offset_right = 70.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+text = "QUIT"
+
+[node name="SETTINGS_BTN" type="Button" parent="MAIN_SCREEN" unique_id=1409946775]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 597.0
+offset_right = 163.0
+offset_bottom = 634.0
+text = "SETTINGS"
+
+[node name="NETWORTH_LABEL" type="Label" parent="MAIN_SCREEN" unique_id=1588554937]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -307.0
+offset_right = 20.0
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.26666665, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "NETWORTH VALUE: $ 0,50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WEAPONS_MENU" type="Control" parent="." unique_id=1673476707]
+visible = false
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+script = ExtResource("4_6cdfb")
+
+[node name="Panel" type="Panel" parent="WEAPONS_MENU" unique_id=682216048]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -303.0
+offset_right = 550.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+
+[node name="TITLE_PANEL" type="Panel" parent="WEAPONS_MENU/Panel" unique_id=849944260]
+layout_mode = 0
+offset_right = 751.0
+offset_bottom = 60.0
+theme = ExtResource("5_w5iqn")
+
+[node name="DESC_PANEL" type="Panel" parent="WEAPONS_MENU/Panel" unique_id=1955316552]
+layout_mode = 0
+offset_top = 309.0
+offset_right = 751.0
+offset_bottom = 611.0
+theme = ExtResource("5_w5iqn")
+
+[node name="Panel2" type="Panel" parent="WEAPONS_MENU" unique_id=603379470]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 54.0
+offset_right = 365.0
+offset_bottom = 574.0
+theme = ExtResource("5_w5iqn")
+
+[node name="WeaponsList" type="ItemList" parent="WEAPONS_MENU" unique_id=2013039538]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 58.0
+offset_right = 359.34113
+offset_bottom = 570.0
+theme = ExtResource("5_w5iqn")
+
+[node name="BUY_GUN_BTN" type="Button" parent="WEAPONS_MENU" unique_id=898341388]
+visible = false
+layout_mode = 0
+offset_left = 531.0
+offset_top = 482.0
+offset_right = 973.0
+offset_bottom = 514.0
+theme = ExtResource("11_dbka8")
+theme_override_font_sizes/font_size = 20
+text = "BUY"
+
+[node name="EQUIP1_BTN" type="Button" parent="WEAPONS_MENU" unique_id=1836394862]
+visible = false
+layout_mode = 0
+offset_left = 382.0
+offset_top = 533.0
+offset_right = 661.0
+offset_bottom = 569.0
+theme = ExtResource("11_dbka8")
+theme_override_font_sizes/font_size = 30
+text = "EQUIP 1"
+
+[node name="EQUIP2_BTN" type="Button" parent="WEAPONS_MENU" unique_id=1594703968]
+visible = false
+layout_mode = 0
+offset_left = 382.0
+offset_top = 577.0
+offset_right = 661.0
+offset_bottom = 613.0
+theme = ExtResource("11_dbka8")
+theme_override_font_sizes/font_size = 30
+text = "EQUIP 2"
+
+[node name="INV_LABEL" type="Label" parent="WEAPONS_MENU" unique_id=572325988]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 551.0
+offset_right = 927.0
+offset_bottom = 604.0
+theme = ExtResource("5_w5iqn")
+theme_override_font_sizes/font_size = 24
+
+[node name="WEAPON_NAME_LABEL" type="Label" parent="WEAPONS_MENU" unique_id=1625638061]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 35.0
+offset_right = 1125.0
+offset_bottom = 68.0
+theme = ExtResource("5_w5iqn")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="WEAPON_STATS_LABEL" type="Label" parent="WEAPONS_MENU" unique_id=1722421707]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 336.0
+offset_right = 1120.0
+offset_bottom = 536.0
+theme = ExtResource("5_w5iqn")
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 2
+clip_text = true
+uppercase = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="WEAPONS_MENU" unique_id=1321310072]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 80.0
+offset_right = 1271.2383
+offset_bottom = 378.41275
+scale = Vector2(0.8377658, 0.8377658)
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="WEAPONS_MENU/SubViewportContainer" unique_id=1608592496]
+own_world_3d = true
+world_3d = SubResource("World3D_wxlp8")
+handle_input_locally = false
+size = Vector2i(895, 298)
+render_target_update_mode = 0
+
+[node name="WEAPON_PREVIEW_NODE" parent="WEAPONS_MENU/SubViewportContainer/SubViewport" unique_id=502000341 instance=ExtResource("6_ncvu7")]
+
+[node name="Camera3D" parent="WEAPONS_MENU/SubViewportContainer/SubViewport/WEAPON_PREVIEW_NODE" index="1" unique_id=1269584162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205, 0, 1)
+
+[node name="CHAR_MENU" type="Control" parent="." unique_id=1111865271]
+visible = false
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_w5iqn")
+script = ExtResource("13_cm53y")
+
+[node name="AUGS" type="Panel" parent="CHAR_MENU" unique_id=1307385985]
+visible = false
+layout_mode = 0
+offset_left = 460.0
+offset_top = 11.0
+offset_right = 1131.0
+offset_bottom = 576.0
+mouse_filter = 1
+
+[node name="CONTAINER" type="TabContainer" parent="CHAR_MENU/AUGS" unique_id=330532431]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 302.0
+offset_bottom = 564.0
+current_tab = 0
+
+[node name="HEAD" type="ItemList" parent="CHAR_MENU/AUGS/CONTAINER" unique_id=254055562]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="CHEST" type="ItemList" parent="CHAR_MENU/AUGS/CONTAINER" unique_id=1894888900]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ARM" type="ItemList" parent="CHAR_MENU/AUGS/CONTAINER" unique_id=981576095]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="LEG" type="ItemList" parent="CHAR_MENU/AUGS/CONTAINER" unique_id=443095313]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="AUG_SPRITE" type="Sprite2D" parent="CHAR_MENU/AUGS" unique_id=1615887564]
+position = Vector2(466, 197)
+scale = Vector2(2, 2)
+
+[node name="AUG_NAME" type="Label" parent="CHAR_MENU/AUGS" unique_id=1937180072]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = 47.5
+offset_right = 328.5
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="AUG_DESC" type="Label" parent="CHAR_MENU/AUGS" unique_id=202647088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = 82.5
+offset_right = 324.5
+offset_bottom = 267.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 2
+
+[node name="AUG_BUY_BTN" type="Button" parent="CHAR_MENU/AUGS" unique_id=648945167]
+visible = false
+layout_mode = 0
+offset_left = 417.0
+offset_top = 505.0
+offset_right = 541.0
+offset_bottom = 545.0
+text = "BUY"
+
+[node name="CHAR" type="Panel" parent="CHAR_MENU" unique_id=1173372850]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 11.0
+offset_right = 1131.0
+offset_bottom = 576.0
+mouse_filter = 1
+script = ExtResource("14_ash4x")
+
+[node name="CHAR_LIST" type="ItemList" parent="CHAR_MENU/CHAR" unique_id=2130970393]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 64.0
+offset_right = 660.0
+offset_bottom = 552.0
+max_columns = 5
+icon_scale = 0.75
+
+[node name="INFO" type="Panel" parent="CHAR_MENU" unique_id=1598312016]
+visible = false
+layout_mode = 0
+offset_left = 460.0
+offset_top = 11.0
+offset_right = 1131.0
+offset_bottom = 576.0
+mouse_filter = 1
+
+[node name="INFOS" type="RichTextLabel" parent="CHAR_MENU/INFO" unique_id=1770146859]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 98.0
+offset_right = 623.0
+offset_bottom = 375.0
+theme_override_fonts/bold_font = ExtResource("14_wxlp8")
+theme_override_fonts/bold_italics_font = ExtResource("14_wxlp8")
+theme_override_fonts/italics_font = ExtResource("14_wxlp8")
+theme_override_fonts/mono_font = ExtResource("14_wxlp8")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "CORE: DEATH
+TOTEM: MAGNITUDE
+LIVES TAKEN: 150
+DEATHS: 457
+NETWORTH: 1.500.000
+CASH: 50.500
+IMPLANTS: 20/20
+CLOTHES: 15/70
+SECRETS: 8/8
+TITLE: High Networth Individual"
+fit_content = true
+autowrap_mode = 2
+script = ExtResource("14_4th48")
+
+[node name="PLAYER_PFP" type="Sprite2D" parent="CHAR_MENU/INFO" unique_id=2139195087]
+position = Vector2(516, 145.00002)
+scale = Vector2(1.315, 1.315)
+texture = ExtResource("9_tc858")
+
+[node name="CODE_BAR" type="ColorRect" parent="CHAR_MENU/INFO" unique_id=1267341024]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 235.0
+offset_right = 615.0
+offset_bottom = 297.0
+
+[node name="CODE_BAR_IMAGE" type="ColorRect" parent="CHAR_MENU/INFO/CODE_BAR" unique_id=2022214301]
+material = SubResource("ShaderMaterial_deyml")
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 193.0
+offset_bottom = 43.0
+
+[node name="CODE_BAR_TEXT" type="Label" parent="CHAR_MENU/INFO/CODE_BAR" unique_id=171503039]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 198.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="BADGES_ROOT" type="Control" parent="CHAR_MENU/INFO" unique_id=738354395]
+anchors_preset = 0
+offset_left = 49.0
+offset_top = 379.0
+offset_right = 89.0
+offset_bottom = 419.0
+
+[node name="BADGE" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=515512695 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 393.0
+offset_right = 581.0
+offset_bottom = 465.0
+badge_tittle_text = "THE GOOD ON EVIL"
+badge_desc_text = "\"FATHER BROTHER, OUR BATTLE IS UNNECESSARY, YOUR DESIRES CAN BE ACHIEVED WITHOUT SHEDDING OUR BITTER BLOOD.\" (Obtained by befriending the Triagons)"
+badge_image = ExtResource("16_8v1l4")
+
+[node name="BADGE2" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=393105828 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 393.0
+offset_right = 653.0
+offset_bottom = 465.0
+badge_tittle_text = "THE EVIL ON GOOD"
+badge_desc_text = "\"I SEE THAT MALICE DWELLS STRONGLY IN YOUR HEART.\" (Obtained by killing the Triagons)"
+badge_image = ExtResource("17_t1tp8")
+
+[node name="BADGE3" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1002820974 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 393.0
+offset_right = 725.0
+offset_bottom = 465.0
+badge_tittle_text = "MEMORIES OF A SWEET ERA WITH A PROFANE SCENT"
+badge_desc_text = "\"YOU WERE THINKING I DIED! BITCH SURPRISE!\" (Obtained by finding the game \"Goon Simulator 6: Belle Delphine\")"
+badge_image = ExtResource("18_t1tp8")
+
+[node name="BADGE4" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=589071541 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 393.0
+offset_right = 797.0
+offset_bottom = 465.0
+badge_tittle_text = "AN OFFERING WAS MADE"
+badge_desc_text = "Your flesh shell is shattered by incomprehensible ancient power, your reconstruction is glorious, your atoms vibrate strangely. (Obtained by using an Altar)"
+badge_image = ExtResource("22_8nwyf")
+
+[node name="BADGE5" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1909321448 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 393.0
+offset_right = 869.0
+offset_bottom = 465.0
+badge_tittle_text = "CHEATING THE NATURAL COURSE"
+badge_desc_text = "Biology has failed us, the divine has become a false memory of something pure amidst the profanity of the modern world. (Obtained by performing a body reconstruction after dying.)"
+badge_image = ExtResource("23_ash4x")
+
+[node name="BADGE6" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=590654370 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 393.0
+offset_right = 941.0
+offset_bottom = 465.0
+badge_tittle_text = "I KNOW WHAT YOU ARE"
+badge_desc_text = "\"VAMPIRE..!\" (Obtained by receiving the curse of vampirism at the Blood Altar)"
+
+[node name="BADGE7" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1362375475 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 393.0
+offset_right = 1013.0
+offset_bottom = 465.0
+badge_tittle_text = "PAY THE RENT!"
+badge_desc_text = "\"No, I don't accept bullets as payment.\" (Obtained by assassinating the owner of your rented house and \"settling\" your debt)"
+
+[node name="BADGE8" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1216094184 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 1013.0
+offset_top = 393.0
+offset_right = 1085.0
+offset_bottom = 465.0
+badge_tittle_text = "THEY COME BACK. THEY ALWAYS COME BACK"
+badge_desc_text = "What's the point of ending their misery? (Obtained by killing a company CEO)"
+
+[node name="BADGE9" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1767086073 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 465.0
+offset_right = 581.0
+offset_bottom = 537.0
+badge_tittle_text = "DIVINE LIGHT RECOVERED"
+badge_desc_text = "Purify yourself from this profane world. Do not be corrupted again. (Obtained by using the Altar of Purity)"
+
+[node name="BADGE10" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1316796503 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 465.0
+offset_right = 653.0
+offset_bottom = 537.0
+badge_tittle_text = "CELESTIAL ENTITY"
+badge_desc_text = "You have reached the pinnacle of existence, unraveled the mysteries of your world, and become a divine being (Obtained by completing \"Trauma Loop\")."
+
+[node name="BADGE11" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=2140374487 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 465.0
+offset_right = 725.0
+offset_bottom = 537.0
+badge_tittle_text = "HE SMILES AT ME."
+badge_desc_text = "\"Feel complete, your existence now has meaning. Fill yourself with...MALICE.\" (Obtained by completing \"Archon Grid\")"
+
+[node name="BADGE12" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1880438113 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 465.0
+offset_right = 797.0
+offset_bottom = 537.0
+badge_tittle_text = "I AM PERFECT AND PURE"
+badge_desc_text = "\"I am shining with divine light!\" (Obtained by collecting all available implants.)"
+
+[node name="BADGE13" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1420122959 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 465.0
+offset_right = 869.0
+offset_bottom = 537.0
+badge_tittle_text = "MAN'S BEST FRIEND"
+badge_desc_text = "In all sizes and shapes! There is no better company! (Obtained by collecting all available weapons.)"
+
+[node name="BADGE14" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=621905003 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 465.0
+offset_right = 941.0
+offset_bottom = 537.0
+badge_tittle_text = "BETTER THAN DARWIN"
+badge_desc_text = "Biology is nothing more than a playground for my transactions. (Obtained by collecting all available organs.)"
+
+[node name="BADGE15" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=1079372763 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 465.0
+offset_right = 1013.0
+offset_bottom = 537.0
+badge_tittle_text = "THIS MAKES ME SICK"
+badge_desc_text = "\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!\" (Obtained by fishing for a \"SOUL\".)"
+
+[node name="BADGE16" parent="CHAR_MENU/INFO/BADGES_ROOT" unique_id=639620806 instance=ExtResource("14_up1up")]
+layout_mode = 0
+offset_left = 1013.0
+offset_top = 465.0
+offset_right = 1085.0
+offset_bottom = 537.0
+badge_tittle_text = "SIDDHARTHA WOULD BE PROUD"
+badge_desc_text = "\"A man at peace wants no war with anyone.\" (Obtained by not committing any violent act for 5 minutes.)"
+badge_image = ExtResource("21_nhqxa")
+
+[node name="BADGE_PANEL" type="Panel" parent="CHAR_MENU/INFO" unique_id=1233379267]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 119.0
+offset_right = 660.0
+offset_bottom = 319.0
+pivot_offset = Vector2(323, 100)
+
+[node name="BADGE_SPRITE" type="Sprite2D" parent="CHAR_MENU/INFO/BADGE_PANEL" unique_id=917036715]
+position = Vector2(106, 100.00001)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("14_odhdv")
+
+[node name="BADGE_NAME" type="Label" parent="CHAR_MENU/INFO/BADGE_PANEL" unique_id=1429827819]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 14.0
+offset_right = 628.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 20
+text = "BADGE TITLE GOES HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BADGE_DESC" type="Label" parent="CHAR_MENU/INFO/BADGE_PANEL" unique_id=913998540]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 56.0
+offset_right = 628.0
+offset_bottom = 178.0
+text = "BADGE INFORMATION GOES HERE ALONG WITH A COOL CATCHY TEXT SO THE PLAYER GETS A GOOD FEELING"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CHAR_PREVIEW" type="Panel" parent="CHAR_MENU" unique_id=625033906]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 444.0
+offset_bottom = 576.0
+mouse_filter = 1
+
+[node name="THE_BG" type="Sprite2D" parent="CHAR_MENU/CHAR_PREVIEW" unique_id=681355046]
+modulate = Color(0.26, 0.26, 0.26, 1)
+position = Vector2(208.5, 284.50003)
+scale = Vector2(0.4052734, 0.45800784)
+texture = ExtResource("15_qcf5p")
+
+[node name="CHAR_LABEL_BOX" type="Panel" parent="CHAR_MENU" unique_id=325815485]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 444.0
+offset_bottom = 61.0
+mouse_filter = 1
+
+[node name="AUG_LABEL_BOX" type="Panel" parent="CHAR_MENU" unique_id=1433600464]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 11.0
+offset_right = 1131.0
+offset_bottom = 61.0
+mouse_filter = 1
+
+[node name="CHAR_PREVIEW_VIEWPORT" type="SubViewportContainer" parent="CHAR_MENU" unique_id=221809087]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 61.0
+offset_right = 443.0
+offset_bottom = 530.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT" unique_id=1082867919]
+own_world_3d = true
+world_3d = SubResource("World3D_8nwyf")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(415, 469)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT/SubViewport" unique_id=2054711504]
+
+[node name="PLAYER_ROOT" type="Node3D" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT/SubViewport/Camera3D" unique_id=1032736863]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.975, -1.505)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT/SubViewport/Camera3D/PLAYER_ROOT" unique_id=224913096]
+visible = false
+mesh = SubResource("CapsuleMesh_8nwyf")
+
+[node name="CUSTOM_PLAYER_BODY" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT/SubViewport/Camera3D/PLAYER_ROOT" unique_id=1907171739 instance=ExtResource("16_ash4x")]
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CHAR_MENU/CHAR_PREVIEW_VIEWPORT/SubViewport/Camera3D" unique_id=1403262717]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0)
+
+[node name="GO_BACK_TO_MENU_BTN" type="Button" parent="CHAR_MENU" unique_id=2129422832]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 597.0
+offset_right = 164.0
+offset_bottom = 634.0
+theme = ExtResource("5_w5iqn")
+text = "BACK"
+
+[node name="CHAR_NAME" type="Label" parent="CHAR_MENU" unique_id=1551462939]
+visible = false
+layout_mode = 0
+offset_left = 27.0
+offset_top = 61.0
+offset_right = 443.0
+offset_bottom = 110.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 48
+text = "USERNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CHAR_NAME_EDIT" type="LineEdit" parent="CHAR_MENU" unique_id=1990904697]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 444.0
+offset_bottom = 61.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 40
+text = "USERNAME"
+alignment = 1
+
+[node name="TAB_LABEL" type="Label" parent="CHAR_MENU" unique_id=1039347007]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 12.0
+offset_right = 1131.0
+offset_bottom = 61.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 48
+text = "APPARENCE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HEAD_BTN" type="Button" parent="CHAR_MENU" unique_id=172264678]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 88.0
+offset_right = 322.0
+offset_bottom = 218.0
+scale = Vector2(0.7, 0.7)
+
+[node name="CHEST_BTN" type="Button" parent="CHAR_MENU" unique_id=180728016]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 222.99998
+offset_right = 322.0
+offset_bottom = 353.0
+scale = Vector2(0.7, 0.7)
+
+[node name="ARM_BTN" type="Button" parent="CHAR_MENU" unique_id=1038890943]
+visible = false
+layout_mode = 0
+offset_left = 68.99999
+offset_top = 260.00003
+offset_right = 199.0
+offset_bottom = 390.00003
+scale = Vector2(0.7, 0.7)
+
+[node name="LEG_BTN" type="Button" parent="CHAR_MENU" unique_id=1474333087]
+visible = false
+layout_mode = 0
+offset_left = 108.99999
+offset_top = 414.0
+offset_right = 239.0
+offset_bottom = 544.0
+scale = Vector2(0.7, 0.7)
+
+[node name="BASE_BTNS" type="HBoxContainer" parent="CHAR_MENU" unique_id=1009797390]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 530.0
+offset_right = 444.0
+offset_bottom = 576.0
+script = ExtResource("14_a5hvx")
+
+[node name="AUG_BTN" type="Button" parent="CHAR_MENU/BASE_BTNS" unique_id=867886579]
+layout_mode = 2
+text = " IMPLANTS "
+
+[node name="CHAR_BTN" type="Button" parent="CHAR_MENU/BASE_BTNS" unique_id=1201294748]
+layout_mode = 2
+text = " APPARENCE "
+
+[node name="INFO_BTN" type="Button" parent="CHAR_MENU/BASE_BTNS" unique_id=143145103]
+layout_mode = 2
+text = " USER INFO "
+
+[node name="STOCK_MARKET" parent="." unique_id=1216629851 instance=ExtResource("14_t8wyk")]
+visible = false
+
+[node name="STOCKS_MAKT" parent="STOCK_MARKET" index="0" unique_id=1565756400]
+offset_left = 40.0
+offset_top = 60.0
+offset_right = 433.0
+offset_bottom = 584.0
+
+[node name="HOLDINGS_PANEL" parent="STOCK_MARKET" index="1" unique_id=1597697853]
+offset_top = 19.0
+offset_bottom = 82.0
+
+[node name="INFO_PANEL" parent="STOCK_MARKET" index="2" unique_id=1289713866]
+offset_top = 95.0
+offset_bottom = 617.0
+
+[node name="HOLDINGS_LABEL" parent="STOCK_MARKET/INFO_PANEL" index="0" unique_id=537207734]
+offset_top = 319.0
+offset_bottom = 416.0
+
+[node name="BUY_BTN_CONTAINER" parent="STOCK_MARKET/INFO_PANEL" index="2" unique_id=289646941]
+offset_top = 430.0
+offset_right = 268.0
+offset_bottom = 456.0
+
+[node name="SELL_BTN_CONTAINER" parent="STOCK_MARKET/INFO_PANEL" index="3" unique_id=393240913]
+offset_top = 467.0
+offset_right = 299.0
+offset_bottom = 492.0
+
+[node name="FISH_VIEW" parent="STOCK_MARKET/INFO_PANEL" index="4" unique_id=675980989]
+offset_left = 286.0
+offset_top = 108.0
+offset_right = 629.0
+offset_bottom = 341.0
+
+[node name="SubViewport" parent="STOCK_MARKET/INFO_PANEL/FISH_VIEW" index="0" unique_id=134237607]
+render_target_update_mode = 0
+
+[node name="STOCK_COMP_SPRITE" parent="STOCK_MARKET/INFO_PANEL" index="5" unique_id=1184657348]
+position = Vector2(476, 250)
+scale = Vector2(1.12, 1.12)
+
+[node name="USER_INFO_PANEL" parent="STOCK_MARKET" index="3" unique_id=295683523]
+visible = false
+
+[node name="STOCK_BACK_BTN" type="Button" parent="STOCK_MARKET" unique_id=1039529409]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 597.0
+offset_right = 164.0
+offset_bottom = 634.0
+text = "BACK"
+
+[node name="OPTIONS_MENU" parent="." unique_id=1055206002 instance=ExtResource("28_deyml")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GO_BACK_TO_MENU_BTN" type="Button" parent="." unique_id=2072952906]
+visible = false
+offset_left = 8.0
+offset_top = 597.0
+offset_right = 163.0
+offset_bottom = 634.0
+theme = ExtResource("5_w5iqn")
+text = "BACK"
+
+[node name="MENU_SND_TRACK" type="AudioStreamPlayer" parent="." unique_id=1279217353]
+stream = ExtResource("27_wxlp8")
+volume_db = -18.128
+autoplay = true
+bus = &"REVERB_SONGS"
+parameters/looping = true
+
+[node name="BEACH_SND" type="AudioStreamPlayer" parent="." unique_id=595476576]
+stream = ExtResource("14_03016")
+volume_db = -16.0
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[connection signal="pressed" from="MAIN_SCREEN/PLAY_BTN" to="." method="_on_play_btn_pressed"]
+[connection signal="item_selected" from="MAIN_SCREEN/SpawnList" to="." method="_on_spawn_list_item_selected"]
+[connection signal="pressed" from="MAIN_SCREEN/WEAPON_BTN" to="." method="_on_weapon_btn_pressed"]
+[connection signal="pressed" from="MAIN_SCREEN/CHAR_BTN" to="." method="_on_char_btn_pressed"]
+[connection signal="pressed" from="MAIN_SCREEN/STOCKS_BTN" to="." method="_on_stocks_btn_pressed"]
+[connection signal="pressed" from="MAIN_SCREEN/QUIT_BTN" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="MAIN_SCREEN/SETTINGS_BTN" to="." method="_on_settings_btn_pressed"]
+[connection signal="item_selected" from="WEAPONS_MENU/WeaponsList" to="WEAPONS_MENU" method="_on_weapons_list_item_selected"]
+[connection signal="pressed" from="WEAPONS_MENU/BUY_GUN_BTN" to="WEAPONS_MENU" method="_on_buy_gun_btn_pressed"]
+[connection signal="pressed" from="WEAPONS_MENU/EQUIP1_BTN" to="WEAPONS_MENU" method="_on_equip_1_btn_pressed"]
+[connection signal="pressed" from="WEAPONS_MENU/EQUIP2_BTN" to="WEAPONS_MENU" method="_on_equip_2_btn_pressed"]
+[connection signal="tab_changed" from="CHAR_MENU/AUGS/CONTAINER" to="CHAR_MENU" method="_on_container_tab_changed"]
+[connection signal="item_activated" from="CHAR_MENU/AUGS/CONTAINER/HEAD" to="CHAR_MENU" method="_on_head_item_activated"]
+[connection signal="item_clicked" from="CHAR_MENU/AUGS/CONTAINER/HEAD" to="CHAR_MENU" method="_on_head_item_clicked"]
+[connection signal="item_activated" from="CHAR_MENU/AUGS/CONTAINER/CHEST" to="CHAR_MENU" method="_on_chest_item_activated"]
+[connection signal="item_clicked" from="CHAR_MENU/AUGS/CONTAINER/CHEST" to="CHAR_MENU" method="_on_chest_item_clicked"]
+[connection signal="item_activated" from="CHAR_MENU/AUGS/CONTAINER/ARM" to="CHAR_MENU" method="_on_arm_item_activated"]
+[connection signal="item_clicked" from="CHAR_MENU/AUGS/CONTAINER/ARM" to="CHAR_MENU" method="_on_arm_item_clicked"]
+[connection signal="item_activated" from="CHAR_MENU/AUGS/CONTAINER/LEG" to="CHAR_MENU" method="_on_leg_item_activated"]
+[connection signal="item_clicked" from="CHAR_MENU/AUGS/CONTAINER/LEG" to="CHAR_MENU" method="_on_leg_item_clicked"]
+[connection signal="pressed" from="CHAR_MENU/AUGS/AUG_BUY_BTN" to="CHAR_MENU" method="_on_aug_buy_btn_pressed"]
+[connection signal="item_selected" from="CHAR_MENU/CHAR/CHAR_LIST" to="CHAR_MENU/CHAR" method="_on_char_list_item_selected"]
+[connection signal="pressed" from="CHAR_MENU/GO_BACK_TO_MENU_BTN" to="CHAR_MENU" method="_on_go_back_to_menu_btn_pressed"]
+[connection signal="text_submitted" from="CHAR_MENU/CHAR_NAME_EDIT" to="CHAR_MENU/INFO/INFOS" method="_on_char_name_edit_text_submitted"]
+[connection signal="pressed" from="CHAR_MENU/HEAD_BTN" to="CHAR_MENU" method="_on_head_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/CHEST_BTN" to="CHAR_MENU" method="_on_chest_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/ARM_BTN" to="CHAR_MENU" method="_on_arm_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/LEG_BTN" to="CHAR_MENU" method="_on_leg_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/BASE_BTNS/AUG_BTN" to="CHAR_MENU/BASE_BTNS" method="_on_aug_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/BASE_BTNS/CHAR_BTN" to="CHAR_MENU/BASE_BTNS" method="_on_char_btn_pressed"]
+[connection signal="pressed" from="CHAR_MENU/BASE_BTNS/INFO_BTN" to="CHAR_MENU/BASE_BTNS" method="_on_info_btn_pressed"]
+[connection signal="pressed" from="STOCK_MARKET/STOCK_BACK_BTN" to="." method="_on_stock_back_btn_pressed"]
+[connection signal="pressed" from="GO_BACK_TO_MENU_BTN" to="." method="_on_go_back_to_menu_btn_pressed"]
+
+[editable path="MAP/CRUEL_BEACH"]
+[editable path="MAP/GAME_LOGO"]
+[editable path="WEAPONS_MENU/SubViewportContainer/SubViewport/WEAPON_PREVIEW_NODE"]
+[editable path="STOCK_MARKET"]
+[editable path="OPTIONS_MENU"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bkkjjp4q52qxh"]
+
+[ext_resource type="PackedScene" uid="uid://h8kkcvpwkiap" path="res://Scenes/Props/DOORS/COMMON_DOOR.tscn" id="1_6asob"]
+[ext_resource type="PackedScene" uid="uid://d2qedocrhiukv" path="res://Models/MAP/TRAUMA LOOP/TEST_TRAUMA_LOOP.glb" id="1_83stp"]
+[ext_resource type="PackedScene" uid="uid://bag6u1th1x52o" path="res://Scenes/PLAYER.tscn" id="1_fwwic"]
+[ext_resource type="Texture2D" uid="uid://csaec2k03mgvk" path="res://Textures/CRUS/SKY/skybox2.png" id="2_fwwic"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6asob"]
+panorama = ExtResource("2_fwwic")
+
+[sub_resource type="Sky" id="Sky_p8djo"]
+sky_material = SubResource("PanoramaSkyMaterial_6asob")
+
+[sub_resource type="Environment" id="Environment_3tkyl"]
+background_mode = 2
+sky = SubResource("Sky_p8djo")
+sky_custom_fov = 111.8
+fog_enabled = true
+fog_light_color = Color(0.24, 0.016799998, 0.020519942, 1)
+fog_light_energy = 4.54
+fog_density = 0.005
+
+[node name="TraumaLoop" type="Node3D" unique_id=472095534]
+
+[node name="DOOR" parent="." unique_id=1545753819 instance=ExtResource("1_6asob")]
+transform = Transform3D(-3.934025e-08, 0, 1, 0, 0.8, 0, -0.9, 0, -4.371139e-08, -9.651963, -0.003000021, 0.64362764)
+
+[node name="Player" parent="." unique_id=1359576397 instance=ExtResource("1_fwwic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0072141886, 0)
+
+[node name="TEST_TRAUMA_LOOP" parent="." unique_id=1005859787 instance=ExtResource("1_83stp")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2134754475]
+environment = SubResource("Environment_3tkyl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1287410909]
+transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, -23, 20, 0)
+visible = false
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=920845427]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -22, 47, 0)
+light_color = Color(1, 0.6166667, 0, 1)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 171.0
+spot_angle = 51.82964
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=738631097]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -98, 47, 0)
+light_color = Color(1, 0.6156863, 0, 1)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 91.0
+spot_angle = 37.85888
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1559398512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+light_energy = 8.13
+shadow_enabled = true
+omni_range = 14.0

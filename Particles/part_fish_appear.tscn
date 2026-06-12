@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cni3iyp1je0mj"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_5v42u"]
+[ext_resource type="Texture2D" uid="uid://cxwj73swytc0k" path="res://Textures/CRUS/MEAT.png" id="1_12nos"]
+[ext_resource type="Script" uid="uid://b4oln6wmnrt41" path="res://Scripts/Props/self_starter_one_shot_particle.gd" id="3_rky01"]
+
+[sub_resource type="Curve" id="Curve_imvit"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15048543, 0.8876405), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f7c4k"]
+curve = SubResource("Curve_imvit")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v2j24"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.25
+emission_ring_radius = 0.25
+emission_ring_inner_radius = 0.13
+emission_ring_cone_angle = 90.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 3.9999776
+gravity = Vector3(0, 2, 0)
+scale_curve = SubResource("CurveTexture_f7c4k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v42u"]
+albedo_color = Color(0.6, 1, 0, 1)
+albedo_texture = ExtResource("1_12nos")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rky01"]
+material = SubResource("StandardMaterial3D_5v42u")
+radius = 0.063
+height = 0.125
+radial_segments = 16
+rings = 8
+
+[node name="part_fish_appear" type="Node3D" unique_id=1508753630]
+script = ExtResource("1_5v42u")
+time = 0.45
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1424105081]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+emitting = false
+amount = 32
+lifetime = 0.45
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_v2j24")
+draw_pass_1 = SubResource("SphereMesh_rky01")
+script = ExtResource("3_rky01")

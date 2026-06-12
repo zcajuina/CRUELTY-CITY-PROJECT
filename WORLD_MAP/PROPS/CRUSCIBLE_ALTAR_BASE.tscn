@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cgcud2kkwp2ix"]
+
+[ext_resource type="Texture2D" uid="uid://ckcqrn02eecqo" path="res://Textures/CRUS/sun.png" id="1_cp84q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c21wd"]
+albedo_texture = ExtResource("1_cp84q")
+uv1_scale = Vector3(-0.014, -0.014, -0.014)
+uv1_offset = Vector3(0.5, 0, 0.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" unique_id=162729686]
+radius = 64.0
+height = 9.0
+sides = 32
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1150390093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+radius = 60.0
+height = 9.0
+sides = 32
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=300826022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+radius = 72.0
+height = 9.0
+sides = 32
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=1451694659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.85, 0)
+radius = 41.0
+height = 8.700001
+sides = 32
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=482445756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.85, 0)
+radius = 37.0
+height = 8.700001
+sides = 32
+material = SubResource("StandardMaterial3D_c21wd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1651732590]
+transform = Transform3D(0.95346475, 0.30150473, 0, -0.30150473, 0.95346475, 0, 0, 0, 1, 69.2771, -2.7095046, 0)
+size = Vector3(70.1, 11, 32)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=647108352]
+transform = Transform3D(0.9761144, 0.2172575, 0, -0.2172575, 0.9761144, 0, 0, 0, 1, 70.85559, 0.27306652, 0)
+size = Vector3(67.200005, 12.3, 24)

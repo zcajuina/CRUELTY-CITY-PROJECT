@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://4c1nthffi0c0"]
+
+[ext_resource type="Script" uid="uid://cc8jmnwcpdgf0" path="res://Scripts/Props/player_bullet.gd" id="1_c3ruc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp80b"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll0be"]
+material = SubResource("StandardMaterial3D_qp80b")
+size = Vector3(0.04, 0.023, 0.13)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll0be"]
+radius = 0.025878906
+height = 0.14058593
+
+[node name="PlayerBullet" type="Node3D"]
+script = ExtResource("1_c3ruc")
+SPEED = 64.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ll0be")
+
+[node name="HIT_AREA" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HIT_AREA"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.5387253e-13, 1.9535422e-05)
+shape = SubResource("CapsuleShape3D_ll0be")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0.06102088)
+
+[connection signal="body_entered" from="HIT_AREA" to="." method="_on_hit_area_body_entered"]

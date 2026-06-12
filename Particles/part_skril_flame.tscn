@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d173xjtwvas0i"]
+
+[ext_resource type="Texture2D" uid="uid://bu0gyhntlraa2" path="res://Textures/GFX/GunFlash.png" id="1_u46k0"]
+
+[sub_resource type="Curve" id="Curve_yioe8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.18796991, 1), 0.0, 0.0, 0, 0, Vector2(0.57894737, 0.50561804), -2.6151686, -2.6151686, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_bqa61"]
+curve = SubResource("Curve_yioe8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rrrdn"]
+gravity = Vector3(-5.285, 7, 0)
+scale_curve = SubResource("CurveTexture_bqa61")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4oh7"]
+transparency = 1
+albedo_color = Color(1, 0.5, 0, 0.16862746)
+albedo_texture = ExtResource("1_u46k0")
+rim_enabled = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_e3cj6"]
+material = SubResource("StandardMaterial3D_l4oh7")
+size = Vector2(0.75, 0.75)
+
+[node name="PART_SKRIL_FLAME" type="GPUParticles3D" unique_id=796108392]
+layers = 2
+lifetime = 0.73
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_rrrdn")
+draw_pass_1 = SubResource("QuadMesh_e3cj6")

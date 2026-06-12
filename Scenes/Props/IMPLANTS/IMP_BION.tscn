@@ -1,0 +1,410 @@
+[gd_scene format=3 uid="uid://rj1sjyl8mubf"]
+
+[ext_resource type="Script" uid="uid://y6pexdaojqfr" path="res://Scripts/IMPLANTS/imp_bion_CHAR.gd" id="1_20mpx"]
+[ext_resource type="Texture2D" uid="uid://bev6jb0wdnk40" path="res://Textures/GFX/light2.png" id="1_xqb27"]
+[ext_resource type="Texture2D" uid="uid://mgkm415t4xwj" path="res://Textures/SPRITES/BION_FACE.png" id="3_0ieak"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="4_0ieak"]
+[ext_resource type="Texture2D" uid="uid://ddnmyakd7ueql" path="res://Textures/GFX/byon_star.png" id="5_0ieak"]
+[ext_resource type="AudioStream" uid="uid://5xs2pkjr5j42" path="res://Sounds/SFK/Bion_Greeting_Yay.ogg" id="6_ha16h"]
+[ext_resource type="Theme" uid="uid://4n78cjei8jxg" path="res://Resourcers/tema_geral.tres" id="7_47qvv"]
+[ext_resource type="Theme" uid="uid://d2cf8jvqspjg3" path="res://Resourcers/BUY_BTN_THEME.tres" id="8_3me3u"]
+[ext_resource type="Texture2D" uid="uid://rqblhf3k5pkh" path="res://Textures/HUD/BION_PANEL_BG.png" id="8_pjpaq"]
+[ext_resource type="Theme" uid="uid://bxnogr3tm22u2" path="res://Resourcers/SELL_BTN_THEME.tres" id="9_pjpaq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_20mpx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ieak"]
+transparency = 1
+cull_mode = 1
+albedo_color = Color(0, 0, 1, 1)
+metallic_specular = 1.0
+roughness = 0.25
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ha16h"]
+material = SubResource("StandardMaterial3D_0ieak")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20mpx"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("5_0ieak")
+rim_enabled = true
+rim_texture = ExtResource("5_0ieak")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xqb27"]
+material = SubResource("StandardMaterial3D_20mpx")
+size = Vector2(0.75, 0.75)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ha16h"]
+material = SubResource("StandardMaterial3D_20mpx")
+size = Vector2(0.75, 0.75)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ah6sr"]
+material = SubResource("StandardMaterial3D_20mpx")
+size = Vector2(0.75, 0.75)
+
+[sub_resource type="QuadMesh" id="QuadMesh_47qvv"]
+material = SubResource("StandardMaterial3D_20mpx")
+size = Vector2(0.75, 0.75)
+
+[sub_resource type="Curve" id="Curve_ah6sr"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(1e-05, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ha16h"]
+curve = SubResource("Curve_ah6sr")
+
+[sub_resource type="Curve" id="Curve_3me3u"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.40963852, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ah6sr"]
+curve = SubResource("Curve_3me3u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fcjo7"]
+emission_shape = 2
+emission_sphere_radius = 0.5
+angle_min = -89.99999
+angle_max = 90.000015
+angle_curve = SubResource("CurveTexture_ha16h")
+gravity = Vector3(0, 0.15, 0)
+radial_accel_min = 4.8999977
+radial_accel_max = 4.8999977
+scale_curve = SubResource("CurveTexture_ah6sr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47qvv"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_xqb27")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3leu8"]
+material = SubResource("StandardMaterial3D_47qvv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcjo7"]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color(0, 0.21960784, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3me3u"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_pjpaq"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fcjo7"]
+curve = SubResource("Curve_pjpaq")
+
+[sub_resource type="Gradient" id="Gradient_kpq0h"]
+offsets = PackedFloat32Array(0, 0.3502825, 0.6779661, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3leu8"]
+gradient = SubResource("Gradient_kpq0h")
+
+[sub_resource type="Curve" id="Curve_0sge5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.44827586, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_shjjs"]
+curve = SubResource("Curve_0sge5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_up6rb"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(720, 512, 1)
+angle_min = -89.99999
+angle_max = 90.000015
+angle_curve = SubResource("CurveTexture_fcjo7")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_shjjs")
+color_ramp = SubResource("GradientTexture1D_3leu8")
+
+[node name="BION" type="CharacterBody3D" unique_id=89179739 groups=["general"]]
+collision_mask = 0
+script = ExtResource("1_20mpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1727069452]
+shape = SubResource("SphereShape3D_20mpx")
+
+[node name="BYON_BODY" type="MeshInstance3D" parent="." unique_id=1829635474]
+mesh = SubResource("SphereMesh_ha16h")
+script = ExtResource("4_0ieak")
+sin_y = true
+sin_amp = 0.001
+sin_freq = 0.25
+
+[node name="BYON_FACE_ROOT" type="Node3D" parent="BYON_BODY" unique_id=1578027555]
+
+[node name="Sprite3D" type="Sprite3D" parent="BYON_BODY/BYON_FACE_ROOT" unique_id=526327757]
+transform = Transform3D(-0.25, 0, -3.774895e-08, 0, 0.25, 0, 3.774895e-08, 0, -0.25, -4.371139e-08, 0, -0.5)
+texture = ExtResource("3_0ieak")
+
+[node name="BYON_STAR_ROOT" type="Node3D" parent="BYON_BODY" unique_id=1007647744]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+script = ExtResource("4_0ieak")
+rotate_x = true
+rotate_z = true
+
+[node name="STAR_BYON" type="MeshInstance3D" parent="BYON_BODY/BYON_STAR_ROOT" unique_id=949775961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("PlaneMesh_xqb27")
+skeleton = NodePath("../../..")
+script = ExtResource("4_0ieak")
+rotate_y = true
+rotate_weight = 2.0
+
+[node name="STAR_BYON5" type="MeshInstance3D" parent="BYON_BODY/BYON_STAR_ROOT" unique_id=813231729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7484552e-08, 0, -0.7)
+mesh = SubResource("QuadMesh_ha16h")
+skeleton = NodePath("../../..")
+script = ExtResource("4_0ieak")
+rotate_z = true
+rotate_weight = -2.0
+
+[node name="STAR_BYON2" type="MeshInstance3D" parent="BYON_BODY/BYON_STAR_ROOT" unique_id=327856694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("PlaneMesh_xqb27")
+skeleton = NodePath("../../..")
+script = ExtResource("4_0ieak")
+rotate_y = true
+rotate_weight = 2.0
+
+[node name="STAR_BYON3" type="MeshInstance3D" parent="BYON_BODY/BYON_STAR_ROOT" unique_id=533755877]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -0.7, 0, -1.7484552e-08)
+mesh = SubResource("QuadMesh_ah6sr")
+skeleton = NodePath("../../..")
+script = ExtResource("4_0ieak")
+rotate_z = true
+rotate_weight = -2.0
+
+[node name="STAR_BYON4" type="MeshInstance3D" parent="BYON_BODY/BYON_STAR_ROOT" unique_id=572563820]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 0, 1.7484552e-08)
+mesh = SubResource("QuadMesh_47qvv")
+skeleton = NodePath("../../..")
+script = ExtResource("4_0ieak")
+rotate_z = true
+rotate_weight = 2.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="BYON_BODY" unique_id=2025642719]
+amount = 16
+lifetime = 3.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_fcjo7")
+draw_pass_1 = SubResource("QuadMesh_3leu8")
+
+[node name="YAY" type="AudioStreamPlayer" parent="." unique_id=47092614]
+stream = ExtResource("6_ha16h")
+autoplay = true
+bus = &"SFX"
+
+[node name="YAY_ECHO" type="AudioStreamPlayer" parent="." unique_id=1508206133]
+stream = ExtResource("6_ha16h")
+volume_db = -10.0
+bus = &"REVERB_SFKs"
+
+[node name="BION_MENU" type="Control" parent="." unique_id=124609304]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_47qvv")
+
+[node name="Panel" type="Panel" parent="BION_MENU" unique_id=2022173226]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -256.0
+offset_right = 360.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fcjo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="BION_MENU/Panel" unique_id=327488934]
+position = Vector2(360, 256)
+texture = ExtResource("8_pjpaq")
+
+[node name="Panel2" type="Panel" parent="BION_MENU/Panel" unique_id=2101008642]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 44.0
+offset_right = 136.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BION_MENU/Panel" unique_id=349061477]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -228.0
+offset_right = 84.0
+offset_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0.56078434, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.34901962)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 64
+text = "BION HELPER MENU 3000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D5" type="Sprite2D" parent="BION_MENU/Panel" unique_id=558259898]
+position = Vector2(244, 208)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("5_0ieak")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BION_MENU/Panel" unique_id=809256367]
+position = Vector2(360, 280)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("5_0ieak")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BION_MENU/Panel" unique_id=1733628241]
+position = Vector2(472.00006, 208)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("5_0ieak")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BION_MENU/Panel" unique_id=300065442]
+position = Vector2(416, 256)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("5_0ieak")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BION_MENU/Panel" unique_id=1134567695]
+position = Vector2(296.00006, 256)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("5_0ieak")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="BION_MENU" unique_id=488136060]
+material = SubResource("CanvasItemMaterial_3me3u")
+position = Vector2(576, 328)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xqb27")
+lifetime = 3.0
+preprocess = 1.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_up6rb")
+
+[node name="BION_FACE" type="Sprite2D" parent="BION_MENU" unique_id=1719748020]
+position = Vector2(576, 240.00002)
+texture = ExtResource("3_0ieak")
+
+[node name="HEAL_BTN" type="Button" parent="BION_MENU" unique_id=423174493]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 376.0
+offset_right = 704.0
+offset_bottom = 416.0
+theme = ExtResource("8_3me3u")
+text = "HEAL YOURSELF"
+
+[node name="GET BULLETS" type="Button" parent="BION_MENU" unique_id=1783376886]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 440.0
+offset_right = 704.0
+offset_bottom = 480.0
+theme = ExtResource("8_3me3u")
+text = "GET BULLETS"
+
+[node name="EXIT" type="Button" parent="BION_MENU" unique_id=482678410]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 504.0
+offset_right = 704.0
+offset_bottom = 544.0
+theme = ExtResource("9_pjpaq")
+text = "EXIT"
+
+[node name="AWAIT_PANEL" type="Panel" parent="BION_MENU" unique_id=140688297]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -156.0
+offset_right = 136.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BION_MENU/AWAIT_PANEL" unique_id=1711451024]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 272.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 24
+text = "BION IS RECHARGING!
+PLEASE WAIT..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TIME_AWAIT_LABEL" type="Label" parent="BION_MENU/AWAIT_PANEL" unique_id=887019021]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -84.0
+offset_right = 136.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label3" type="Label" parent="BION_MENU/AWAIT_PANEL" unique_id=139973204]
+layout_mode = 0
+offset_top = 248.0
+offset_right = 272.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 24
+text = "SECONDS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BION_MENU/HEAL_BTN" to="." method="_on_heal_btn_pressed"]
+[connection signal="pressed" from="BION_MENU/GET BULLETS" to="." method="_on_get_bullets_pressed"]
+[connection signal="pressed" from="BION_MENU/EXIT" to="." method="_on_exit_pressed"]

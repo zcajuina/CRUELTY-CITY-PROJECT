@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://5cp57jyria38"]
+
+[ext_resource type="Script" uid="uid://5ydmhs7gkvxf" path="res://Scripts/Props/PARTICLES/blood_splat_marker.gd" id="1_wc7f4"]
+[ext_resource type="Script" uid="uid://b4oln6wmnrt41" path="res://Scripts/Props/self_starter_one_shot_particle.gd" id="3_y0l7t"]
+
+[sub_resource type="Curve" id="Curve_d2afg"]
+_data = [Vector2(0, 0.30337083), 0.0, 0.0, 0, 0, Vector2(0.39097744, 0.50561804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_cupue"]
+curve = SubResource("Curve_d2afg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ylvpk"]
+direction = Vector3(0, 0, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -7, 0)
+scale_curve = SubResource("CurveTexture_cupue")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc7f4"]
+shading_mode = 0
+albedo_color = Color(0.6, 0, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_coequ"]
+material = SubResource("StandardMaterial3D_wc7f4")
+size = Vector2(0.125, 0.25)
+
+[node name="BloodSplat" type="Node3D" unique_id=1744345775]
+script = ExtResource("1_wc7f4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=25864767]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+emitting = false
+amount = 16
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ylvpk")
+draw_pass_1 = SubResource("QuadMesh_coequ")
+script = ExtResource("3_y0l7t")
+time = 1.5
+delete = false

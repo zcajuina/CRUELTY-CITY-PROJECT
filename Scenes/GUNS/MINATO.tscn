@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvnngpi7edbx0"]
+
+[ext_resource type="PackedScene" uid="uid://gy03iiprvvai" path="res://Models/Guns/MINATO.glb" id="1_g7pvy"]
+
+[node name="MINATO" type="Node3D"]
+
+[node name="PANTIES_UZI" parent="." instance=ExtResource("1_g7pvy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="minato_001" parent="PANTIES_UZI" index="0"]
+transform = Transform3D(0.795168, 0, 7.10543e-15, 0, 0.795168, 0, -7.10543e-15, 0, 0.795168, 0, 0, 0)
+layers = 2
+
+[node name="GUN_NOZZLE" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00674826, 0.0676665, -0.420249)
+
+[editable path="PANTIES_UZI"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://h8kkcvpwkiap"]
+
+[ext_resource type="Script" uid="uid://bguempieau620" path="res://Scripts/Props/DOOR_STATIC_BODY_COMMON.gd" id="1_rf54h"]
+[ext_resource type="Texture2D" uid="uid://c57cqw6ttye6r" path="res://Textures/CRUS/Wood_Door2.png" id="2_um45a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dg3u"]
+size = Vector3(1.5, 3, 0.125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pew3q"]
+albedo_texture = ExtResource("2_um45a")
+uv1_scale = Vector3(0.67, 0.345, 0.085)
+uv1_offset = Vector3(0.5, 0.5, 0)
+uv1_triplanar = true
+
+[node name="DOOR" type="StaticBody3D" unique_id=1545753819]
+script = ExtResource("1_rf54h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=297058527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.503, 0)
+shape = SubResource("BoxShape3D_4dg3u")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=430478776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.5, 0)
+size = Vector3(1.5, 3, 0.125)
+material = SubResource("StandardMaterial3D_pew3q")

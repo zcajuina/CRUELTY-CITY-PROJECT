@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=3 uid="uid://bag6u1th1x52o"]
+
+[ext_resource type="Script" uid="uid://1cs8xnc1mkbu" path="res://Scripts/Player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bs6cevhut6jtj" path="res://Scripts/player_raycast.gd" id="2_3smsa"]
+[ext_resource type="Script" uid="uid://bp65r816bqs3y" path="res://Scripts/StateMachine/StateMachine.gd" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://cow1nt7hr7d1c" path="res://Scenes/HUD/WEAPON_WORLD.tscn" id="3_f1ek2"]
+[ext_resource type="Script" uid="uid://kgshejlvi8h6" path="res://Scripts/StateMachine/PLAYER_STATES/idle.gd" id="3_fkybt"]
+[ext_resource type="Script" uid="uid://k01uhfpp5tfu" path="res://Scripts/StateMachine/PLAYER_STATES/move.gd" id="4_fkybt"]
+[ext_resource type="Script" uid="uid://cc7k3tf6dxkwk" path="res://Scripts/StateMachine/PLAYER_STATES/jump.gd" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://bg2dk80vubi22" path="res://Scripts/StateMachine/PLAYER_STATES/falling.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://daikogiqfvcbw" path="res://Scripts/StateMachine/GUN_STATES/gun_idle.gd" id="9_pu2lt"]
+[ext_resource type="Script" uid="uid://bhi3lnv304e0j" path="res://Scripts/StateMachine/GUN_STATES/gun_shoot.gd" id="10_ukyrk"]
+[ext_resource type="Script" uid="uid://b2r645e8qie2q" path="res://Scripts/StateMachine/GUN_STATES/gun_reload.gd" id="11_7dp3o"]
+[ext_resource type="Script" uid="uid://ctx377yayafcb" path="res://Scripts/Props/HUD.gd" id="11_gymyn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_v0iea")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wydro")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+cull_mask = 1048573
+
+[node name="GUN_RAYCAST" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -5.59506e-06, -1, 0, 128, -4.37114e-08, 0, 0, 0)
+debug_shape_custom_color = Color(1, 1, 0, 1)
+script = ExtResource("2_3smsa")
+
+[node name="visuais" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67939, 0)
+
+[node name="SubViewportContainer" parent="Head/Camera3D/visuais" instance=ExtResource("3_f1ek2")]
+
+[node name="PLAYER_SM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_6t5aa")
+initial_state = NodePath("IDLE")
+metadata/_custom_type_script = "uid://bp65r816bqs3y"
+
+[node name="IDLE" type="Node" parent="PLAYER_SM"]
+script = ExtResource("3_fkybt")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="MOVE" type="Node" parent="PLAYER_SM"]
+script = ExtResource("4_fkybt")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="JUMP" type="Node" parent="PLAYER_SM"]
+script = ExtResource("5_fkybt")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="FALLING" type="Node" parent="PLAYER_SM"]
+script = ExtResource("6_x3wgy")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="GUN_SM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_6t5aa")
+initial_state = NodePath("GUN_IDLE")
+metadata/_custom_type_script = "uid://bp65r816bqs3y"
+
+[node name="GUN_IDLE" type="Node" parent="GUN_SM"]
+script = ExtResource("9_pu2lt")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="GUN_SHOOT" type="Node" parent="GUN_SM"]
+script = ExtResource("10_ukyrk")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="GUN_RELOAD" type="Node" parent="GUN_SM"]
+script = ExtResource("11_7dp3o")
+metadata/_custom_type_script = "uid://d3m3ugy3gr2vc"
+
+[node name="shoot_timer" type="Timer" parent="."]
+wait_time = 0.085
+one_shot = true
+
+[node name="reload_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_gymyn")
+
+[node name="MAG" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "MAG: 00"
+
+[node name="STORAGE" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 99.0
+offset_bottom = 51.0
+text = "STORAGE: 00"
+
+[connection signal="timeout" from="shoot_timer" to="GUN_SM/GUN_SHOOT" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="reload_timer" to="Head/Camera3D/GUN_RAYCAST" method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="reload_timer" to="GUN_SM/GUN_RELOAD" method="_on_reload_timer_timeout"]
+
+[editable path="Head/Camera3D/visuais/SubViewportContainer"]

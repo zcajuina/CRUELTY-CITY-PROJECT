@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3d1vjmhelqd2"]
+
+[ext_resource type="Script" uid="uid://cdq0w3gon08kj" path="res://Scripts/Props/self_delete_script.gd" id="1_ngx3f"]
+[ext_resource type="Texture2D" uid="uid://bxkx56su3h2fl" path="res://Textures/GFX/blood2.png" id="2_8jm82"]
+
+[node name="PartBloodDecak" type="Node3D"]
+script = ExtResource("1_ngx3f")
+time = 30.0
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(3.5, 0.25, 3.5)
+texture_albedo = ExtResource("2_8jm82")

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bn34r0wac3mkd"]
+
+[ext_resource type="Script" uid="uid://cdm60johrf43e" path="res://Scripts/Props/fishing_bait.gd" id="1_yoy0a"]
+[ext_resource type="AudioStream" uid="uid://dysgnaaa1ilrx" path="res://Sounds/fish_catch.wav" id="2_yoy0a"]
+[ext_resource type="PackedScene" uid="uid://frlxvd52a157" path="res://Models/Props/FISHING_BAIT.glb" id="3_f1f3s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f1f3s"]
+radius = 0.013957173
+
+[node name="FishBait" type="CharacterBody3D" unique_id=415248860]
+process_priority = 15
+process_physics_priority = 15
+collision_layer = 2
+collision_mask = 2
+collision_priority = 3.0
+script = ExtResource("1_yoy0a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=881610352]
+transform = Transform3D(1.0000005, 0, 0, 0, 1.0000005, 0, 0, 0, 1, 0, 0.024384648, 0)
+shape = SubResource("SphereShape3D_f1f3s")
+
+[node name="catch_timer" type="Timer" parent="." unique_id=55370646]
+one_shot = true
+
+[node name="fish_catch_snd" type="AudioStreamPlayer3D" parent="." unique_id=273930499]
+stream = ExtResource("2_yoy0a")
+volume_db = 15.294
+bus = &"SFX"
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1653271680]
+visible = false
+radius = 0.039070375
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=801981313]
+target_position = Vector3(0, -0.05, 0)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="FISHING_BAIT" parent="." unique_id=1656774829 instance=ExtResource("3_f1f3s")]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -0.0143889785, 0.052271232, 0)
+
+[connection signal="timeout" from="catch_timer" to="." method="_on_catch_timer_timeout"]

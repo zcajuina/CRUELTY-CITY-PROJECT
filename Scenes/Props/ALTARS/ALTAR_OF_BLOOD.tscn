@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://d28fmg6ng6wub"]
+
+[ext_resource type="Script" uid="uid://dmm82o754gkn" path="res://Scripts/Props/ALTAR_interact_LOGIC.gd" id="1_7b817"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="3_p1pkk"]
+[ext_resource type="PackedScene" uid="uid://cweixntm67gd2" path="res://Models/Props/ALTARES/BLOOD_ALTAR.glb" id="4_80vwx"]
+[ext_resource type="AudioStream" uid="uid://csgi156mnktr4" path="res://Sounds/SFK/TV_HUM.mp3" id="5_53gov"]
+[ext_resource type="Texture2D" uid="uid://c2flu3jgur6ni" path="res://Textures/GFX/FLARE_RED.png" id="6_b7usb"]
+[ext_resource type="Texture2D" uid="uid://cnxvlad2cwybn" path="res://Textures/GFX/sonic2.png" id="7_p1pkk"]
+
+[sub_resource type="Gradient" id="Gradient_xwp74"]
+offsets = PackedFloat32Array(0.69285715, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vdj8v"]
+gradient = SubResource("Gradient_xwp74")
+
+[sub_resource type="Curve" id="Curve_f8ru2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.18674698, 0.505618), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f8rc"]
+curve = SubResource("Curve_f8ru2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7mmrq"]
+emission_shape_scale = Vector3(0.5, 0.23, 0.5)
+emission_shape = 2
+emission_sphere_radius = 0.6
+gravity = Vector3(0, -2, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_6f8rc")
+color_ramp = SubResource("GradientTexture1D_vdj8v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_312lp"]
+render_priority = -1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("7_p1pkk")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_8hkex"]
+material = SubResource("StandardMaterial3D_312lp")
+size = Vector2(0.055, 0.3)
+
+[sub_resource type="Curve" id="Curve_p1pkk"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_botx1"]
+curve = SubResource("Curve_p1pkk")
+
+[sub_resource type="Gradient" id="Gradient_53gov"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a1mev"]
+gradient = SubResource("Gradient_53gov")
+
+[sub_resource type="Curve" id="Curve_tvs8p"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_djexc"]
+curve = SubResource("Curve_tvs8p")
+
+[sub_resource type="Curve" id="Curve_7x6ck"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8827586, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fajbe"]
+curve = SubResource("Curve_7x6ck")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t3k5a"]
+angle_min = -360.0
+angle_max = 360.00003
+angle_curve = SubResource("CurveTexture_botx1")
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_fajbe")
+color_ramp = SubResource("GradientTexture1D_a1mev")
+hue_variation_curve = SubResource("CurveTexture_djexc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no7il"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_b7usb")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ys0p"]
+material = SubResource("StandardMaterial3D_no7il")
+size = Vector2(2.5, 0.25)
+
+[sub_resource type="Gradient" id="Gradient_botx1"]
+offsets = PackedFloat32Array(0, 0.08571429, 0.22142857)
+colors = PackedColorArray(0.73333335, 1, 0, 1, 0.98333335, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_53gov"]
+gradient = SubResource("Gradient_botx1")
+
+[sub_resource type="Curve" id="Curve_a1mev"]
+_data = [Vector2(0, 0.25842696), 0.0, 0.0, 0, 0, Vector2(0.2951807, 0.30337077), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tvs8p"]
+curve = SubResource("Curve_a1mev")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_djexc"]
+emission_shape = 2
+emission_sphere_radius = 0.02
+gravity = Vector3(0, 1.19, 0)
+scale_curve = SubResource("CurveTexture_tvs8p")
+color_ramp = SubResource("GradientTexture1D_53gov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x6ck"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_p1pkk")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_fajbe"]
+material = SubResource("StandardMaterial3D_7x6ck")
+size = Vector2(0.5, 1)
+
+[node name="AltarOfBlood" type="Node3D" unique_id=1264323083]
+
+[node name="MEAGER_ALTAR2_MEAGER_ALTAR#MAGNITUDE_INTERACT" type="CSGSphere3D" parent="." unique_id=1699387139 groups=["altar"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015745283, 1.8694551, -0.00026053935)
+visible = false
+use_collision = true
+radius = 0.4829569
+rings = 8
+script = ExtResource("1_7b817")
+altar_name = "BLOOD"
+
+[node name="LIGHT" type="OmniLight3D" parent="." unique_id=824866516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015745283, 1.8265314, -0.00026053935)
+light_color = Color(0.92, 0, 0.015333099, 1)
+light_energy = 16.0
+omni_range = 2.515
+omni_attenuation = 0.265
+
+[node name="HUM" type="AudioStreamPlayer3D" parent="." unique_id=1915128666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("5_53gov")
+volume_db = -16.0
+pitch_scale = 1.24
+autoplay = true
+max_distance = 6.0
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[node name="BLOOD_ALTAR" parent="." unique_id=476495887 instance=ExtResource("4_80vwx")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="BLOOD_CRISTAL" parent="BLOOD_ALTAR" index="3" unique_id=770205421]
+script = ExtResource("3_p1pkk")
+rotate_y = true
+rotate_weight = 0.1
+sin_y = true
+sin_amp = 0.001
+sin_freq = 0.25
+
+[node name="BLOOD_DRIP" type="GPUParticles3D" parent="BLOOD_ALTAR/BLOOD_CRISTAL" index="0" unique_id=1727290512]
+transform = Transform3D(1.350472, 0, 0, 0, 1.350472, 0, 0, 0, 1.350472, 0, -0.6492026, 0)
+amount = 32
+lifetime = 1.25
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_7mmrq")
+draw_pass_1 = SubResource("QuadMesh_8hkex")
+
+[node name="RAYS" type="GPUParticles3D" parent="BLOOD_ALTAR/BLOOD_CRISTAL" index="1" unique_id=1891837045]
+amount = 64
+lifetime = 2.0
+preprocess = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_t3k5a")
+draw_pass_1 = SubResource("QuadMesh_8ys0p")
+
+[node name="BLOOD_CENTER" parent="BLOOD_ALTAR" index="4" unique_id=352983601]
+script = ExtResource("3_p1pkk")
+rotate_y = true
+rotate_weight = -0.25
+sin_y = true
+sin_amp = 0.001
+sin_freq = 0.25
+
+[node name="CANDLE_FLAMES" type="Node3D" parent="." unique_id=1918773663]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="PART_FLAME_CANDLE" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=1971488772]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 1.8457948, -0.59750634)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE2" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=578072474]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 1.891238, 0.6)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE3" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=33188088]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0.059074186, 1.7640167, 0.5419232)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE4" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=685240213]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 0.6, 1.8680512, 0)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE5" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=1819653140]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0.58561105, 1.6646627, -0.07059583)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE6" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=120724665]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, -0.59775174, 2.1494448, 0)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE7" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=1135466945]
+transform = Transform3D(0.345, 0, 0, 0, 0.345, 0, 0, 0, 0.345, -0.62518066, 1.8842164, 0.116415665)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[node name="PART_FLAME_CANDLE8" type="GPUParticles3D" parent="CANDLE_FLAMES" unique_id=2076871996]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, -0.5339346, 1.7434081, -0.10153714)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djexc")
+draw_pass_1 = SubResource("QuadMesh_fajbe")
+
+[editable path="BLOOD_ALTAR"]

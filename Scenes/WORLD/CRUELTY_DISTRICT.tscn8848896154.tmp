@@ -1,0 +1,147 @@
+[gd_scene load_steps=16 format=3 uid="uid://5ogv5comu60l"]
+
+[ext_resource type="PackedScene" uid="uid://6lurpnpyw3c4" path="res://Models/City/CRUELTY_DISTRIC/cruelty_district.glb" id="1_5paju"]
+[ext_resource type="Shader" uid="uid://cx4nyu1ke7fnt" path="res://Scripts/Shaders/CLOUDS_SHADER.gdshader" id="1_8pk81"]
+[ext_resource type="Script" uid="uid://cfcrqvm2pm0hs" path="res://Scripts/Props/water_logic.gd" id="5_8pk81"]
+[ext_resource type="PackedScene" uid="uid://bag6u1th1x52o" path="res://Scenes/PLAYER.tscn" id="5_vyxks"]
+[ext_resource type="PackedScene" uid="uid://dbhnd4bytjfpu" path="res://Scenes/Props/ULTIMATE_CONTROLLER.tscn" id="6_8pk81"]
+[ext_resource type="PackedScene" uid="uid://chilsmrggfh1y" path="res://Scenes/Props/CRUS_SAFE.tscn" id="7_5paju"]
+[ext_resource type="PackedScene" uid="uid://d10i4t8eimci0" path="res://Scenes/Props/PHONE_BOOT.tscn" id="7_hf33m"]
+[ext_resource type="PackedScene" uid="uid://buq5c0mb7msw6" path="res://Scenes/NPCS/NPC_civilian.tscn" id="8_hf33m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyxks"]
+
+[sub_resource type="Sky" id="Sky_8pk81"]
+sky_material = SubResource("ProceduralSkyMaterial_vyxks")
+
+[sub_resource type="Environment" id="Environment_5paju"]
+background_mode = 2
+sky = SubResource("Sky_8pk81")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5paju"]
+render_priority = 0
+shader = ExtResource("1_8pk81")
+shader_parameter/noise_scale = 20.93
+shader_parameter/speed = 0.195
+shader_parameter/darkness_amount = 6.92
+shader_parameter/detail = 0.285
+shader_parameter/concentration = 0.0
+shader_parameter/amount = -0.385
+shader_parameter/bloom = 2.495
+shader_parameter/alpha = 9.21
+shader_parameter/cloud_tint = Color(1.3655106, 0.3556689, 0.84375924, 1)
+shader_parameter/edge_fade = 0.445
+shader_parameter/rotation_matrix = Transform2D(1.885, -1.2, 1.305, 1.6, 0.2, 0)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8pk81"]
+material = SubResource("ShaderMaterial_5paju")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewei1"]
+size = Vector3(15, 5, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyxks"]
+albedo_color = Color(0.38, 0.752, 1, 1)
+
+[node name="CrueltyDistrict" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(100, 1, 100)
+
+[node name="cruelty_district" parent="." instance=ExtResource("1_5paju")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 301.133, 1.811, 266.00873)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5paju")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.86602545, 0, -0.86602545, 0.49999994, 0, 278.788, 0)
+layers = 3
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00017834247, -4080, 0, 4080, -0.00017834247, 0, 0, 0, 4080, 0, -295.0241, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_8pk81")
+
+[node name="Player" parent="." instance=ExtResource("5_vyxks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1183224, 0.5, 35.07054)
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_snap_length = 0.0
+
+[node name="SPAWN_POINTS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711745, 35.84548)
+
+[node name="PLAYER_HOUSE" type="Marker3D" parent="SPAWN_POINTS"]
+gizmo_extents = 5.92
+
+[node name="MEGA_MALL" type="Marker3D" parent="SPAWN_POINTS"]
+gizmo_extents = 5.92
+
+[node name="ECHO_CLUB" type="Marker3D" parent="SPAWN_POINTS"]
+gizmo_extents = 5.92
+
+[node name="GODHEAD" type="Marker3D" parent="SPAWN_POINTS"]
+gizmo_extents = 5.92
+
+[node name="UltimateController" parent="." instance=ExtResource("6_8pk81")]
+
+[node name="WATER" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -1, 41)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_8pk81")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WATER"]
+shape = SubResource("BoxShape3D_ewei1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WATER"]
+size = Vector3(15, 5, 15)
+material = SubResource("StandardMaterial3D_vyxks")
+
+[node name="CrusSafe" parent="." instance=ExtResource("7_5paju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6189, 0.5, 2.8105469)
+
+[node name="StaticBody3D" parent="CrusSafe/CRUS_SAFE/DOOR" index="0"]
+enable_money = true
+money_count = 9
+max_money_value = 800
+
+[node name="CrusSafe2" parent="." instance=ExtResource("7_5paju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.400877, 0.5, -5.8535995)
+
+[node name="StaticBody3D" parent="CrusSafe2/CRUS_SAFE/DOOR" index="0"]
+enable_organs = true
+organ_count = 10
+
+[node name="CrusSafe3" parent="." instance=ExtResource("7_5paju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.796082, 0.5, -11.956608)
+
+[node name="StaticBody3D" parent="CrusSafe3/CRUS_SAFE/DOOR" index="0"]
+enable_money = true
+money_count = 8
+is_bio_currency = true
+
+[node name="SAFE_BREAK" parent="CrusSafe3" index="2"]
+volume_db = -0.2
+
+[node name="PhoneBoot" parent="." instance=ExtResource("7_hf33m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.763752, 0.5, 38.718353)
+
+[node name="CIVILIAN" parent="." instance=ExtResource("8_hf33m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.96208, 0.4999981, 17.103432)
+
+[connection signal="body_entered" from="WATER" to="WATER" method="_on_body_entered"]
+
+[editable path="Player"]
+[editable path="Player/Head/Camera3D/visuais/SubViewportContainer"]
+[editable path="Player/Control"]
+[editable path="CrusSafe"]
+[editable path="CrusSafe/CRUS_SAFE"]
+[editable path="CrusSafe2"]
+[editable path="CrusSafe2/CRUS_SAFE"]
+[editable path="CrusSafe3"]
+[editable path="CrusSafe3/CRUS_SAFE"]

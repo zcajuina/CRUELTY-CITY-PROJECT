@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://qc7o2k0q4fux"]
+
+[ext_resource type="PackedScene" uid="uid://dvorudmvskbap" path="res://Models/Props/ALTARES/MEAGER_ALTAR.glb" id="2_1kbjj"]
+[ext_resource type="Script" uid="uid://dmm82o754gkn" path="res://Scripts/Props/ALTAR_interact_LOGIC.gd" id="2_cl156"]
+[ext_resource type="AudioStream" uid="uid://csgi156mnktr4" path="res://Sounds/SFK/TV_HUM.mp3" id="3_cl156"]
+[ext_resource type="Script" uid="uid://70bywhykd1ft" path="res://Scripts/Props/NODE_ROTATE_SCRIPT.gd" id="3_hbfo5"]
+[ext_resource type="Texture2D" uid="uid://bev6jb0wdnk40" path="res://Textures/GFX/light2.png" id="4_fon6i"]
+
+[sub_resource type="Curve" id="Curve_qer2w"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0s8k0"]
+curve = SubResource("Curve_qer2w")
+
+[sub_resource type="Gradient" id="Gradient_xwp74"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vdj8v"]
+gradient = SubResource("Gradient_xwp74")
+
+[sub_resource type="Curve" id="Curve_f8ru2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8827586, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f8rc"]
+curve = SubResource("Curve_f8ru2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7mmrq"]
+emission_shape_scale = Vector3(0.48, 1.8, 0.49)
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = -360.0
+angle_max = 360.00003
+angle_curve = SubResource("CurveTexture_0s8k0")
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 0.99997765
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_6f8rc")
+color_ramp = SubResource("GradientTexture1D_vdj8v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_312lp"]
+render_priority = -1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.10000014, 1, 1)
+albedo_texture = ExtResource("4_fon6i")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_8hkex"]
+material = SubResource("StandardMaterial3D_312lp")
+size = Vector2(0.3, 0.3)
+
+[node name="AltarOfMeager" type="Node3D" unique_id=1264323083]
+
+[node name="MEAGER_ALTAR2_MEAGER_ALTAR#MAGNITUDE_INTERACT" type="CSGSphere3D" parent="." unique_id=1699387139 groups=["altar"]]
+transform = Transform3D(1.2857143, 0, 0, 0, 3.9359448, 0, 0, 0, 1.1785716, -0.0015745283, 3.7058375, -0.00026053935)
+visible = false
+use_collision = true
+radius = 0.6374772
+rings = 8
+script = ExtResource("2_cl156")
+altar_name = "MEAGER"
+
+[node name="LIGHT" type="OmniLight3D" parent="." unique_id=824866516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015745283, 3.142857, -0.00026053935)
+light_color = Color(0, 0.1333332, 1, 1)
+light_energy = 16.0
+omni_attenuation = -1.0
+
+[node name="MEAGER_ALTAR" parent="." unique_id=2099351217 instance=ExtResource("2_1kbjj")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="ROOT_MEAGER" parent="MEAGER_ALTAR" index="1" unique_id=253757344]
+script = ExtResource("3_hbfo5")
+rotate_y = true
+rotate_weight = -0.05
+sin_y = true
+sin_amp = -0.001
+sin_freq = 0.25
+
+[node name="CRISTAL_CASE" parent="MEAGER_ALTAR/ROOT_MEAGER" index="0" unique_id=206873036]
+script = ExtResource("3_hbfo5")
+rotate_y = true
+rotate_weight = -0.1
+
+[node name="CRISTAL_SMALL" parent="MEAGER_ALTAR/ROOT_MEAGER" index="1" unique_id=376673634]
+script = ExtResource("3_hbfo5")
+sin_y = true
+sin_amp = 0.002
+sin_freq = 0.25
+
+[node name="INNER_CRYSTAL" parent="MEAGER_ALTAR/ROOT_MEAGER" index="2" unique_id=1645659857]
+script = ExtResource("3_hbfo5")
+rotate_y = true
+rotate_weight = 0.25
+
+[node name="SPARKS" type="GPUParticles3D" parent="MEAGER_ALTAR/ROOT_MEAGER" index="3" unique_id=1727290512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27221346, 0)
+amount = 64
+preprocess = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_7mmrq")
+draw_pass_1 = SubResource("QuadMesh_8hkex")
+
+[node name="HUM" type="AudioStreamPlayer3D" parent="." unique_id=1915128666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("3_cl156")
+autoplay = true
+max_distance = 6.0
+bus = &"REVERB_SFKs"
+parameters/looping = true
+
+[editable path="MEAGER_ALTAR"]

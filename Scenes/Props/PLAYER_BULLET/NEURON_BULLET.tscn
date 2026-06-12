@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://canjj6hoft0yh"]
+
+[ext_resource type="Script" uid="uid://cc8jmnwcpdgf0" path="res://Scripts/Props/player_bullet.gd" id="1_6b6oy"]
+[ext_resource type="PackedScene" uid="uid://dij815uxmpjgt" path="res://Particles/pre_mesh_neuron_gun_flash.tscn" id="2_cwxii"]
+[ext_resource type="Script" uid="uid://8v826esw1gvw" path="res://Scripts/Gun_Special_Effects/neuron_disabler_sound_wave_pulsate.gd" id="3_txxl4"]
+[ext_resource type="Texture2D" uid="uid://dfilc3cfqxaab" path="res://Textures/GFX/WHITE_STAR.png" id="4_txxl4"]
+[ext_resource type="Texture2D" uid="uid://busckritupl5q" path="res://Textures/GFX/FLARE_BLUE.png" id="5_lhvo7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp80b"]
+albedo_color = Color(0.7166667, 0, 1, 1)
+emission_enabled = true
+emission = Color(1, 0, 0.7833333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll0be"]
+material = SubResource("StandardMaterial3D_qp80b")
+size = Vector3(-0.56, 0.683, 0.13)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll0be"]
+radius = 0.025878906
+height = 0.14058593
+
+[sub_resource type="Gradient" id="Gradient_cwxii"]
+offsets = PackedFloat32Array(0.3364486, 0.5607477)
+colors = PackedColorArray(0.19, 0.97300005, 1, 1, 1, 0, 0.6666665, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_txxl4"]
+gradient = SubResource("Gradient_cwxii")
+
+[sub_resource type="Curve" id="Curve_lhvo7"]
+_data = [Vector2(0, 0.6067416), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qiwfw"]
+curve = SubResource("Curve_lhvo7")
+
+[sub_resource type="Curve" id="Curve_txxl4"]
+_data = [Vector2(0, 0.022471905), 0.0, 0.0, 0, 0, Vector2(0.1954887, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lhvo7"]
+curve = SubResource("Curve_txxl4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aim7q"]
+angle_min = -720.0
+angle_max = 720.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 1.9999776
+radial_velocity_curve = SubResource("CurveTexture_qiwfw")
+gravity = Vector3(0, 0, 16)
+scale_curve = SubResource("CurveTexture_lhvo7")
+color_ramp = SubResource("GradientTexture1D_txxl4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qiwfw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_txxl4")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_42orj"]
+material = SubResource("StandardMaterial3D_qiwfw")
+
+[node name="PlayerBullet" type="Node3D" unique_id=583165145]
+script = ExtResource("1_6b6oy")
+SPEED = 64.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2031192764]
+visible = false
+mesh = SubResource("BoxMesh_ll0be")
+
+[node name="HIT_AREA" type="Area3D" parent="." unique_id=2063512921]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HIT_AREA" unique_id=1936479215]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.5387253e-13, 1.9535422e-05)
+shape = SubResource("CapsuleShape3D_ll0be")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=338879827]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -0.25, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(1, 0.9333334, 0, 1)
+
+[node name="kill_timer" type="Timer" parent="." unique_id=1815153]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="PRE_MESH_NEURON_GUN_FLASH" parent="." unique_id=888706263 instance=ExtResource("2_cwxii")]
+
+[node name="Sprite3D" parent="PRE_MESH_NEURON_GUN_FLASH" index="0" unique_id=2139257571]
+transform = Transform3D(0.1765501, 0.28470176, 0, -0.28470176, 0.1765501, 0, 0, 0, 0.33500004, 0, 0, -0.3741835)
+script = ExtResource("3_txxl4")
+direction = 4
+
+[node name="Sprite3D2" parent="PRE_MESH_NEURON_GUN_FLASH" index="1" unique_id=1437193199]
+script = ExtResource("3_txxl4")
+direction = -1
+
+[node name="Sprite3D3" parent="PRE_MESH_NEURON_GUN_FLASH" index="2" unique_id=1532696544]
+script = ExtResource("3_txxl4")
+direction = -5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2022750363]
+amount = 16
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_aim7q")
+draw_pass_1 = SubResource("QuadMesh_42orj")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=4377589]
+transform = Transform3D(0.4258855, 0, 0, 0, 0.4258855, 0, 0, 0, 0.4258855, 0, 0, 0)
+texture = ExtResource("5_lhvo7")
+script = ExtResource("3_txxl4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1941438252]
+layers = 3
+light_color = Color(0.53999996, 0.95400006, 1, 1)
+omni_range = 1.4021658
+omni_attenuation = -1.581
+
+[connection signal="timeout" from="kill_timer" to="." method="_on_kill_timer_timeout"]
+
+[editable path="PRE_MESH_NEURON_GUN_FLASH"]

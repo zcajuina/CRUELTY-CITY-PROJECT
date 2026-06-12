@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://otg8dwjip4mc"]
+
+[ext_resource type="Script" uid="uid://dw2yh3nlkwirt" path="res://Scripts/Props/dropped_gun_logic.gd" id="1_h2dax"]
+[ext_resource type="Texture2D" uid="uid://dqw7fhjr1qe2g" path="res://Textures/PAIN/CHILD_PORN_961.png" id="2_tkdbm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkdbm"]
+albedo_texture = ExtResource("2_tkdbm")
+uv1_scale = Vector3(2.355, 2.355, 2.355)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="DroppedGun" type="Node3D"]
+script = ExtResource("1_h2dax")
+gun_name = null
+current_magazine = null
+current_storage = null
+
+[node name="DroppedGun" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00300002, 0)
+use_collision = true
+collision_layer = 4
+collision_mask = 4
+size = Vector3(1, 0.001, 1)
+material = SubResource("StandardMaterial3D_tkdbm")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c5l0u6v5i4eio"]
+
+[ext_resource type="Script" uid="uid://cac80x4v1v0rq" path="res://Scripts/Props/WORLD_MAP_PROPS/POLE_LIGHT.gd" id="1_i8v38"]
+[ext_resource type="Texture2D" uid="uid://dhrlssp4nu1u5" path="res://Textures/CRUS/metal_door.png" id="2_i8v38"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8v38"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+rim_enabled = true
+rim = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhd07"]
+albedo_texture = ExtResource("2_i8v38")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[node name="POLE_LIGHT" type="Node3D" unique_id=846935365]
+script = ExtResource("1_i8v38")
+
+[node name="LIGHT" type="CSGCylinder3D" parent="." unique_id=12449378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.528125, 0)
+use_collision = true
+radius = 0.39
+height = 1.0
+sides = 16
+material = SubResource("StandardMaterial3D_i8v38")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1843350620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+use_collision = true
+radius = 0.063
+height = 5.0
+sides = 16
+material = SubResource("StandardMaterial3D_dhd07")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=1036748235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.028125, 0)
+use_collision = true
+radius = 0.45
+height = 0.08125001
+sides = 16
+material = SubResource("StandardMaterial3D_dhd07")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=447580463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1375003, 0)
+use_collision = true
+radius = 0.45
+height = 0.275
+sides = 16
+material = SubResource("StandardMaterial3D_dhd07")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1917269843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+omni_range = 10.0
+omni_attenuation = 0.25

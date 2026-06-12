@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dh7quje371t88"]
+
+[ext_resource type="PackedScene" uid="uid://d3asss0ifee3s" path="res://Models/Guns/MOLTEM_BOY.glb" id="1_7qgl8"]
+[ext_resource type="Script" uid="uid://u476v54ieswj" path="res://Scripts/Props/GUN_ANIM_SCRIPTS/moltem_boy.gd" id="1_f604f"]
+[ext_resource type="Texture2D" uid="uid://fgnrunrlwrlv" path="res://Textures/SPRITES/GORBINO_GAME/0001.png" id="3_n1r0i"]
+[ext_resource type="Texture2D" uid="uid://bl4vkk4s1s5li" path="res://Textures/SPRITES/GORBINO_GAME/0002.png" id="4_ixrcl"]
+[ext_resource type="Texture2D" uid="uid://cck30f2h1im2p" path="res://Textures/SPRITES/GORBINO_GAME/0003.png" id="5_tlsnh"]
+[ext_resource type="Texture2D" uid="uid://b153du8gxsjhg" path="res://Textures/SPRITES/GORBINO_GAME/0004.png" id="6_s7mcr"]
+[ext_resource type="Texture2D" uid="uid://cyvaey8wbdprj" path="res://Textures/SPRITES/GORBINO_GAME/0005.png" id="7_kqiji"]
+[ext_resource type="Texture2D" uid="uid://b3v8c8tcgjrtj" path="res://Textures/SPRITES/GORBINO_GAME/0006.png" id="8_w40aj"]
+[ext_resource type="Texture2D" uid="uid://cb18iw33btawl" path="res://Textures/SPRITES/GORBINO_GAME/0007.png" id="9_ohesd"]
+[ext_resource type="Texture2D" uid="uid://8iu5hs4n0opt" path="res://Textures/SPRITES/GORBINO_GAME/0008.png" id="10_5kx02"]
+[ext_resource type="Texture2D" uid="uid://bh4f2tqhcw110" path="res://Textures/SPRITES/GORBINO_GAME/0009.png" id="11_6febw"]
+[ext_resource type="Texture2D" uid="uid://b6ubrnq1rnd3m" path="res://Textures/SPRITES/GORBINO_GAME/0010.png" id="12_7i1oh"]
+[ext_resource type="Texture2D" uid="uid://doonievc7svlp" path="res://Textures/SPRITES/GORBINO_GAME/0011.png" id="13_ojg1l"]
+[ext_resource type="Texture2D" uid="uid://dxn7rxb3rkq54" path="res://Textures/SPRITES/GORBINO_GAME/0012.png" id="14_bjucw"]
+[ext_resource type="Texture2D" uid="uid://g6kud3dermpc" path="res://Textures/SPRITES/GORBINO_GAME/0013.png" id="15_fw1hf"]
+[ext_resource type="Texture2D" uid="uid://ci2mua4ij8868" path="res://Textures/SPRITES/GORBINO_GAME/0014.png" id="16_8b1gt"]
+[ext_resource type="Texture2D" uid="uid://xynrhk1a1aag" path="res://Textures/SPRITES/GORBINO_GAME/0015.png" id="17_d8uwa"]
+[ext_resource type="Texture2D" uid="uid://bakb5lburmemo" path="res://Textures/SPRITES/GORBINO_GAME/0016.png" id="18_y757b"]
+[ext_resource type="Texture2D" uid="uid://c4hi73i5g2d3r" path="res://Textures/SPRITES/GORBINO_GAME/0017.png" id="19_u2oey"]
+[ext_resource type="Texture2D" uid="uid://uxomk0qpspnn" path="res://Textures/SPRITES/GORBINO_GAME/0018.png" id="20_q01iv"]
+[ext_resource type="Texture2D" uid="uid://bwkvy071rjgdr" path="res://Textures/SPRITES/GORBINO_GAME/0019.png" id="21_rg6iv"]
+[ext_resource type="Texture2D" uid="uid://dxj86jm7xy2bq" path="res://Textures/SPRITES/GORBINO_GAME/0020.png" id="22_kygmm"]
+[ext_resource type="Texture2D" uid="uid://dpr4oiob35v17" path="res://Textures/SPRITES/GORBINO_GAME/0021.png" id="23_qsi6c"]
+[ext_resource type="Texture2D" uid="uid://dj7qbpj5wfb4f" path="res://Textures/SPRITES/GORBINO_GAME/0022.png" id="24_uxrek"]
+[ext_resource type="Texture2D" uid="uid://byi1usxyqdkk4" path="res://Textures/SPRITES/GORBINO_GAME/0023.png" id="25_2vs4m"]
+[ext_resource type="Texture2D" uid="uid://dm286crg4whry" path="res://Textures/SPRITES/GORBINO_GAME/0024.png" id="26_irjpt"]
+[ext_resource type="Texture2D" uid="uid://cu3r1f3iiwkd4" path="res://Textures/SPRITES/GORBINO_GAME/0025.png" id="27_g8b2v"]
+[ext_resource type="Texture2D" uid="uid://bh5b4t22680mq" path="res://Textures/SPRITES/GORBINO_GAME/0026.png" id="28_462c8"]
+[ext_resource type="Texture2D" uid="uid://bp8bk7mll6ine" path="res://Textures/SPRITES/GORBINO_GAME/0027.png" id="29_auvec"]
+[ext_resource type="Texture2D" uid="uid://c8fexpgvxx7xs" path="res://Textures/SPRITES/GORBINO_GAME/0028.png" id="30_yiaoa"]
+[ext_resource type="Texture2D" uid="uid://bdco7mfp18b32" path="res://Textures/SPRITES/GORBINO_GAME/0029.png" id="31_undp2"]
+[ext_resource type="Texture2D" uid="uid://ow5041pgm4hu" path="res://Textures/SPRITES/GORBINO_GAME/0030.png" id="32_t4u8w"]
+[ext_resource type="Texture2D" uid="uid://cp1ajjscs2k5a" path="res://Textures/SPRITES/GORBINO_GAME/0031.png" id="33_6ebtu"]
+[ext_resource type="Texture2D" uid="uid://bnmqrobhtke26" path="res://Textures/SPRITES/GORBINO_GAME/0032.png" id="34_2cqbe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8v4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n1r0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ixrcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tlsnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7mcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqiji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w40aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ohesd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5kx02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6febw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7i1oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ojg1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bjucw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fw1hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8b1gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_d8uwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_y757b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u2oey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q01iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rg6iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kygmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qsi6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uxrek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2vs4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_irjpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_g8b2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_462c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_auvec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_yiaoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_undp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_t4u8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6ebtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2cqbe")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 24.0
+}]
+
+[node name="MoltemBoy" type="Node3D" unique_id=538584921]
+script = ExtResource("1_f604f")
+
+[node name="MOLTEM_BOY2" parent="." unique_id=1923158597 instance=ExtResource("1_7qgl8")]
+
+[node name="SPRITE_SHOOT" type="Sprite3D" parent="MOLTEM_BOY2/MOLTEM_BOY" parent_id_path=PackedInt32Array(1923158597, 507256453) index="1" unique_id=166036562]
+transform = Transform3D(-2.8412401e-09, 0.065, 2.8412401e-09, 0, -2.8412401e-09, 0.065, 0.065, 2.8412401e-09, 1.2419455e-16, 0.19223171, 0.038683444, 0)
+visible = false
+modulate = Color(1, 0, 0.016666412, 1)
+shaded = true
+texture = ExtResource("3_n1r0i")
+
+[node name="SPRITE_IDLE" type="AnimatedSprite3D" parent="MOLTEM_BOY2/MOLTEM_BOY" parent_id_path=PackedInt32Array(1923158597, 507256453) index="2" unique_id=198214757]
+transform = Transform3D(-2.8412401e-09, 0.065, 2.8412401e-09, 0, -2.8412401e-09, 0.065, 0.065, 2.8412401e-09, 1.2419455e-16, 0.19223171, 0.038683444, 0)
+shaded = true
+sprite_frames = SubResource("SpriteFrames_s8v4e")
+animation = &"IDLE"
+frame_progress = 0.3091069
+
+[editable path="MOLTEM_BOY2"]
